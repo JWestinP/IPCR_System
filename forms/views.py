@@ -8,90 +8,18 @@ from datetime import date
 
 # Create your views here.
 
-def IPCRForm(request):
+def IPCR_pg1(request):
     previous_response_syllabus = IPCR_Syllabus_model.objects.filter(author=request.user).last()
     previous_response_courseguide = IPCR_CourseGuide_model.objects.filter(author=request.user).last()
     previous_response_SLM = IPCR_SLM_model.objects.filter(author=request.user).last()
     previous_response_subjectareas = IPCR_SubjectAreas_model.objects.filter(author=request.user).last()
-    previous_response_attendancesheet = IPCR_AttendanceSheet_model.objects.filter(author=request.user).last()
-    previous_response_classrecord = IPCR_ClassRecord_model.objects.filter(author=request.user).last()
-    previous_response_teachingeffectiveness = IPCR_TeachingEffectiveness_model.objects.filter(author=request.user).last()
-    previous_response_classroomobservation = IPCR_ClassroomObservation_model.objects.filter(author=request.user).last()
-    previous_response_midtermtosrubrics = IPCR_MidtermTOSRubrics_model.objects.filter(author=request.user).last()
-    previous_response_finaltermtosrubrics = IPCR_FinaltermTOSRubrics_model.objects.filter(author=request.user).last()
-    previous_response_midtermtestquestions = IPCR_MidtermTestQuestions_model.objects.filter(author=request.user).last()
-    previous_response_finaltermtestquestions = IPCR_FinaltermTestQuestions_model.objects.filter(author=request.user).last()
-    previous_response_midtermanswerkey = IPCR_MidtermAnswerKey_model.objects.filter(author=request.user).last()
-    previous_response_finaltermanswerkey = IPCR_FinaltermAnswerKey_model.objects.filter(author=request.user).last()
-    previous_response_gradingsheet = IPCR_GradingSheet_model.objects.filter(author=request.user).last()
-    previous_response_studentadviced = IPCR_StudentAdviced_model.objects.filter(author=request.user).last()
-    previous_response_accomplishmentreport = IPCR_AccomplishmentReport_model.objects.filter(author=request.user).last()
-    previous_response_researchproposalsubmitted = IPCR_ResearchProposalSubmitted_model.objects.filter(author=request.user).last()
-    previous_response_researchimplemented = IPCR_ResearchImplemented_model.objects.filter(author=request.user).last()
-    previous_response_researchpresented = IPCR_ResearchPresented_model.objects.filter(author=request.user).last()
-    previous_response_researchpublished = IPCR_ResearchPublished_model.objects.filter(author=request.user).last()
-    previous_response_approvediprights = IPCR_ApprovedIPRights_model.objects.filter(author=request.user).last()
-    previous_response_researchutilized = IPCR_ResearchUtilized_model.objects.filter(author=request.user).last()
-    previous_response_numberofcitations = IPCR_NumberOfCitations_model.objects.filter(author=request.user).last()
-    previous_response_extensionproposalsubmitted = IPCR_ExtensionProposalSubmitted_model.objects.filter(author=request.user).last()
-    previous_response_persontrained = IPCR_PersonTrained_model.objects.filter(author=request.user).last()
-    previous_response_personavailedratedgood = IPCR_PersonAvailedRatedGood_model.objects.filter(author=request.user).last()   
-    previous_response_persontrainedratedgood = IPCR_PersonTrainedRatedGood_model.objects.filter(author=request.user).last()   
-    previous_response_technicaladvice = IPCR_TechnicalAdvice_model.objects.filter(author=request.user).last()   
-    previous_response_accomplishmentreportdeligatedassignment = IPCR_AccomplishmentReportDeligatedAssignment_model.objects.filter(author=request.user).last()   
-    previous_response_flagraisingattendance = IPCR_FlagRaisingAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_flagloweringattendance = IPCR_FlagLoweringAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_wellnessprogramattendance = IPCR_WellnessProgramAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_schoolcelebrationattendance = IPCR_SchoolCelebrationAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_trainingattendance = IPCR_TrainingAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_facultymeetingattendance = IPCR_FacultyMeetingAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_accreditationattendance = IPCR_AccreditationAttendance_model.objects.filter(author=request.user).last()   
-    previous_response_spiritualactivityattendance = IPCR_SpiritualActivityAttendance_model.objects.filter(author=request.user).last()   
 
-
-
-    
     if (request.method == 'POST'):
         form_syllabus = IPCR_Syllabus_form(request.POST)
         form_courseguide = IPCR_CourseGuide_form(request.POST)
         form_SLM = IPCR_SLM_form(request.POST)
         form_subjectareas = IPCR_SubjectAreas_form(request.POST)
-        form_attendancesheet = IPCR_AttendanceSheet_form(request.POST)              
-        form_classrecord = IPCR_ClassRecord_form(request.POST)              
-        form_teachingeffectiveness = IPCR_TeachingEffectiveness_form(request.POST)   
-        form_classroomobservation = IPCR_ClassroomObservation_form(request.POST)   
-        form_midtermtosrubrics = IPCR_MidtermTOSRubrics_form(request.POST)   
-        form_finaltermtosrubrics = IPCR_FinaltermTOSRubrics_form(request.POST)   
-        form_midtermtestquestions = IPCR_MidtermTestQuestions_form(request.POST)   
-        form_finaltermtestquestions = IPCR_FinaltermTestQuestions_form(request.POST)   
-        form_midtermanswerkey = IPCR_MidtermAnswerKey_form(request.POST)   
-        form_finaltermanswerkey = IPCR_FinaltermAnswerKey_form(request.POST)   
-        form_gradingsheet = IPCR_GradingSheet_form(request.POST)   
-        form_studentadviced = IPCR_StudentAdviced_form(request.POST)   
-        form_accomplishmentreport = IPCR_AccomplishmentReport_form(request.POST)   
-        form_researchproposalsubmitted = IPCR_ResearchProposalSubmitted_form(request.POST)   
-        form_researchimplemented = IPCR_ResearchImplemented_form(request.POST)   
-        form_researchpresented = IPCR_ResearchPresented_form(request.POST)   
-        form_researchpublished = IPCR_ResearchPublished_form(request.POST)   
-        form_approvediprights = IPCR_ApprovedIPRights_form(request.POST)   
-        form_researchutilized = IPCR_ResearchUtilized_form(request.POST)   
-        form_numberofcitations = IPCR_NumberOfCitations_form(request.POST)   
-        form_extensionproposalsubmitted = IPCR_ExtensionProposalSubmitted_form(request.POST)   
-        form_persontrained = IPCR_PersonTrained_form(request.POST)   
-        form_personavailedratedgood = IPCR_PersonAvailedRatedGood_form(request.POST)   
-        form_persontrainedratedgood = IPCR_PersonTrainedRatedGood_form(request.POST)          
-        form_technicaladvice = IPCR_TechnicalAdvice_form(request.POST) 
-        form_accomplishmentreportdeligatedassignment = IPCR_AccomplishmentReportDeligatedAssignment_form(request.POST)         
-        form_flagraisingattendance = IPCR_FlagRaisingAttendance_form(request.POST)        
-        form_flagloweringattendance = IPCR_FlagLoweringAttendance_form(request.POST)          
-        form_wellnessprogramattendance = IPCR_WellnessProgramAttendance_form(request.POST)          
-        form_schoolcelebrationattendance = IPCR_SchoolCelebrationAttendance_form(request.POST) 
-        form_trainingattendance = IPCR_TrainingAttendance_form(request.POST) 
-        form_facultymeetingattendance = IPCR_FacultyMeetingAttendance_form(request.POST) 
-        form_accreditationattendance = IPCR_AccreditationAttendance_form(request.POST) 
-        form_spiritualactivityattendance = IPCR_SpiritualActivityAttendance_form(request.POST) 
 
-                      
         if (form_syllabus.is_valid()):
             cd = form_syllabus.cleaned_data
             IPCR_syllabus = IPCR_Syllabus_model(
@@ -102,6 +30,8 @@ def IPCRForm(request):
             IPCR_syllabus.author = request.user
             IPCR_syllabus.syllabus_Submitted = date.today()
             IPCR_syllabus.save()
+
+            messages.success(request, "The IPCR Form has been saved.")
 
         if (form_courseguide.is_valid()):
             cd = form_courseguide.cleaned_data
@@ -141,6 +71,44 @@ def IPCRForm(request):
             IPCR_subjectareas.save()
 
             messages.success(request, "The IPCR Form has been saved.")
+
+    else:
+            initial_data = {}
+            if previous_response_syllabus:
+                initial_data['syllabus_Target'] = previous_response_syllabus.syllabus_Target
+                initial_data['syllabus_Accomplished'] = previous_response_syllabus.syllabus_Accomplished
+
+            if previous_response_courseguide:
+                initial_data['CourseGuide_Target'] = previous_response_courseguide.CourseGuide_Target
+                initial_data['CourseGuide_Accomplished'] = previous_response_courseguide.CourseGuide_Accomplished
+                
+            if previous_response_SLM:
+                initial_data['SLM_Target'] = previous_response_SLM.SLM_Target
+                initial_data['SLM_Accomplished'] = previous_response_SLM.SLM_Accomplished
+
+            if previous_response_subjectareas:
+                initial_data['SubjectAreas_Target'] = previous_response_subjectareas.SubjectAreas_Target
+                initial_data['SubjectAreas_Accomplished'] = previous_response_subjectareas.SubjectAreas_Accomplished
+
+            form_syllabus = IPCR_Syllabus_form(initial=initial_data)
+            form_courseguide = IPCR_CourseGuide_form(initial=initial_data)
+            form_SLM = IPCR_SLM_form(initial=initial_data)
+            form_subjectareas = IPCR_SubjectAreas_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_1.html', {'form_syllabus' : form_syllabus , 'form_courseguide' : form_courseguide,
+                                                    'form_SLM' : form_SLM, 'form_subjectareas' : form_subjectareas})
+
+def IPCR_pg2(request):
+    previous_response_attendancesheet = IPCR_AttendanceSheet_model.objects.filter(author=request.user).last()
+    previous_response_classrecord = IPCR_ClassRecord_model.objects.filter(author=request.user).last()
+    previous_response_teachingeffectiveness = IPCR_TeachingEffectiveness_model.objects.filter(author=request.user).last()
+    previous_response_classroomobservation = IPCR_ClassroomObservation_model.objects.filter(author=request.user).last()
+
+    if (request.method == 'POST'):
+        form_attendancesheet = IPCR_AttendanceSheet_form(request.POST)              
+        form_classrecord = IPCR_ClassRecord_form(request.POST)              
+        form_teachingeffectiveness = IPCR_TeachingEffectiveness_form(request.POST)   
+        form_classroomobservation = IPCR_ClassroomObservation_form(request.POST)   
 
         if (form_attendancesheet.is_valid()):
             cd = form_attendancesheet.cleaned_data
@@ -193,6 +161,50 @@ def IPCRForm(request):
             IPCR_classroomobservation.save()
 
             messages.success(request, "The IPCR Form has been saved.")
+
+    else:
+            initial_data = {}
+                
+            if previous_response_attendancesheet:
+                initial_data['AttendanceSheet_Target'] = previous_response_attendancesheet.AttendanceSheet_Target
+                initial_data['AttendanceSheet_Accomplished'] = previous_response_attendancesheet.AttendanceSheet_Accomplished
+                
+            if previous_response_classrecord:
+                initial_data['ClassRecord_Target'] = previous_response_classrecord.ClassRecord_Target
+                initial_data['ClassRecord_Accomplished'] = previous_response_classrecord.ClassRecord_Accomplished  
+                
+            if previous_response_teachingeffectiveness:
+                initial_data['TeachingEffectiveness_Target'] = previous_response_teachingeffectiveness.TeachingEffectiveness_Target
+                initial_data['TeachingEffectiveness_Accomplished'] = previous_response_teachingeffectiveness.TeachingEffectiveness_Accomplished                 
+
+            if previous_response_classroomobservation:
+                initial_data['ClassroomObservation_Target'] = previous_response_classroomobservation.ClassroomObservation_Target
+                initial_data['ClassroomObservation_Accomplished'] = previous_response_classroomobservation.ClassroomObservation_Accomplished                                 
+
+            form_attendancesheet = IPCR_AttendanceSheet_form(initial=initial_data)
+            form_classrecord = IPCR_ClassRecord_form(initial=initial_data)
+            form_teachingeffectiveness = IPCR_TeachingEffectiveness_form(initial=initial_data)
+            form_classroomobservation = IPCR_ClassroomObservation_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_2.html', {'form_attendancesheet' : form_attendancesheet,
+                                                    'form_classrecord' : form_classrecord, 'form_teachingeffectiveness' : form_teachingeffectiveness,
+                                                    'form_classroomobservation' : form_classroomobservation})
+
+def IPCR_pg3(request):
+    previous_response_midtermtosrubrics = IPCR_MidtermTOSRubrics_model.objects.filter(author=request.user).last()
+    previous_response_finaltermtosrubrics = IPCR_FinaltermTOSRubrics_model.objects.filter(author=request.user).last()
+    previous_response_midtermtestquestions = IPCR_MidtermTestQuestions_model.objects.filter(author=request.user).last()
+    previous_response_finaltermtestquestions = IPCR_FinaltermTestQuestions_model.objects.filter(author=request.user).last()
+    previous_response_midtermanswerkey = IPCR_MidtermAnswerKey_model.objects.filter(author=request.user).last()
+    previous_response_finaltermanswerkey = IPCR_FinaltermAnswerKey_model.objects.filter(author=request.user).last()
+   
+    if (request.method == 'POST'):
+        form_midtermtosrubrics = IPCR_MidtermTOSRubrics_form(request.POST)   
+        form_finaltermtosrubrics = IPCR_FinaltermTOSRubrics_form(request.POST)   
+        form_midtermtestquestions = IPCR_MidtermTestQuestions_form(request.POST)   
+        form_finaltermtestquestions = IPCR_FinaltermTestQuestions_form(request.POST)   
+        form_midtermanswerkey = IPCR_MidtermAnswerKey_form(request.POST)   
+        form_finaltermanswerkey = IPCR_FinaltermAnswerKey_form(request.POST)   
 
         if (form_midtermtosrubrics.is_valid()):
             cd = form_midtermtosrubrics.cleaned_data
@@ -271,7 +283,56 @@ def IPCRForm(request):
             IPCR_finaltermanswerkey.save()
 
             messages.success(request, "The IPCR Form has been saved.")   
-            
+
+    else:
+            initial_data = {}
+                
+            if previous_response_midtermtosrubrics:
+                initial_data['MidtermTOSRubrics_Target'] = previous_response_midtermtosrubrics.MidtermTOSRubrics_Target
+                initial_data['MidtermTOSRubrics_Accomplished'] = previous_response_midtermtosrubrics.MidtermTOSRubrics_Accomplished                                 
+
+            if previous_response_finaltermtosrubrics:
+                initial_data['FinaltermTOSRubrics_Target'] = previous_response_finaltermtosrubrics.FinaltermTOSRubrics_Target
+                initial_data['FinaltermTOSRubrics_Accomplished'] = previous_response_finaltermtosrubrics.FinaltermTOSRubrics_Accomplished                                 
+
+            if previous_response_midtermtestquestions:
+                initial_data['MidtermTestQuestions_Target'] = previous_response_midtermtestquestions.MidtermTestQuestions_Target
+                initial_data['MidtermTestQuestions_Accomplished'] = previous_response_midtermtestquestions.MidtermTestQuestions_Accomplished                                 
+
+            if previous_response_finaltermtestquestions:
+                initial_data['FinaltermTestQuestions_Target'] = previous_response_finaltermtestquestions.FinaltermTestQuestions_Target
+                initial_data['FinaltermTestQuestions_Accomplished'] = previous_response_finaltermtestquestions.FinaltermTestQuestions_Accomplished                                 
+
+            if previous_response_midtermanswerkey:
+                initial_data['MidtermAnswerKey_Target'] = previous_response_midtermanswerkey.MidtermAnswerKey_Target
+                initial_data['MidtermAnswerKey_Accomplished'] = previous_response_midtermanswerkey.MidtermAnswerKey_Accomplished                                 
+
+            if previous_response_finaltermanswerkey:
+                initial_data['FinaltermAnswerKey_Target'] = previous_response_finaltermanswerkey.FinaltermAnswerKey_Target
+                initial_data['FinaltermAnswerKey_Accomplished'] = previous_response_finaltermanswerkey.FinaltermAnswerKey_Accomplished                                 
+
+            form_midtermtosrubrics = IPCR_MidtermTOSRubrics_form(initial=initial_data)
+            form_finaltermtosrubrics = IPCR_FinaltermTOSRubrics_form(initial=initial_data)
+            form_midtermtestquestions = IPCR_MidtermTestQuestions_form(initial=initial_data)
+            form_finaltermtestquestions = IPCR_FinaltermTestQuestions_form(initial=initial_data)
+            form_midtermanswerkey = IPCR_MidtermAnswerKey_form(initial=initial_data)
+            form_finaltermanswerkey = IPCR_FinaltermAnswerKey_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_3.html', {'form_midtermtosrubrics' :form_midtermtosrubrics, 
+                                                    'form_finaltermtosrubrics' :form_finaltermtosrubrics, 'form_midtermtestquestions' :form_midtermtestquestions,
+                                                    'form_finaltermtestquestions' :form_finaltermtestquestions, 'form_midtermanswerkey' :form_midtermanswerkey,
+                                                    'form_finaltermanswerkey' :form_finaltermanswerkey})
+
+def IPCR_pg4(request):
+    previous_response_gradingsheet = IPCR_GradingSheet_model.objects.filter(author=request.user).last()
+    previous_response_studentadviced = IPCR_StudentAdviced_model.objects.filter(author=request.user).last()
+    previous_response_accomplishmentreport = IPCR_AccomplishmentReport_model.objects.filter(author=request.user).last()
+
+    if (request.method == 'POST'):
+        form_gradingsheet = IPCR_GradingSheet_form(request.POST)   
+        form_studentadviced = IPCR_StudentAdviced_form(request.POST)   
+        form_accomplishmentreport = IPCR_AccomplishmentReport_form(request.POST)   
+
         if (form_gradingsheet.is_valid()):
             cd = form_gradingsheet.cleaned_data
             IPCR_gradingsheet =IPCR_GradingSheet_model(
@@ -310,7 +371,47 @@ def IPCRForm(request):
             IPCR_accomplishmentreport.save()
 
             messages.success(request, "The IPCR Form has been saved.")
-        
+
+    else:
+            initial_data = {}
+                
+            if previous_response_gradingsheet:
+                initial_data['GradingSheet_Target'] = previous_response_gradingsheet.GradingSheet_Target
+                initial_data['GradingSheet_Accomplished'] = previous_response_gradingsheet.GradingSheet_Accomplished                                 
+
+            if previous_response_studentadviced:
+                initial_data['StudentAdviced_Target'] = previous_response_studentadviced.StudentAdviced_Target
+                initial_data['StudentAdviced_Accomplished'] = previous_response_studentadviced.StudentAdviced_Accomplished                                 
+
+            if previous_response_accomplishmentreport:
+                initial_data['AccomplishmentReport_Target'] = previous_response_accomplishmentreport.AccomplishmentReport_Target
+                initial_data['AccomplishmentReport_Accomplished'] = previous_response_accomplishmentreport.AccomplishmentReport_Accomplished
+
+            form_gradingsheet = IPCR_GradingSheet_form(initial=initial_data)
+            form_studentadviced = IPCR_StudentAdviced_form(initial=initial_data)
+            form_accomplishmentreport = IPCR_AccomplishmentReport_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_4.html', {'form_gradingsheet' :form_gradingsheet,
+                                                    'form_studentadviced' :form_studentadviced, 'form_accomplishmentreport' :form_accomplishmentreport})
+
+def IPCR_pg5(request):
+    previous_response_researchproposalsubmitted = IPCR_ResearchProposalSubmitted_model.objects.filter(author=request.user).last()
+    previous_response_researchimplemented = IPCR_ResearchImplemented_model.objects.filter(author=request.user).last()
+    previous_response_researchpresented = IPCR_ResearchPresented_model.objects.filter(author=request.user).last()
+    previous_response_researchpublished = IPCR_ResearchPublished_model.objects.filter(author=request.user).last()
+    previous_response_approvediprights = IPCR_ApprovedIPRights_model.objects.filter(author=request.user).last()
+    previous_response_researchutilized = IPCR_ResearchUtilized_model.objects.filter(author=request.user).last()
+    previous_response_numberofcitations = IPCR_NumberOfCitations_model.objects.filter(author=request.user).last()
+
+    if (request.method == 'POST'):
+        form_researchproposalsubmitted = IPCR_ResearchProposalSubmitted_form(request.POST)   
+        form_researchimplemented = IPCR_ResearchImplemented_form(request.POST)   
+        form_researchpresented = IPCR_ResearchPresented_form(request.POST)   
+        form_researchpublished = IPCR_ResearchPublished_form(request.POST)   
+        form_approvediprights = IPCR_ApprovedIPRights_form(request.POST)   
+        form_researchutilized = IPCR_ResearchUtilized_form(request.POST)   
+        form_numberofcitations = IPCR_NumberOfCitations_form(request.POST)   
+
         if (form_researchproposalsubmitted.is_valid()):
             cd = form_researchproposalsubmitted.cleaned_data
             IPCR_researchproposalsubmitted =IPCR_ResearchProposalSubmitted_model(
@@ -402,6 +503,64 @@ def IPCRForm(request):
 
             messages.success(request, "The IPCR Form has been saved.")
 
+    else:
+            initial_data = {}
+                
+            if previous_response_researchproposalsubmitted:
+                initial_data['ResearchProposalSubmitted_Target'] = previous_response_researchproposalsubmitted.ResearchProposalSubmitted_Target
+                initial_data['ResearchProposalSubmitted_Accomplished'] = previous_response_researchproposalsubmitted.ResearchProposalSubmitted_Accomplished
+
+            if previous_response_researchimplemented:
+                initial_data['ResearchImplemented_Target'] = previous_response_researchimplemented.ResearchImplemented_Target
+                initial_data['ResearchImplemented_Accomplished'] = previous_response_researchimplemented.ResearchImplemented_Accomplished
+
+            if previous_response_researchpresented:
+                initial_data['ResearchPresented_Target'] = previous_response_researchpresented.ResearchPresented_Target
+                initial_data['ResearchPresented_Accomplished'] = previous_response_researchpresented.ResearchPresented_Accomplished
+
+            if previous_response_researchpublished:
+                initial_data['ResearchPublished_Target'] = previous_response_researchpublished.ResearchPublished_Target
+                initial_data['ResearchPublished_Accomplished'] = previous_response_researchpublished.ResearchPublished_Accomplished
+
+            if previous_response_approvediprights:
+                initial_data['ApprovedIPRights_Target'] = previous_response_approvediprights.ApprovedIPRights_Target
+                initial_data['ApprovedIPRights_Accomplished'] = previous_response_approvediprights.ApprovedIPRights_Accomplished
+
+            if previous_response_researchutilized:
+                initial_data['ResearchUtilized_Target'] = previous_response_researchutilized.ResearchUtilized_Target
+                initial_data['ResearchUtilized_Accomplished'] = previous_response_researchutilized.ResearchUtilized_Accomplished
+
+            if previous_response_numberofcitations:
+                initial_data['NumberOfCitations_Target'] = previous_response_numberofcitations.NumberOfCitations_Target
+                initial_data['NumberOfCitations_Accomplished'] = previous_response_numberofcitations.NumberOfCitations_Accomplished
+
+            form_researchproposalsubmitted = IPCR_ResearchProposalSubmitted_form(initial=initial_data)
+            form_researchimplemented = IPCR_ResearchImplemented_form(initial=initial_data)
+            form_researchpresented = IPCR_ResearchPresented_form(initial=initial_data)
+            form_researchpublished = IPCR_ResearchPublished_form(initial=initial_data)
+            form_approvediprights = IPCR_ApprovedIPRights_form(initial=initial_data)
+            form_researchutilized = IPCR_ResearchUtilized_form(initial=initial_data)
+            form_numberofcitations = IPCR_NumberOfCitations_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_5.html', {'form_researchproposalsubmitted' :form_researchproposalsubmitted, 'form_researchimplemented' :form_researchimplemented,
+                                                    'form_researchpresented' :form_researchpresented, 'form_researchpublished' :form_researchpublished,
+                                                    'form_approvediprights' :form_approvediprights, 'form_researchutilized' :form_researchutilized,
+                                                    'form_numberofcitations' :form_numberofcitations})
+
+def IPCR_pg6(request):
+    previous_response_extensionproposalsubmitted = IPCR_ExtensionProposalSubmitted_model.objects.filter(author=request.user).last()
+    previous_response_persontrained = IPCR_PersonTrained_model.objects.filter(author=request.user).last()
+    previous_response_personavailedratedgood = IPCR_PersonAvailedRatedGood_model.objects.filter(author=request.user).last()   
+    previous_response_persontrainedratedgood = IPCR_PersonTrainedRatedGood_model.objects.filter(author=request.user).last()   
+    previous_response_technicaladvice = IPCR_TechnicalAdvice_model.objects.filter(author=request.user).last()   
+
+    if (request.method == 'POST'):
+        form_extensionproposalsubmitted = IPCR_ExtensionProposalSubmitted_form(request.POST)   
+        form_persontrained = IPCR_PersonTrained_form(request.POST)   
+        form_personavailedratedgood = IPCR_PersonAvailedRatedGood_form(request.POST)   
+        form_persontrainedratedgood = IPCR_PersonTrainedRatedGood_form(request.POST)          
+        form_technicaladvice = IPCR_TechnicalAdvice_form(request.POST) 
+
         if (form_extensionproposalsubmitted.is_valid()):
             cd = form_extensionproposalsubmitted.cleaned_data
             IPCR_extensionproposalsubmitted =IPCR_ExtensionProposalSubmitted_model(
@@ -466,6 +625,53 @@ def IPCRForm(request):
             IPCR_technicaladvice.save()
 
             messages.success(request, "The IPCR Form has been saved.")
+
+    else:
+            initial_data = {}
+                
+            if previous_response_extensionproposalsubmitted:
+                initial_data['ExtensionProposalSubmitted_Target'] = previous_response_extensionproposalsubmitted.ExtensionProposalSubmitted_Target
+                initial_data['ExtensionProposalSubmitted_Accomplished'] = previous_response_extensionproposalsubmitted.ExtensionProposalSubmitted_Accomplished
+
+            if previous_response_persontrained:
+                initial_data['PersonTrained_Target'] = previous_response_persontrained.PersonTrained_Target
+                initial_data['PersonTrained_Accomplished'] = previous_response_persontrained.PersonTrained_Accomplished
+
+            if previous_response_personavailedratedgood:
+                initial_data['PersonAvailedRatedGood_Target'] = previous_response_personavailedratedgood.PersonAvailedRatedGood_Target
+                initial_data['PersonAvailedRatedGood_Accomplished'] = previous_response_personavailedratedgood.PersonAvailedRatedGood_Accomplished
+
+            if previous_response_persontrainedratedgood:
+                initial_data['PersonTrainedRatedGood_Target'] = previous_response_persontrainedratedgood.PersonTrainedRatedGood_Target
+                initial_data['PersonTrainedRatedGood_Accomplished'] = previous_response_persontrainedratedgood.PersonTrainedRatedGood_Accomplished
+
+            if previous_response_technicaladvice:
+                initial_data['TechnicalAdvice_Target'] = previous_response_technicaladvice.TechnicalAdvice_Target
+                initial_data['TechnicalAdvice_Accomplished'] = previous_response_technicaladvice.TechnicalAdvice_Accomplished
+
+            form_extensionproposalsubmitted = IPCR_ExtensionProposalSubmitted_form(initial=initial_data)        
+            form_persontrained = IPCR_PersonTrained_form(initial=initial_data) 
+            form_personavailedratedgood = IPCR_PersonAvailedRatedGood_form(initial=initial_data) 
+            form_persontrainedratedgood = IPCR_PersonTrainedRatedGood_form(initial=initial_data)
+            form_technicaladvice = IPCR_TechnicalAdvice_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_6.html', {'form_extensionproposalsubmitted' :form_extensionproposalsubmitted, 
+                                                    'form_persontrained' :form_persontrained, 'form_personavailedratedgood' :form_personavailedratedgood,
+                                                    'form_persontrainedratedgood' :form_persontrainedratedgood, 'form_technicaladvice' :form_technicaladvice})   
+
+def IPCR_pg7(request):
+    previous_response_accomplishmentreportdeligatedassignment = IPCR_AccomplishmentReportDeligatedAssignment_model.objects.filter(author=request.user).last()   
+    previous_response_flagraisingattendance = IPCR_FlagRaisingAttendance_model.objects.filter(author=request.user).last()   
+    previous_response_flagloweringattendance = IPCR_FlagLoweringAttendance_model.objects.filter(author=request.user).last()   
+    previous_response_wellnessprogramattendance = IPCR_WellnessProgramAttendance_model.objects.filter(author=request.user).last()   
+    previous_response_schoolcelebrationattendance = IPCR_SchoolCelebrationAttendance_model.objects.filter(author=request.user).last()   
+
+    if (request.method == 'POST'):
+        form_accomplishmentreportdeligatedassignment = IPCR_AccomplishmentReportDeligatedAssignment_form(request.POST)         
+        form_flagraisingattendance = IPCR_FlagRaisingAttendance_form(request.POST)        
+        form_flagloweringattendance = IPCR_FlagLoweringAttendance_form(request.POST)          
+        form_wellnessprogramattendance = IPCR_WellnessProgramAttendance_form(request.POST)          
+        form_schoolcelebrationattendance = IPCR_SchoolCelebrationAttendance_form(request.POST) 
 
         if (form_accomplishmentreportdeligatedassignment.is_valid()):
             cd = form_accomplishmentreportdeligatedassignment.cleaned_data
@@ -532,6 +738,51 @@ def IPCRForm(request):
 
             messages.success(request, "The IPCR Form has been saved.")
 
+    else:
+            initial_data = {}
+                
+            if previous_response_accomplishmentreportdeligatedassignment:
+                initial_data['AccomplishmentReportDeligatedAssignment_Target'] = previous_response_accomplishmentreportdeligatedassignment.AccomplishmentReportDeligatedAssignment_Target
+                initial_data['AccomplishmentReportDeligatedAssignment_Accomplished'] = previous_response_accomplishmentreportdeligatedassignment.AccomplishmentReportDeligatedAssignment_Accomplished
+
+            if previous_response_flagraisingattendance:
+                initial_data['FlagRaisingAttendance_Target'] = previous_response_flagraisingattendance.FlagRaisingAttendance_Target
+                initial_data['FlagRaisingAttendance_Accomplished'] = previous_response_flagraisingattendance.FlagRaisingAttendance_Accomplished
+
+            if previous_response_flagloweringattendance:
+                initial_data['FlagLoweringAttendance_Target'] = previous_response_flagloweringattendance.FlagLoweringAttendance_Target
+                initial_data['FlagLoweringAttendance_Accomplished'] = previous_response_flagloweringattendance.FlagLoweringAttendance_Accomplished
+
+            if previous_response_wellnessprogramattendance:
+                initial_data['WellnessProgramAttendance_Target'] = previous_response_wellnessprogramattendance.WellnessProgramAttendance_Target
+                initial_data['WellnessProgramAttendance_Accomplished'] = previous_response_wellnessprogramattendance.WellnessProgramAttendance_Accomplished
+
+            if previous_response_schoolcelebrationattendance:
+                initial_data['SchoolCelebrationAttendance_Target'] = previous_response_schoolcelebrationattendance.SchoolCelebrationAttendance_Target
+                initial_data['SchoolCelebrationAttendance_Accomplished'] = previous_response_schoolcelebrationattendance.SchoolCelebrationAttendance_Accomplished
+
+            form_accomplishmentreportdeligatedassignment = IPCR_AccomplishmentReportDeligatedAssignment_form(initial=initial_data)
+            form_flagraisingattendance = IPCR_FlagRaisingAttendance_form(initial=initial_data)
+            form_flagloweringattendance = IPCR_FlagLoweringAttendance_form(initial=initial_data)
+            form_wellnessprogramattendance = IPCR_WellnessProgramAttendance_form(initial=initial_data)
+            form_schoolcelebrationattendance = IPCR_SchoolCelebrationAttendance_form(initial=initial_data)
+
+    return render (request, 'forms/IPCRForm_7.html', {'form_accomplishmentreportdeligatedassignment' :form_accomplishmentreportdeligatedassignment, 'form_flagraisingattendance' :form_flagraisingattendance,
+                                                    'form_flagloweringattendance' :form_flagloweringattendance, 'form_wellnessprogramattendance' :form_wellnessprogramattendance, 
+                                                    'form_schoolcelebrationattendance' :form_schoolcelebrationattendance})  
+
+def IPCR_pg8(request):
+    previous_response_trainingattendance = IPCR_TrainingAttendance_model.objects.filter(author=request.user).last()   
+    previous_response_facultymeetingattendance = IPCR_FacultyMeetingAttendance_model.objects.filter(author=request.user).last()   
+    previous_response_accreditationattendance = IPCR_AccreditationAttendance_model.objects.filter(author=request.user).last()   
+    previous_response_spiritualactivityattendance = IPCR_SpiritualActivityAttendance_model.objects.filter(author=request.user).last()   
+       
+    if (request.method == 'POST'):
+        form_trainingattendance = IPCR_TrainingAttendance_form(request.POST) 
+        form_facultymeetingattendance = IPCR_FacultyMeetingAttendance_form(request.POST) 
+        form_accreditationattendance = IPCR_AccreditationAttendance_form(request.POST) 
+        form_spiritualactivityattendance = IPCR_SpiritualActivityAttendance_form(request.POST) 
+        
         if (form_trainingattendance.is_valid()):
             cd = form_trainingattendance.cleaned_data
             IPCR_trainingattendance =IPCR_TrainingAttendance_model(
@@ -586,142 +837,7 @@ def IPCRForm(request):
            
     else:
             initial_data = {}
-            if previous_response_syllabus:
-                initial_data['syllabus_Target'] = previous_response_syllabus.syllabus_Target
-                initial_data['syllabus_Accomplished'] = previous_response_syllabus.syllabus_Accomplished
-
-            if previous_response_courseguide:
-                initial_data['CourseGuide_Target'] = previous_response_courseguide.CourseGuide_Target
-                initial_data['CourseGuide_Accomplished'] = previous_response_courseguide.CourseGuide_Accomplished
                 
-            if previous_response_SLM:
-                initial_data['SLM_Target'] = previous_response_SLM.SLM_Target
-                initial_data['SLM_Accomplished'] = previous_response_SLM.SLM_Accomplished
-
-            if previous_response_subjectareas:
-                initial_data['SubjectAreas_Target'] = previous_response_subjectareas.SubjectAreas_Target
-                initial_data['SubjectAreas_Accomplished'] = previous_response_subjectareas.SubjectAreas_Accomplished
-                
-            if previous_response_attendancesheet:
-                initial_data['AttendanceSheet_Target'] = previous_response_attendancesheet.AttendanceSheet_Target
-                initial_data['AttendanceSheet_Accomplished'] = previous_response_attendancesheet.AttendanceSheet_Accomplished
-                
-            if previous_response_classrecord:
-                initial_data['ClassRecord_Target'] = previous_response_classrecord.ClassRecord_Target
-                initial_data['ClassRecord_Accomplished'] = previous_response_classrecord.ClassRecord_Accomplished  
-                
-            if previous_response_teachingeffectiveness:
-                initial_data['TeachingEffectiveness_Target'] = previous_response_teachingeffectiveness.TeachingEffectiveness_Target
-                initial_data['TeachingEffectiveness_Accomplished'] = previous_response_teachingeffectiveness.TeachingEffectiveness_Accomplished                 
-
-            if previous_response_classroomobservation:
-                initial_data['ClassroomObservation_Target'] = previous_response_classroomobservation.ClassroomObservation_Target
-                initial_data['ClassroomObservation_Accomplished'] = previous_response_classroomobservation.ClassroomObservation_Accomplished                                 
-
-            if previous_response_midtermtosrubrics:
-                initial_data['MidtermTOSRubrics_Target'] = previous_response_midtermtosrubrics.MidtermTOSRubrics_Target
-                initial_data['MidtermTOSRubrics_Accomplished'] = previous_response_midtermtosrubrics.MidtermTOSRubrics_Accomplished                                 
-
-            if previous_response_finaltermtosrubrics:
-                initial_data['FinaltermTOSRubrics_Target'] = previous_response_finaltermtosrubrics.FinaltermTOSRubrics_Target
-                initial_data['FinaltermTOSRubrics_Accomplished'] = previous_response_finaltermtosrubrics.FinaltermTOSRubrics_Accomplished                                 
-
-            if previous_response_midtermtestquestions:
-                initial_data['MidtermTestQuestions_Target'] = previous_response_midtermtestquestions.MidtermTestQuestions_Target
-                initial_data['MidtermTestQuestions_Accomplished'] = previous_response_midtermtestquestions.MidtermTestQuestions_Accomplished                                 
-
-            if previous_response_finaltermtestquestions:
-                initial_data['FinaltermTestQuestions_Target'] = previous_response_finaltermtestquestions.FinaltermTestQuestions_Target
-                initial_data['FinaltermTestQuestions_Accomplished'] = previous_response_finaltermtestquestions.FinaltermTestQuestions_Accomplished                                 
-
-            if previous_response_midtermanswerkey:
-                initial_data['MidtermAnswerKey_Target'] = previous_response_midtermanswerkey.MidtermAnswerKey_Target
-                initial_data['MidtermAnswerKey_Accomplished'] = previous_response_midtermanswerkey.MidtermAnswerKey_Accomplished                                 
-
-            if previous_response_finaltermanswerkey:
-                initial_data['FinaltermAnswerKey_Target'] = previous_response_finaltermanswerkey.FinaltermAnswerKey_Target
-                initial_data['FinaltermAnswerKey_Accomplished'] = previous_response_finaltermanswerkey.FinaltermAnswerKey_Accomplished                                 
-
-            if previous_response_gradingsheet:
-                initial_data['GradingSheet_Target'] = previous_response_gradingsheet.GradingSheet_Target
-                initial_data['GradingSheet_Accomplished'] = previous_response_gradingsheet.GradingSheet_Accomplished                                 
-
-            if previous_response_studentadviced:
-                initial_data['StudentAdviced_Target'] = previous_response_studentadviced.StudentAdviced_Target
-                initial_data['StudentAdviced_Accomplished'] = previous_response_studentadviced.StudentAdviced_Accomplished                                 
-
-            if previous_response_accomplishmentreport:
-                initial_data['AccomplishmentReport_Target'] = previous_response_accomplishmentreport.AccomplishmentReport_Target
-                initial_data['AccomplishmentReport_Accomplished'] = previous_response_accomplishmentreport.AccomplishmentReport_Accomplished
-
-            if previous_response_researchproposalsubmitted:
-                initial_data['ResearchProposalSubmitted_Target'] = previous_response_researchproposalsubmitted.ResearchProposalSubmitted_Target
-                initial_data['ResearchProposalSubmitted_Accomplished'] = previous_response_researchproposalsubmitted.ResearchProposalSubmitted_Accomplished
-
-            if previous_response_researchimplemented:
-                initial_data['ResearchImplemented_Target'] = previous_response_researchimplemented.ResearchImplemented_Target
-                initial_data['ResearchImplemented_Accomplished'] = previous_response_researchimplemented.ResearchImplemented_Accomplished
-
-            if previous_response_researchpresented:
-                initial_data['ResearchPresented_Target'] = previous_response_researchpresented.ResearchPresented_Target
-                initial_data['ResearchPresented_Accomplished'] = previous_response_researchpresented.ResearchPresented_Accomplished
-
-            if previous_response_researchpublished:
-                initial_data['ResearchPublished_Target'] = previous_response_researchpublished.ResearchPublished_Target
-                initial_data['ResearchPublished_Accomplished'] = previous_response_researchpublished.ResearchPublished_Accomplished
-
-            if previous_response_approvediprights:
-                initial_data['ApprovedIPRights_Target'] = previous_response_approvediprights.ApprovedIPRights_Target
-                initial_data['ApprovedIPRights_Accomplished'] = previous_response_approvediprights.ApprovedIPRights_Accomplished
-
-            if previous_response_researchutilized:
-                initial_data['ResearchUtilized_Target'] = previous_response_researchutilized.ResearchUtilized_Target
-                initial_data['ResearchUtilized_Accomplished'] = previous_response_researchutilized.ResearchUtilized_Accomplished
-
-            if previous_response_numberofcitations:
-                initial_data['NumberOfCitations_Target'] = previous_response_numberofcitations.NumberOfCitations_Target
-                initial_data['NumberOfCitations_Accomplished'] = previous_response_numberofcitations.NumberOfCitations_Accomplished
-
-            if previous_response_extensionproposalsubmitted:
-                initial_data['ExtensionProposalSubmitted_Target'] = previous_response_extensionproposalsubmitted.ExtensionProposalSubmitted_Target
-                initial_data['ExtensionProposalSubmitted_Accomplished'] = previous_response_extensionproposalsubmitted.ExtensionProposalSubmitted_Accomplished
-
-            if previous_response_persontrained:
-                initial_data['PersonTrained_Target'] = previous_response_persontrained.PersonTrained_Target
-                initial_data['PersonTrained_Accomplished'] = previous_response_persontrained.PersonTrained_Accomplished
-
-            if previous_response_personavailedratedgood:
-                initial_data['PersonAvailedRatedGood_Target'] = previous_response_personavailedratedgood.PersonAvailedRatedGood_Target
-                initial_data['PersonAvailedRatedGood_Accomplished'] = previous_response_personavailedratedgood.PersonAvailedRatedGood_Accomplished
-
-            if previous_response_persontrainedratedgood:
-                initial_data['PersonTrainedRatedGood_Target'] = previous_response_persontrainedratedgood.PersonTrainedRatedGood_Target
-                initial_data['PersonTrainedRatedGood_Accomplished'] = previous_response_persontrainedratedgood.PersonTrainedRatedGood_Accomplished
-
-            if previous_response_technicaladvice:
-                initial_data['TechnicalAdvice_Target'] = previous_response_technicaladvice.TechnicalAdvice_Target
-                initial_data['TechnicalAdvice_Accomplished'] = previous_response_technicaladvice.TechnicalAdvice_Accomplished
-
-            if previous_response_accomplishmentreportdeligatedassignment:
-                initial_data['AccomplishmentReportDeligatedAssignment_Target'] = previous_response_accomplishmentreportdeligatedassignment.AccomplishmentReportDeligatedAssignment_Target
-                initial_data['AccomplishmentReportDeligatedAssignment_Accomplished'] = previous_response_accomplishmentreportdeligatedassignment.AccomplishmentReportDeligatedAssignment_Accomplished
-
-            if previous_response_flagraisingattendance:
-                initial_data['FlagRaisingAttendance_Target'] = previous_response_flagraisingattendance.FlagRaisingAttendance_Target
-                initial_data['FlagRaisingAttendance_Accomplished'] = previous_response_flagraisingattendance.FlagRaisingAttendance_Accomplished
-
-            if previous_response_flagloweringattendance:
-                initial_data['FlagLoweringAttendance_Target'] = previous_response_flagloweringattendance.FlagLoweringAttendance_Target
-                initial_data['FlagLoweringAttendance_Accomplished'] = previous_response_flagloweringattendance.FlagLoweringAttendance_Accomplished
-
-            if previous_response_wellnessprogramattendance:
-                initial_data['WellnessProgramAttendance_Target'] = previous_response_wellnessprogramattendance.WellnessProgramAttendance_Target
-                initial_data['WellnessProgramAttendance_Accomplished'] = previous_response_wellnessprogramattendance.WellnessProgramAttendance_Accomplished
-
-            if previous_response_schoolcelebrationattendance:
-                initial_data['SchoolCelebrationAttendance_Target'] = previous_response_schoolcelebrationattendance.SchoolCelebrationAttendance_Target
-                initial_data['SchoolCelebrationAttendance_Accomplished'] = previous_response_schoolcelebrationattendance.SchoolCelebrationAttendance_Accomplished
-
             if previous_response_trainingattendance:
                 initial_data['TrainingAttendance_Target'] = previous_response_trainingattendance.TrainingAttendance_Target
                 initial_data['TrainingAttendance_Accomplished'] = previous_response_trainingattendance.TrainingAttendance_Accomplished
@@ -738,70 +854,16 @@ def IPCRForm(request):
                 initial_data['SpiritualActivityAttendance_Target'] = previous_response_spiritualactivityattendance.SpiritualActivityAttendance_Target
                 initial_data['SpiritualActivityAttendance_Accomplished'] = previous_response_spiritualactivityattendance.SpiritualActivityAttendance_Accomplished
 
-
-
-            form_syllabus = IPCR_Syllabus_form(initial=initial_data)
-            form_courseguide = IPCR_CourseGuide_form(initial=initial_data)
-            form_SLM = IPCR_SLM_form(initial=initial_data)
-            form_subjectareas = IPCR_SubjectAreas_form(initial=initial_data)
-            form_attendancesheet = IPCR_AttendanceSheet_form(initial=initial_data)
-            form_classrecord = IPCR_ClassRecord_form(initial=initial_data)
-            form_teachingeffectiveness = IPCR_TeachingEffectiveness_form(initial=initial_data)
-            form_classroomobservation = IPCR_ClassroomObservation_form(initial=initial_data)
-            form_midtermtosrubrics = IPCR_MidtermTOSRubrics_form(initial=initial_data)
-            form_finaltermtosrubrics = IPCR_FinaltermTOSRubrics_form(initial=initial_data)
-            form_midtermtestquestions = IPCR_MidtermTestQuestions_form(initial=initial_data)
-            form_finaltermtestquestions = IPCR_FinaltermTestQuestions_form(initial=initial_data)
-            form_midtermanswerkey = IPCR_MidtermAnswerKey_form(initial=initial_data)
-            form_finaltermanswerkey = IPCR_FinaltermAnswerKey_form(initial=initial_data)
-            form_gradingsheet = IPCR_GradingSheet_form(initial=initial_data)
-            form_studentadviced = IPCR_StudentAdviced_form(initial=initial_data)
-            form_accomplishmentreport = IPCR_AccomplishmentReport_form(initial=initial_data)
-            form_researchproposalsubmitted = IPCR_ResearchProposalSubmitted_form(initial=initial_data)
-            form_researchimplemented = IPCR_ResearchImplemented_form(initial=initial_data)
-            form_researchpresented = IPCR_ResearchPresented_form(initial=initial_data)
-            form_researchpublished = IPCR_ResearchPublished_form(initial=initial_data)
-            form_approvediprights = IPCR_ApprovedIPRights_form(initial=initial_data)
-            form_researchutilized = IPCR_ResearchUtilized_form(initial=initial_data)
-            form_numberofcitations = IPCR_NumberOfCitations_form(initial=initial_data)
-            form_extensionproposalsubmitted = IPCR_ExtensionProposalSubmitted_form(initial=initial_data)        
-            form_persontrained = IPCR_PersonTrained_form(initial=initial_data) 
-            form_personavailedratedgood = IPCR_PersonAvailedRatedGood_form(initial=initial_data) 
-            form_persontrainedratedgood = IPCR_PersonTrainedRatedGood_form(initial=initial_data)
-            form_technicaladvice = IPCR_TechnicalAdvice_form(initial=initial_data)
-            form_accomplishmentreportdeligatedassignment = IPCR_AccomplishmentReportDeligatedAssignment_form(initial=initial_data)
-            form_flagraisingattendance = IPCR_FlagRaisingAttendance_form(initial=initial_data)
-            form_flagloweringattendance = IPCR_FlagLoweringAttendance_form(initial=initial_data)
-            form_wellnessprogramattendance = IPCR_WellnessProgramAttendance_form(initial=initial_data)
-            form_schoolcelebrationattendance = IPCR_SchoolCelebrationAttendance_form(initial=initial_data)
             form_trainingattendance = IPCR_TrainingAttendance_form(initial=initial_data)
             form_facultymeetingattendance = IPCR_FacultyMeetingAttendance_form(initial=initial_data)
             form_accreditationattendance = IPCR_AccreditationAttendance_form(initial=initial_data)
             form_spiritualactivityattendance = IPCR_SpiritualActivityAttendance_form(initial=initial_data)
-
-    
-    return render (request, 'forms/IPCRForm.html', {'form_syllabus' : form_syllabus , 'form_courseguide' : form_courseguide,
-                                                    'form_SLM' : form_SLM, 'form_subjectareas' : form_subjectareas, 'form_attendancesheet' : form_attendancesheet,
-                                                    'form_classrecord' : form_classrecord, 'form_teachingeffectiveness' : form_teachingeffectiveness,
-                                                    'form_classroomobservation' : form_classroomobservation, 'form_midtermtosrubrics' :form_midtermtosrubrics, 
-                                                    'form_finaltermtosrubrics' :form_finaltermtosrubrics, 'form_midtermtestquestions' :form_midtermtestquestions,
-                                                    'form_finaltermtestquestions' :form_finaltermtestquestions, 'form_midtermanswerkey' :form_midtermanswerkey,
-                                                    'form_finaltermanswerkey' :form_finaltermanswerkey, 'form_gradingsheet' :form_gradingsheet,
-                                                    'form_studentadviced' :form_studentadviced, 'form_accomplishmentreport' :form_accomplishmentreport,
-                                                    'form_researchproposalsubmitted' :form_researchproposalsubmitted, 'form_researchimplemented' :form_researchimplemented,
-                                                    'form_researchpresented' :form_researchpresented, 'form_researchpublished' :form_researchpublished,
-                                                    'form_approvediprights' :form_approvediprights, 'form_researchutilized' :form_researchutilized,
-                                                    'form_numberofcitations' :form_numberofcitations, 'form_extensionproposalsubmitted' :form_extensionproposalsubmitted, 
-                                                    'form_persontrained' :form_persontrained, 'form_personavailedratedgood' :form_personavailedratedgood,
-                                                    'form_persontrainedratedgood' :form_persontrainedratedgood, 'form_technicaladvice' :form_technicaladvice,
-                                                    'form_accomplishmentreportdeligatedassignment' :form_accomplishmentreportdeligatedassignment, 'form_flagraisingattendance' :form_flagraisingattendance,
-                                                    'form_flagloweringattendance' :form_flagloweringattendance, 'form_wellnessprogramattendance' :form_wellnessprogramattendance, 
-                                                    'form_schoolcelebrationattendance' :form_schoolcelebrationattendance, 'form_trainingattendance' :form_trainingattendance,
+   
+    return render (request, 'forms/IPCRForm_8.html', {'form_trainingattendance' :form_trainingattendance,
                                                     'form_facultymeetingattendance' :form_facultymeetingattendance, 'form_accreditationattendance' :form_accreditationattendance,
                                                     'form_spiritualactivityattendance' :form_spiritualactivityattendance,})
-
-
-
+    
+  
 def Show_IPCR(request):
     Current_user = request.user
     IPCR_Data = IPCR_Syllabus_model.objects.filter(author = Current_user)

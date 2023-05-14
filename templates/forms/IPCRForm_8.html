@@ -1,0 +1,31 @@
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong>{{ message }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+
+<form action="{% url 'IPCR_pg8' %}" method = "POST">
+    {% csrf_token %}
+
+            <h4>Attendance:</h4>
+            {{ form_trainingattendance }}
+
+            <h4>Attendance:</h4>
+            {{ form_facultymeetingattendance }}
+
+            <h4>Attendance:</h4>
+            {{ form_accreditationattendance }}
+
+            <h4>Attendance:</h4>
+            {{ form_spiritualactivityattendance }}            
+
+        <h1>  </h1>    
+        <input type="submit" value="Save">
+</form>
+
+<button><a href="{% url 'member_home' %}">home</a></button>
+<button><a href="{% url 'IPCR_pg1' %}">pg 1</a></button>
+
