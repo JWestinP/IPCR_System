@@ -1,17 +1,36 @@
+<style>
+    .form-field-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .form-field {
+      width: 48%; /* Adjust the width as needed */
+      margin-bottom: 10px; /* Add margin as desired */
+    }
+  </style>
+
 <form method="post">
     {% csrf_token %}
-    {% for form in forms %}
-      <div class="form-field">
-        <label for="{{ form.prefix }}_{{ form.instance.field_name }}">{{ form.instance.field_name }}</label>
-        {{ form }}
-        {% if form.errors %}
-          <div class="error-message">
-            {% for error in form.errors %}
-              <span>{{ error }}</span>
-            {% endfor %}
+    <div class="form-field-container">
+      {% for field in forms %}
+        <div class="form-field">
+          <label for="{{ field.auto_id }}">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div class="error-message">
+              {% for error in field.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+        {% if forloop.counter|divisibleby:2 %}
           </div>
+          <div class="form-field-container">
         {% endif %}
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
     <button type="submit">Submit</button>
-</form>
+  </form>
