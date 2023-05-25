@@ -1,0 +1,285 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+    height: 100%;
+    width : 100%;
+    min-height : 100vh;
+    background: linear-gradient(179.82deg, #5C85B3 -3.97%, #451212 111.83%);
+    margin: 0; 
+
+    
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* start styling here */
+
+@media (max-width : 1920px){
+
+    .body{
+        margin: 0; 
+        overflow: hidden}
+    }
+.forgot_form { 
+    position: absolute;
+    width: 575px;
+    height: 600px;
+    left: 1000px;
+    top: 160px;
+    
+    background: #282525;
+    box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+}
+.login{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+}
+.frwhite_bg {
+    position: absolute;
+    width: 620px;
+    height: 600px;
+    left: 350px;
+    top: 160px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    border-radius: 18px; 
+}
+.frlspu_logo_web{
+    position: absolute;
+    width: 493px;
+    height: 218px;
+    left: 420px;
+    top:350px; 
+} 
+.frlspu_bg{
+    box-sizing: border-box;
+    opacity : 0.3;
+    background: linear-gradient(180deg, #5C85B3 0%, #ED353D 95.93%, rgba(179, 92, 92, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-repeat: no-repeat;
+}
+.lock{
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    left: 230px;
+    top: 40px;
+}
+.frnewform{
+    position: absolute;
+    background: #836F6F;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left : 110px;
+    width: 350px;
+    height: 41px; 
+}
+.frconfirmform{
+    background: #836F6F;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 80px;
+    margin-left : 110px;
+    width: 350px;
+    height: 41px;
+    position: absolute;
+}
+.frsubmit{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    width: 211px;
+    height: 40px;
+    position: absolute;
+    left: 180px;
+    text-transform: capitalize;
+    background: #3F6DEB;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    border: 0px solid;
+}
+.frback{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    width: 211px;
+    height: 40px;
+    position: absolute;
+    left: 180px;
+    text-transform: capitalize;
+    background: #3F6DEB;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    margin-top: 150px;
+    border: 0px solid;
+    background: #FCFCFC;
+}
+.create{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 190px;
+}
+.note{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+.frlogowb{
+    position: absolute;
+    width: 493px;
+    height: 218px;
+    left: 480px;
+    top:350px;
+}
+.frcredit{
+    position: absolute;
+    width: 402px;
+    height: 50px;
+    left: 100px;
+    top: 500px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.6;
+}
+.frconfirm_submit{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    width: 211px;
+    height: 40px;
+    position: absolute;
+    left: 180px;
+    text-transform: capitalize;
+    background: #3F6DEB;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    margin-top: 150px;
+    border: 0px solid;
+}
+@media (max-width : 1440px){
+
+.body{
+    margin: 0; 
+    overflow: hidden}
+}
+
+.monthly-accomplished {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .month-wrapper {
+    width: 150px;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }

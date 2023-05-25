@@ -1,0 +1,187 @@
+body {
+    line-height:1;
+    height: 100%;
+    width : 100%;
+    min-height : 100vh;
+    background: linear-gradient(179.82deg, #5C85B3 -3.97%, #451212 111.83%);
+    margin: 0; 
+    overflow-x: hidden;
+    overflow-y : scroll;
+    
+}
+/*Header*/
+#header{
+    position: absolute;
+    font-family: 'Inter';
+    font-style: italic;
+} 
+.lspu_bg{
+    box-sizing: border-box;
+    opacity : 0.3;
+    background: linear-gradient(180deg, #5C85B3 0%, #ED353D 95.93%, rgba(179, 92, 92, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-repeat: no-repeat;
+} 
+.white_bg {
+    
+    width: 1179px;
+    height: 147px;
+    left: 262px;
+    top: 54px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    border-radius: 18px;
+}
+.lspu_header{
+    
+    width: 1155px;
+    height: 125px;
+    left: 274px;
+    top: 67px;
+} 
+.avatar_bg {
+    
+    width: 119px;
+    height: 114px;
+    left: 1525px;
+    top: 54px;
+    background: #282525;
+    border-radius : 100px;
+  }
+.avatar{
+   
+    width: 53px;
+    height: 61px;
+    left: 1558px;
+    top: 80px;
+        
+}
+.acc_name_bg{
+   
+    width: 153px;
+    height: 30px;
+    left: 1508px;
+    top: 178px;
+    background: #282525;
+    border-radius: 7px; 
+}
+.acc_name_placeholder{
+    
+    width: 117px;
+    height: 20px;
+    left: 1526px;
+    top: 183px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+.Home_bg {
+    width: 1399px;
+    height: 699px;
+    left: 262px;
+    top: 244px;
+    background: #282525;
+    box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 18px; 
+}
+a:link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    display: block;
+}
+a:active {
+    color: black;
+  }
+
+.logout{
+    font-weight: 700;
+    width: 153px;
+    height: 30px;
+    left: 1508px;
+    top: 20px;
+    background: #282525;
+    margin-bottom: 20px;
+    margin-top: 190px;
+    border-radius: 7px;
+    border : 0px solid;
+}
+/*Menu_member */
+#download_menu:hover{
+    background-color: #5C85B3;
+}
+#download_menu{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 18px;
+    border : 0px solid;  
+    position: absolute;
+   
+}
+.download_home {
+    
+    width: 172px;
+    height: 42px;
+    left: 296px;
+    top: 273px;
+    background: #7a7979;
+}
+.download_download{
+    width: 172px;
+    height: 42px;
+    left: 712px;
+    top: 273px;
+    background: #3F6DEB;
+    opacity: 0.4;
+}
+.download{
+    width: 139px;
+    height: 20px;
+    left: 727px;
+    top: 287px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 19px;
+    
+}
+
+.download_ipcr{
+    width: 172px;
+    height: 42px;
+    left: 504px;
+    top: 273px;
+    background: #7a7979;
+   
+}
+.download_dashboard{
+    width: 172px;
+    height: 42px;
+    left: 920px;
+    top: 273px;
+    background: #7a7979;
+    
+}
+.download_faculty_list{
+    width: 172px;
+    height: 42px;
+    left: 1128px;
+    top: 273px;
+    background: #7a7979;
+}
+.download_notifications{
+    width: 172px;
+    height: 42px;
+    left: 1336px;
+    top: 273px;
+    background: #7a7979;
+}
+.download_settings {
+    width: 60px;
+    height: 42px;
+    left: 1544px;
+    top: 273px;
+    background: #7a7979;
+}

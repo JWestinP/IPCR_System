@@ -12,7 +12,7 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
-
+from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 @unauthenticated_user
@@ -22,16 +22,17 @@ def user_login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         
-        user = authenticate(username = email, password = password)
+        user = authenticate(username=email, password=password)
         
         if user is not None:
             login(request, user)
-            group = None
+            group_names = []
             if user.groups.exists():
-                group = user.groups.all()[0].name
-            if group == 'Admin_Dean' or group == 'Admin_Director':
+                group_names = user.groups.values_list('name', flat=True)[:2]  # Get the first two group names
+                
+            if 'Admin_Dean' in group_names or 'Admin_Director' in group_names:
                 return redirect('admin_home')  
-            elif group == 'Superadmin':
+            elif 'Superadmin' in group_names:
                 return redirect('superadmin_home')
             else:
                 return redirect('member_home')
@@ -40,7 +41,7 @@ def user_login(request):
             messages.error(request, "Invalid username or password, please try again.")
             return redirect('login')
     
-    return render(request, ('login/login.html'))
+    return render(request, 'login/login.html')
 
 def user_logout(request):
     logout(request)
@@ -74,7 +75,6 @@ def password_reset_request(request):
 					return redirect ("/password_reset/done/")
 	password_reset_form = PasswordResetForm()
 	return render(request=request, template_name="forget_password/password_reset.html", context={"password_reset_form":password_reset_form})
-
 
 
 

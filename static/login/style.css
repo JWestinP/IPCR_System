@@ -21,8 +21,14 @@ time, mark, audio, video {
 
 body {
     line-height:1;
+    height: 100%;
+    width : 100%;
+    min-height : 100vh;
+    background: linear-gradient(179.82deg, #5C85B3 -3.97%, #451212 111.83%);
+    margin: 0; 
+    overflow: hidden
     
-}
+} 
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
@@ -49,12 +55,13 @@ a {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    
 }
 
 /* change colours to suit your needs */
 ins {
     background-color:#ff9;
-    color:#000;
+    color:white;
     text-decoration:none;
 }
 
@@ -64,6 +71,7 @@ mark {
     color:#000;
     font-style:italic;
     font-weight:bold;
+ 
 }
 
 del {
@@ -95,3 +103,335 @@ input, select {
 }
 
 /* start styling here */
+
+/* login.html */
+@media (max-width : 1920px){
+    .body{
+        margin: 0; 
+        overflow: hidden}
+
+.lspu_bg{
+    box-sizing: border-box;
+    opacity : 0.3;
+    background: linear-gradient(180deg, #5C85B3 0%, #ED353D 95.93%, rgba(179, 92, 92, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-repeat: no-repeat;
+} 
+
+
+
+.white_bg {
+    position: absolute;
+    width: 620px;
+    height: 600px;
+    left: 350px;
+    top: 160px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    border-radius: 18px; 
+}
+.lspu_logo_web{
+    position: absolute;
+    width: 493px;
+    height: 218px;
+    left: 420px;
+    top:350px; 
+} 
+.logo{
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    left: 250px;
+    top: 40px;
+
+}
+.login_form{
+    position: absolute;
+    width: 575px;
+    height: 600px;
+    left:1000px;
+    top: 160px;
+    background: #282525;
+    box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+}
+.logintitle{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+}
+.login_form_field{
+    position: absolute;
+    text-align : center;
+    top: 140px;
+}
+.submit_button{
+    margin: 0;
+    top: 75%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.loginbutton{
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 700;
+    width: 211px;
+    height: 40px;
+    position: absolute;
+    left: 85%;
+    text-transform: capitalize;
+    background: #3F6DEB;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    margin-top: 190px;
+    border: 0px solid;
+}
+.loginbutton:hover{
+    background:#3F6DEB;
+}
+.credit{
+position: absolute;
+width: 402px;
+height: 50px;
+left: 100px;
+top: 480px;
+font-family: 'Inter';
+font-style: italic;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+color: #FFFFFF;
+opacity: 0.6;
+}
+a:link {
+    text-decoration: none;
+    color : White;
+}
+a:visited{
+    color : white;
+}
+.email{
+    position: absolute;
+    background: #836F6F;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    margin-left : 120px;
+    width: 350px;
+    height: 41px; 
+}
+.email::-webkit-input-placeholder { 
+    
+    color : white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align : left;
+    opacity: 0.5;
+    overflow: visible;
+    vertical-align: baseline;
+    padding-left: 5px;
+    padding-top: 2px;
+    }
+.password{
+    background: #836F6F;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 130px;
+    margin-left : 120px;
+    width: 350px;
+    height: 41px;
+    position: absolute;
+}
+.password::-webkit-input-placeholder { 
+    
+    color : white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align : left;
+    opacity: 0.5;
+    overflow: visible;
+    vertical-align: baseline;
+    padding-left: 5px;
+    padding-top: 2px;
+    }
+.forgot_pass{
+    position: absolute;
+    width: 150px;
+    height: 17px;
+    left: 340px;
+    top: 320px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color : white;
+}
+}
+@media (max-width : 1900px){
+.body{
+    margin: 0; 
+    overflow: hidden 
+}
+.white_bg {
+        position: absolute;
+        width: 620px;
+        height: 637px;
+        left: 202px;
+        top: 193px;
+        background: #FFFFFF;
+        opacity: 0.4;
+        border-radius: 18px;
+        }
+.lspu_logo_web{
+        position: absolute;
+        width: 493px;
+        height: 218px;
+        left: 166px;
+        top: 410px;
+    }
+.login_form{
+        position: absolute;
+        width: 517px;
+        height: 600px;
+        left:593px;
+        top: 160px;
+        background: #282525;
+        box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+        border-radius: 18px;
+}
+.logo{
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    left: 225px;
+    top: 40px;
+}
+.logintitle{
+            font-family:'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            margin-top: 150px;
+        }
+.login_form_field{
+            position: absolute;
+            text-align : center;
+            top: 140px;
+        }
+.submit_button{
+            margin: 0;
+            top: 75%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+.loginbutton{
+            font-family:'Inter';
+            font-style: normal;
+            font-weight: 700;
+            width: 211px;
+            height: 40px;
+            position: absolute;
+            left: 80%;
+            text-transform: capitalize;
+            background: #3F6DEB;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            margin-top: 190px;
+            border: 0px solid;
+        }
+.credit{
+        position: absolute;
+        width: 402px;
+        height: 50px;
+        left: 70px;
+        top: 480px;
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+        opacity: 0.6;
+        }
+a:link {
+            text-decoration: none;
+            color : White;
+        }
+a:visited{
+            color : white;
+        }
+.email{
+            position: absolute;
+            background: #836F6F;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 60px;
+            margin-left : 75px;
+            width: 350px;
+            height: 41px; 
+        }
+.email::-webkit-input-placeholder { 
+            
+            color : white;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            text-align : left;
+            opacity: 0.5;
+            overflow: visible;
+            vertical-align: baseline;
+            padding-left: 5px;
+            padding-top: 2px;
+            }
+.password{
+            background: #836F6F;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 130px;
+            margin-left : 75px;
+            width: 350px;
+            height: 41px;
+            position: absolute;
+        }
+.password::-webkit-input-placeholder { 
+            
+            color : white;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            text-align : left;
+            opacity: 0.5;
+            overflow: visible;
+            vertical-align: baseline;
+            padding-left: 5px;
+            padding-top: 2px;
+            }
+.forgot_pass{
+            position: absolute;
+            width: 150px;
+            height: 17px;
+            left: 300px;
+            top: 320px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 19px;
+            color : white;
+        }
+        
+    }
+/* login.html */

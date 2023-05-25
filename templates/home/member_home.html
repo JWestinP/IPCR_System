@@ -1,9 +1,62 @@
-<h1>test member</h1>
-<button><a href="{% url 'logout' %}">logout</a></button>
-<button><a href="{% url 'IPCR_Form' %}">IPCR_Form</a></button>
-<button><a href="{% url 'Show_IPCR' %}">IPCR_Form_View == disregard, para lang to sakin para makita ko kung nagsasave, delete mo nalang to ate mina</a></button>
-<button><a href="{% url 'download' %}">download</a></button>
-<button><a href="{% url 'dashboard' %}">dashboard</a></button>
-<button><a href="{% url 'member_faculty_list' %}">faculty list</a></button>
-<button><a href="{% url 'member_notification' %}">notifications</a></button>
-<button><a href="{% url 'settings' %}">settings</a></button>
+<html>
+    <head>
+    {% load static %}
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+    <div class="title"> 
+        <div class = "lspu_bg">
+            <img src="{% static 'home/img/background.png' %} "class="center" >
+        </div>
+        <div class = "white_bg"></div>
+        <div class = "lspu_header"> 
+            <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+    </div>
+    <div class = "avatar_bg"></div>
+    <div class = "avatar">
+        <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+    <div class = "acc_name_bg"></div>
+    <div class = "acc_name_placeholder">Account name </div>
+    <div class = "home_bg"></div>
+    <div class ="logout_bg">
+        <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+    
+        
+    <section class ="menu" id="menu">
+            <div class ="menu_home"></div>
+            <div class ="home">Home</div>
+            <button class="home_ipcr"><a href="{% url 'IPCR_Form' %}">IPCR</a></button> 
+            <button class="home_downloads"><a href="{% url 'download' %}">Downloads</a></button>
+            <button class="home_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+            <button class="home_faculty_list"><a href="{% url 'member_faculty_list' %}">Faculty List</a></button>
+            <button class="home_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
+            <button class="home_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+    </section>
+            
+   <!--<div class ="BANNERS"></div>-->     
+    <section class = "ipcr_banner" id = "ipcr_banner">
+        <div class="ipcr_banner_box"></div>
+        <div class="ipcr_banner_content">Upload and Submit your Commitment. Report through our IPCR form</div>
+        <div class="ipcr_banner_image"><img src="{% static 'home/img/ipcr_banner_image.png' %}"></div>
+        <button class="ipcr_button"><a href="{% url 'IPCR_Form' %}"> Go to IPCR Form</a></button>
+    </section>
+
+    <section class = "dashboard_banner" id="dashboard_banner">
+        <div class="dashboard_banner_box"></div>
+        <div class="dashboard_banner_content">View the Summary of reports here in the dashbpard</div>
+        <div class="dashboard_banner_image"><img src="{% static 'home/img/dashboard_banner_image.png' %}"></div>
+        <button class="dashboard_button"><b href = "{% url 'dashboard' %}">Dashboard</b></button>
+    </section>
+    <section class = "faq_banner" id="faq_banner">
+        <div class="faq_banner_box"></div>
+        <div class="faq_banner_title">FAQ's</div>
+        
+
+
