@@ -79,7 +79,6 @@ def IPCR_Form(request):
                 destination_instance.save()
             
             else:
-                print("Else")
                 past_instance = IPMT_Form_model.objects.filter(author = request.user)
                 total_IPCR = past_instance.aggregate(
                     total_syllabus = Sum('syllabus_Accomplished'),
@@ -172,3 +171,103 @@ def IPCR_Form(request):
     }
     return render(request, 'forms/IPCRForm_Submit.html', context)
 
+def IPCR_Form_Submit(request):
+    if (request.method == "POST"):
+        
+        if IPCR_Form_model_submitted.objects.filter(author = request.user).exists() == True:
+            return redirect('IPCR_Form_Already_Submitted')
+        
+        else:
+            new_instance = IPCR_Form_model_submitted.objects.create(author = request.user)
+            source_instance = IPCR_Form_model.objects.get(author = request.user)
+            
+            new_instance.syllabus_Target = source_instance.syllabus_Target
+            new_instance.syllabus_Accomplished = source_instance.syllabus_Accomplished
+            new_instance.CourseGuide_Target = source_instance.CourseGuide_Target
+            new_instance.CourseGuide_Accomplished = source_instance.CourseGuide_Accomplished
+            new_instance.SLM_Target = source_instance.SLM_Target
+            new_instance.SLM_Accomplished = source_instance.SLM_Accomplished
+            new_instance.SubjectAreas_Target = source_instance.SubjectAreas_Target
+            new_instance.SubjectAreas_Accomplished = source_instance.SubjectAreas_Accomplished
+            new_instance.AttendanceSheet_Target = source_instance.AttendanceSheet_Target
+            new_instance.AttendanceSheet_Accomplished = source_instance.AttendanceSheet_Accomplished
+            new_instance.ClassRecord_Target = source_instance.ClassRecord_Target
+            new_instance.ClassRecord_Accomplished = source_instance.ClassRecord_Accomplished
+            new_instance.TeachingEffectiveness_Target = source_instance.TeachingEffectiveness_Target
+            new_instance.TeachingEffectiveness_Accomplished = source_instance.TeachingEffectiveness_Accomplished
+            new_instance.ClassroomObservation_Target = source_instance.ClassroomObservation_Target
+            new_instance.ClassroomObservation_Accomplished = source_instance.ClassroomObservation_Accomplished
+            new_instance.MidtermTOSRubrics_Target = source_instance.MidtermTOSRubrics_Target
+            new_instance.MidtermTOSRubrics_Accomplished = source_instance.MidtermTOSRubrics_Accomplished
+            new_instance.FinaltermTOSRubrics_Target = source_instance.FinaltermTOSRubrics_Target
+            new_instance.FinaltermTOSRubrics_Accomplished = source_instance.FinaltermTOSRubrics_Accomplished
+            new_instance.MidtermTestQuestions_Target = source_instance.MidtermTestQuestions_Target
+            new_instance.MidtermTestQuestions_Accomplished = source_instance.MidtermTestQuestions_Accomplished
+            new_instance.FinaltermTestQuestions_Target = source_instance.FinaltermTestQuestions_Target
+            new_instance.FinaltermTestQuestions_Accomplished = source_instance.FinaltermTestQuestions_Accomplished
+            new_instance.MidtermAnswerKey_Target = source_instance.MidtermAnswerKey_Target
+            new_instance.MidtermAnswerKey_Accomplished = source_instance.MidtermAnswerKey_Accomplished
+            new_instance.FinaltermAnswerKey_Target = source_instance.FinaltermAnswerKey_Target
+            new_instance.FinaltermAnswerKey_Accomplished = source_instance.FinaltermAnswerKey_Accomplished
+            new_instance.GradingSheet_Target = source_instance.GradingSheet_Target
+            new_instance.GradingSheet_Accomplished = source_instance.GradingSheet_Accomplished
+            new_instance.StudentAdviced_Target = source_instance.StudentAdviced_Target
+            new_instance.StudentAdviced_Accomplished = source_instance.StudentAdviced_Accomplished
+            new_instance.AccomplishmentReport_Target = source_instance.AccomplishmentReport_Target
+            new_instance.AccomplishmentReport_Accomplished = source_instance.AccomplishmentReport_Accomplished
+            new_instance.ResearchProposalSubmitted_Target = source_instance.ResearchProposalSubmitted_Target
+            new_instance.ResearchProposalSubmitted_Accomplished = source_instance.ResearchProposalSubmitted_Accomplished
+            new_instance.ResearchImplemented_Target = source_instance.ResearchImplemented_Target
+            new_instance.ResearchImplemented_Accomplished = source_instance.ResearchImplemented_Accomplished
+            new_instance.ResearchPresented_Target = source_instance.ResearchPresented_Target
+            new_instance.ResearchPresented_Accomplished = source_instance.ResearchPresented_Accomplished
+            new_instance.ResearchPublished_Target = source_instance.ResearchPublished_Target
+            new_instance.ResearchPublished_Accomplished = source_instance.ResearchPublished_Accomplished
+            new_instance.ApprovedIPRights_Target = source_instance.ApprovedIPRights_Target
+            new_instance.ApprovedIPRights_Accomplished = source_instance.ApprovedIPRights_Accomplished
+            new_instance.ResearchUtilized_Target = source_instance.ResearchUtilized_Target
+            new_instance.ResearchUtilized_Accomplished = source_instance.ResearchUtilized_Accomplished
+            new_instance.NumberOfCitations_Target = source_instance.NumberOfCitations_Target
+            new_instance.NumberOfCitations_Accomplished = source_instance.NumberOfCitations_Accomplished
+            new_instance.ExtensionProposalSubmitted_Target = source_instance.ExtensionProposalSubmitted_Target
+            new_instance.ExtensionProposalSubmitted_Accomplished = source_instance.ExtensionProposalSubmitted_Accomplished
+            new_instance.PersonTrained_Target = source_instance.PersonTrained_Target
+            new_instance.PersonTrained_Accomplished = source_instance.PersonTrained_Accomplished
+            new_instance.PersonAvailedRatedGood_Target = source_instance.PersonAvailedRatedGood_Target
+            new_instance.PersonAvailedRatedGood_Accomplished = source_instance.PersonAvailedRatedGood_Accomplished
+            new_instance.PersonTrainedRatedGood_Target = source_instance.PersonTrainedRatedGood_Target
+            new_instance.PersonTrainedRatedGood_Accomplished = source_instance.PersonTrainedRatedGood_Accomplished
+            new_instance.TechnicalAdvice_Target = source_instance.TechnicalAdvice_Target
+            new_instance.TechnicalAdvice_Accomplished = source_instance.TechnicalAdvice_Accomplished
+            new_instance.AccomplishmentReportDeligatedAssignment_Target = source_instance.AccomplishmentReportDeligatedAssignment_Target
+            new_instance.AccomplishmentReportDeligatedAssignment_Accomplished = source_instance.AccomplishmentReportDeligatedAssignment_Accomplished
+            new_instance.FlagRaisingAttendance_Target = source_instance.FlagRaisingAttendance_Target
+            new_instance.FlagRaisingAttendance_Accomplished = source_instance.FlagRaisingAttendance_Accomplished
+            new_instance.FlagLoweringAttendance_Target = source_instance.FlagLoweringAttendance_Target
+            new_instance.FlagLoweringAttendance_Accomplished = source_instance.FlagLoweringAttendance_Accomplished
+            new_instance.WellnessProgramAttendance_Target = source_instance.WellnessProgramAttendance_Target
+            new_instance.WellnessProgramAttendance_Accomplished = source_instance.WellnessProgramAttendance_Accomplished
+            new_instance.SchoolCelebrationAttendance_Target = source_instance.SchoolCelebrationAttendance_Target
+            new_instance.SchoolCelebrationAttendance_Accomplished = source_instance.SchoolCelebrationAttendance_Accomplished
+            new_instance.TrainingAttendance_Target = source_instance.TrainingAttendance_Target
+            new_instance.TrainingAttendance_Accomplished = source_instance.TrainingAttendance_Accomplished
+            new_instance.FacultyMeetingAttendance_Target = source_instance.FacultyMeetingAttendance_Target
+            new_instance.FacultyMeetingAttendance_Accomplished = source_instance.FacultyMeetingAttendance_Accomplished
+            new_instance.AccreditationAttendance_Target = source_instance.AccreditationAttendance_Target
+            new_instance.AccreditationAttendance_Accomplished = source_instance.AccreditationAttendance_Accomplished
+            new_instance.SpiritualActivityAttendance_Target = source_instance.SpiritualActivityAttendance_Target
+            new_instance.SpiritualActivityAttendance_Accomplished = source_instance.SpiritualActivityAttendance_Accomplished
+            new_instance.IPCR_Deadline = source_instance.IPCR_Deadline
+            new_instance.IPCR_Submitted = date.today()
+            new_instance.department = source_instance.department
+            
+            if('no' in request.POST):
+                return redirect('IPCR_Form')
+            
+            else:
+                new_instance.save()
+                return redirect('IPCR_Form')
+    
+    return render(request, 'forms/IPCRForm_SubmitNow.html')
+def IPCR_Form_Already_Submitted(request):
+    return render(request, 'forms/IPCRForm_AlreadySubmitted.html')

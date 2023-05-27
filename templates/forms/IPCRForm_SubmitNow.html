@@ -1,0 +1,6 @@
+<form method="POST" action="{% url 'IPCR_Form_Submit' %}">
+    {% csrf_token %}
+    Are you sure you want to submit your IPCR form?
+    <button type="submit">Yes</button>
+    <button type="submit" name="no">No</button>
+</form>
