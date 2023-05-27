@@ -4,14 +4,14 @@ from .forms import *
 from .models import *
 from django.contrib import messages
 from django.contrib.auth.models import User
-from datetime import date
+from datetime import date, datetime
 from django.forms import modelform_factory
 from django.db.models import Sum
 
 # Create your views here.
 
 def IPCR_Form(request):
-    IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'IPCR_Submitted'])
+    IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'IPCR_Submitted', 'IPCR_Deadline'])
 
     # Check if the user already has a saved instance of IPCR_Form_model
     try:
@@ -24,6 +24,13 @@ def IPCR_Form(request):
         if forms.is_valid():
             model_instance = forms.save(commit=False)
             model_instance.author = request.user
+            current_date = datetime.now().date()
+            deadline_date = datetime.strptime("2023-06-16", "%Y-%m-%d").date()
+                
+            if current_date <= deadline_date:
+                model_instance.IPCR_Deadline = date(2023, 6, 16)
+                model_instance.save()
+                
             model_instance.save()
             
             if IPMT_Form_model.objects.filter(author = request.user).exists() == False:
@@ -37,12 +44,9 @@ def IPCR_Form(request):
                 destination_instance.ClassRecord_Accomplished = source_instance.ClassRecord_Accomplished
                 destination_instance.TeachingEffectiveness_Accomplished = source_instance.TeachingEffectiveness_Accomplished
                 destination_instance.ClassroomObservation_Accomplished = source_instance.ClassroomObservation_Accomplished
-                destination_instance.MidtermTOSRubrics_Accomplished = source_instance.MidtermTOSRubrics_Accomplished
-                destination_instance.FinaltermTOSRubrics_Accomplished = source_instance.FinaltermTOSRubrics_Accomplished
-                destination_instance.MidtermTestQuestions_Accomplished = source_instance.MidtermTestQuestions_Accomplished
-                destination_instance.FinaltermTestQuestions_Accomplished = source_instance.FinaltermTestQuestions_Accomplished
-                destination_instance.MidtermAnswerKey_Accomplished = source_instance.MidtermAnswerKey_Accomplished
-                destination_instance.FinaltermAnswerKey_Accomplished = source_instance.FinaltermAnswerKey_Accomplished
+                destination_instance.TOSRubrics_Accomplished = source_instance.MidtermTOSRubrics_Accomplished + source_instance.FinaltermTOSRubrics_Accomplished
+                destination_instance.TestQuestions_Accomplished = source_instance.MidtermTestQuestions_Accomplished + source_instance.FinaltermTestQuestions_Accomplished
+                destination_instance.AnswerKey_Accomplished = source_instance.MidtermAnswerKey_Accomplished + source_instance.FinaltermAnswerKey_Accomplished
                 destination_instance.GradingSheet_Accomplished = source_instance.GradingSheet_Accomplished
                 destination_instance.StudentAdviced_Accomplished = source_instance.StudentAdviced_Accomplished
                 destination_instance.AccomplishmentReport_Accomplished = source_instance.AccomplishmentReport_Accomplished
@@ -68,6 +72,7 @@ def IPCR_Form(request):
                 destination_instance.AccreditationAttendance_Accomplished = source_instance.AccreditationAttendance_Accomplished
                 destination_instance.SpiritualActivityAttendance_Accomplished = source_instance.SpiritualActivityAttendance_Accomplished
                 destination_instance.IPCR_Saved = date.today()
+                
                 destination_instance.save()
             
             else:
@@ -82,12 +87,9 @@ def IPCR_Form(request):
                     total_ClassRecord = Sum('ClassRecord_Accomplished'),
                     total_TeachingEffectiveness = Sum('TeachingEffectiveness_Accomplished'),
                     total_ClassroomObservation = Sum('ClassroomObservation_Accomplished'),
-                    total_MidtermTOSRubrics = Sum('MidtermTOSRubrics_Accomplished'),
-                    total_FinaltermTOSRubrics = Sum('FinaltermTOSRubrics_Accomplished'),
-                    total_MidtermTestQuestions = Sum('MidtermTestQuestions_Accomplished'),
-                    total_FinaltermTestQuestions = Sum('FinaltermTestQuestions_Accomplished'),
-                    total_MidtermAnswerKey = Sum('MidtermAnswerKey_Accomplished'),
-                    total_FinaltermAnswerKey = Sum('FinaltermAnswerKey_Accomplished'),
+                    total_TOSRubrics = Sum('TOSRubrics_Accomplished'),
+                    total_TestQuestions = Sum('TestQuestions_Accomplished'),
+                    total_AnswerKey = Sum('AnswerKey_Accomplished'),
                     total_GradingSheet = Sum('GradingSheet_Accomplished'),
                     total_StudentAdviced = Sum('StudentAdviced_Accomplished'),
                     total_AccomplishmentReport = Sum('AccomplishmentReport_Accomplished'),
@@ -125,12 +127,9 @@ def IPCR_Form(request):
                 destination_instance.ClassRecord_Accomplished = source_instance.ClassRecord_Accomplished - total_IPCR.get('total_ClassRecord')
                 destination_instance.TeachingEffectiveness_Accomplished = source_instance.TeachingEffectiveness_Accomplished - total_IPCR.get('total_TeachingEffectiveness')
                 destination_instance.ClassroomObservation_Accomplished = source_instance.ClassroomObservation_Accomplished - total_IPCR.get('total_ClassroomObservation')
-                destination_instance.MidtermTOSRubrics_Accomplished = source_instance.MidtermTOSRubrics_Accomplished - total_IPCR.get('total_MidtermTOSRubrics')
-                destination_instance.FinaltermTOSRubrics_Accomplished = source_instance.FinaltermTOSRubrics_Accomplished - total_IPCR.get('total_FinaltermTOSRubrics')
-                destination_instance.MidtermTestQuestions_Accomplished = source_instance.MidtermTestQuestions_Accomplished - total_IPCR.get('total_MidtermTestQuestions')
-                destination_instance.FinaltermTestQuestions_Accomplished = source_instance.FinaltermTestQuestions_Accomplished - total_IPCR.get('total_FinaltermTestQuestions')
-                destination_instance.MidtermAnswerKey_Accomplished = source_instance.MidtermAnswerKey_Accomplished - total_IPCR.get('total_MidtermAnswerKey')
-                destination_instance.FinaltermAnswerKey_Accomplished = source_instance.FinaltermAnswerKey_Accomplished - total_IPCR.get('total_FinaltermAnswerKey')
+                destination_instance.TOSRubrics_Accomplished = source_instance.MidtermTOSRubrics_Accomplished + source_instance.FinaltermTOSRubrics_Accomplished - total_IPCR.get('total_TOSRubrics')
+                destination_instance.TestQuestions_Accomplished = source_instance.MidtermTestQuestions_Accomplished + source_instance.FinaltermTestQuestions_Accomplished - total_IPCR.get('total_TestQuestions')
+                destination_instance.AnswerKey_Accomplished = source_instance.MidtermAnswerKey_Accomplished + source_instance.FinaltermAnswerKey_Accomplished - total_IPCR.get('total_AnswerKey')
                 destination_instance.GradingSheet_Accomplished = source_instance.GradingSheet_Accomplished - total_IPCR.get('total_GradingSheet')
                 destination_instance.StudentAdviced_Accomplished = source_instance.StudentAdviced_Accomplished - total_IPCR.get('total_StudentAdviced')
                 destination_instance.AccomplishmentReport_Accomplished = source_instance.AccomplishmentReport_Accomplished - total_IPCR.get('total_AccomplishmentReport')
