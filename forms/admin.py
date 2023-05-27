@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(IPCR_Form_model)
 admin.site.register(IPMT_Form_model)
+admin.site.register(IPCR_Form_model_submitted)
