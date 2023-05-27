@@ -11,7 +11,7 @@ from django.db.models import Sum
 # Create your views here.
 
 def IPCR_Form(request):
-    IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'IPCR_Submitted', 'IPCR_Deadline'])
+    IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'department', 'IPCR_Submitted', 'IPCR_Deadline'])
 
     # Check if the user already has a saved instance of IPCR_Form_model
     try:
@@ -22,8 +22,11 @@ def IPCR_Form(request):
     if request.method == 'POST':
         forms = IPCRForm(request.POST, instance=existing_instance)
         if forms.is_valid():
+            current_user = request.user
+            group_names = [group.name for group in current_user.groups.all()]
             model_instance = forms.save(commit=False)
-            model_instance.author = request.user
+            model_instance.author = current_user
+            model_instance.department = ', '.join(group_names)
             current_date = datetime.now().date()
             deadline_date = datetime.strptime("2023-06-16", "%Y-%m-%d").date()
                 

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 # Create your models here.
 
 
@@ -84,6 +84,7 @@ class IPCR_Form_model (models.Model):
     IPCR_Deadline = models.DateField(null=True, blank=True)
     IPCR_Submitted = models.DateField(null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    department = models.CharField(max_length=255)
 
 class IPCR_Form_model_submitted (models.Model):
     syllabus_Target = models.IntegerField(default = 0, null = True, blank = True)
@@ -165,6 +166,8 @@ class IPCR_Form_model_submitted (models.Model):
     
     IPCR_Deadline = models.DateField(null=True, blank=True)
     IPCR_Submitted = models.DateField(null=True, blank=True)
+    department = models.CharField(max_length=255)
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class IPMT_Form_model (models.Model):
