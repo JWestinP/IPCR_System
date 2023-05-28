@@ -1,36 +1,176 @@
-<style>
-    .form-field-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-    .form-field {
-      width: 48%; /* Adjust the width as needed */
-      margin-bottom: 10px; /* Add margin as desired */
-    }
-  </style>
 
-<form method="post">
-    {% csrf_token %}
-    <div class="form-field-container">
-      {% for field in forms %}
-        <div class="form-field">
-          <label for="{{ field.auto_id }}">{{ field.label }}</label>
-          {{ field }}
-          {% if field.errors %}
-            <div class="error-message">
-              {% for error in field.errors %}
-                <span>{{ error }}</span>
-              {% endfor %}
+<html>
+  <head>
+  {% load static %}
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type = "text/css" href="css/style.css">
+  <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'IPCR/style.css' %}">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+  <!--DEFAULT DESIGN-->
+  <div class="title"> 
+  <div class = "lspu_bg">
+          <img src="{% static 'home/img/background.png' %} "class="center" >
+      </div>
+  <div class = "white_bg"></div>
+  <div class = "lspu_header"> 
+          <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+  <div class = "avatar_bg"></div>
+  <div class = "avatar">
+      <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+  <div class = "acc_name_bg"></div>
+  <div class = "acc_name_placeholder">Account name </div>
+  <div class ="logout_bg">
+      <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+  </head>
+
+   <body>
+      <div class = "home_bg">
+        <!--BORDERS-->
+        <section class = "border" id ="border">
+          <div class = "border1"></div><div class = "border2"></div><div class = "border2_2"></div>
+          <div class = "border3"></div><div class = "border4"></div><div class = "border5"></div>
+          <div class = "border6"></div><div class = "border7"></div><div class = "border8"></div>
+          <div class = "border9"></div><div class = "border9_9"></div><div class = "border10"></div>
+          <div class = "border10_1"></div><div class = "border11"></div><div class = "border11_1"></div>
+          <div class = "border12"></div><div class = "border13"></div><div class = "border14"></div>
+          <div class = "border15"></div><div class = "border16"></div><div class = "border17"></div>
+          <div class = "border18"></div><div class = "border19"></div>
+        </section> 
+        <!--IPCR FORM MAIN TITLE--> 
+        <section class = "main" id ="main">
+        <div class = "ipcr_indiv">INDIVIDUAL PERFORMANCE COMMITMENT and REVIEW</div>
+        <div class = "ipcr_conformed">Conformed by: (RATEE)</div>
+        <div class = "ipcr_reviewed">Reviewed by: (DIRECTOR)</div>
+        <div class = "ipcr_reviewed_vice">Reviewed by: (VICE PRESIDENT FOR ACADEMIC AFFAIRS)</div>
+        <div class = "ipcr_title1">Performance Indicator </div>
+        <div class = "ipcr_title">Target Accomplished</div>
+        </section>
+        <!--CONTENT-->
+        <section class = "content" id ="content">
+          <!--instructions-->
+          <div class = "content_syllabus">Number of Syllabus prepared</div>
+          <div class = "content_course">Number of Course Guide</div>
+          <div class = "content_slm">   Number of SLM</div>
+          <div class = "content_subject">Number of subject areas with community immersion/involvement component</div>
+          <div class = "content_attendance">Attendance Sheet</div>
+          <div class = "content_classrecords">Class records</div>
+          <div class = "content_evaluation">Evaluation of Teaching Effectivess (CQA-SF-012)</div>
+          <div class = "content_classroom">Classroom Observation (CQA-SF-012)</div>
+          <div class = "content_tosmid">A. TOS/ Rubrics (Midterm)</div>
+          <div class = "content_tosfinal">A. TOS/ Rubrics (Final Term)</div>
+          <div class = "content_testmid">B. Test Questions (term exams) / Performance's based activities (Midterm)</div>
+          <div class = "content_testfinal">B. Test Questions (term exams) / Performance's based activities (Final Term)</div>
+          <div class = "content_answermid">C. Answer Keys (Midterm)</div>
+          <div class = "content_answerfinal">C. Answer Keys (Final Term)</div>
+          <div class = "content_grade">Number of grading sheets submitted & encoded</div>
+          <div class = "content_facultyseek">Number of faculty & students seek advises (LSPU-ACAD-SF-011) </div>
+          <div class = "content_accomplishment">Accomplishment Report</div>
+          <!--Research-->
+          <div class = "content_researchpro">Research Proposal submitted/ Activity Conducted</div>
+          <div class = "content_researchimp">Research Implemented and/or Completed within the Timeframe</div>
+          <div class = "content_researchpre">Research Presented in Regional/National/International Conferences</div>
+          <div class = "content_researchpub">Research Published in Peer-reviewed Journals</div>
+          <div class = "content_researchfiled">Filed/Published/Approved Intellectual Property Rights</div>
+          <div class = "content_researchutil">Research Utilized/Deployed through Commercialization/Extension/Policy</div>
+          <div class = "content_citations">Number of citations in journals/books</div>
+          <!--Extensions-->
+          <div class = "content_extension">Extension proposal submitted/activity conducted</div>
+          <div class = "content_pertrained">Persons trained/provided with technical advise</div>
+          <div class = "content_perserv">Persons who avail the service who rated the service as good or better</div>
+          <div class = "content_perad">Persons given training or advisory who rated the timeliness of service delivery as good or better</div>
+          <div class = "content_techad">Technical advice responded within 3 days upon request</div>
+          <!--SUPPORT FUNCTION-->
+          <div class = "content_accperf">Accomplishment Report</div>
+          <div class = "content_flagraise">Attendance</div>
+          <div class = "content_flaglower">Attendance</div>
+          <div class = "content_healthprog">Attendance sheet/Program of activities/other document as proof</div>
+          <div class = "content_schoolceleb">Attendance sheet/Program of activities/other document as proof</div>
+          <div class = "content_training">Training/Seminar/Conference certificate of attendance/ participation</div>
+          <div class = "content_facultymeet">Attendance</div>
+          <div class = "content_accre">Attendance</div>
+          <div class = "content_spiritual">Attendance sheet/Program of activities/other document as proof</div>
+        </section>
+        <!--CONTENT-->
+        <!--SUBTITLES-->
+        <section class = "subtitle" id ="subtitle">
+            <div class = "subtitle_plan">Plan and prepare instructional materials to enhance insctruction</div>
+            <div class = "subtitle_plan_1">INSTRUCTIONS</div>
+            <div class = "subtitle_organize">Organizes classroom instruction </div>
+            <div class = "subtitle_teaching">Teaching effectiveness</div>
+            <div class = "subtitle_summative">Prepare and check  Summative/Evaluative/ Formative Tests.</div>
+            <div class = "subtitle_grades">Compute & Evaluate  Grades.</div>
+            <div class = "subtitle_consult">Consultation services to faculty and  students. </div>
+            <div class = "subtitle_prep">Prepare accomplishment report. 
+            <div class = "subtitle_resprog">Research program/projects/studies.</div>
+            <div class = "subtitle_resprog_1">RESEARCH</div>
+            <div class = "subtitle_ext">Extension projects.</div>
+            <div class = "subtitle_ext_1">EXTENSION</div>
+            <div class = "subtitle_off">Perform Officially-Deligated Assignment</div>
+            <div class = "subtitle_flagraise">Participate in the Flag Raising Ceremony				</div>
+            <div class = "subtitle_flaglower">Participate in the Flag lowering				</div>
+            <div class = "subtitle_health">Participate in the health  and wellness  program				</div>
+            <div class = "subtitle_celeb">Participate in school celebrations and other allied activities				</div>
+            <div class = "subtitle_confe">Attend  trainings /conferences/seminars				</div>
+            <div class = "subtitle_facmeet">Attend  Faculty Meeting				</div>
+            <div class = "subtitle_iso">Involvement in accreditation/ISO and other related activities				</div>
+            <div class = "subtitle_spirit">Participate in the spiritual activities				</div>
+            <div class = "subtitle_supp">SUPPORT FUNCTION</div>
+        </section>
+
+      <form method="post">
+        {% csrf_token %}
+       
+        <div class="form-field-container">
+          {% for field in forms %}
+            <div class="form-field">
+             <!--  <label for="{{ field.auto_id }}">{{ field.label }}</label>-->
+              {{ field }}
+              {% if field.errors %}
+                <div class="error-message">
+                  {% for error in field.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
             </div>
-          {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+              </div>
+              <div class="form-field-container">
+            {% endif %}
+          {% endfor %}
+          
         </div>
-        {% if forloop.counter|divisibleby:2 %}
-          </div>
-          <div class="form-field-container">
-        {% endif %}
-      {% endfor %}
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+        <button class="submit">Submit</button>
+       
+        
+      </form></div>
+      <section class ="ipcr_menu" id="ipcr_menu">
+        <!-- <div class ="ipcr_home"></div> -->
+             <button class="ipcr_home"><a href="{% url 'member_home' %}">Home</a></button>
+         <!--<div class ="menu_ipcr"> -->
+             <div class ="ipcr_ipcr"></div>
+             <div class ="ipcr">IPCR</div>
+         <!--<div class ="menu_downloads"> -->
+             <button class="ipcr_downloads"><a href="{% url 'download' %}">Downloads</a></button>
+         <!--<div class ="menu_dashboard"></div> -->
+             <button class="ipcr_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+         <!--<div class ="menu_faculty_list"></div> -->
+             <button class="ipcr_faculty_list"><a href="{% url 'member_faculty_list' %}">Faculty List</a></button>
+         <!--<div class ="menu_notifications"></div>-->
+             <button class="ipcr_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
+         <!--<div class ="menu_settings"></div>-->
+             <button class="ipcr_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+             <div class ="ipcr_ipcr_form"></div>
+             <div class ="ipcr_form">IPCR FORM</div>
+             <button class="ipcr_coachingform"><a href="{% url 'member_notification' %}">COACHING FORM</a></button>
+             <button class="ipcr_iptm_form"><a href="{% url 'member_notification' %}">IPTM FORM</a></button>
+      </section>
+   </body>
+  
