@@ -1,0 +1,11 @@
+{% if matching_users %}
+    <ul>
+        {% for user in matching_users %}
+        <li><a href="{% url 'IPCR_Remarks_Create' user_id=user.id %}" target="_blank">{{ user.get_full_name }}</a></li>
+
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No matching users found.</p>
+{% endif %}
+

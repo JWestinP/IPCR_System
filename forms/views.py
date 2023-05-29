@@ -161,6 +161,7 @@ def IPCR_Form(request):
                 destination_instance.save()
             
             model_instance.save()
+            messages.success(request, "You've successfully saved your IPCR form.")
             return redirect('IPCR_Form')
 
     else:
@@ -178,7 +179,10 @@ def IPCR_Form_Submit(request):
             return redirect('IPCR_Form_Already_Submitted')
         
         else:
-            new_instance = IPCR_Form_model_submitted.objects.create(author = request.user)
+            user = request.user
+            first_name = user.first_name
+            last_name = user.last_name
+            new_instance = IPCR_Form_model_submitted.objects.create(author = user, user_fullname = f"{first_name} {last_name}")
             source_instance = IPCR_Form_model.objects.get(author = request.user)
             
             new_instance.syllabus_Target = source_instance.syllabus_Target

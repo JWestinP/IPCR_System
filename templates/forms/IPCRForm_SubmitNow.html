@@ -1,6 +1,63 @@
-<form method="POST" action="{% url 'IPCR_Form_Submit' %}">
-    {% csrf_token %}
-    Are you sure you want to submit your IPCR form?
-    <button type="submit">Yes</button>
-    <button type="submit" name="no">No</button>
-</form>
+
+<html>
+  <head>
+  {% load static %}
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type = "text/css" href="css/style.css">
+  <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'IPCR/style.css' %}">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+  <!--DEFAULT DESIGN-->
+  <div class="title"> 
+  <div class = "lspu_bg">
+          <img src="{% static 'home/img/background.png' %} "class="center" >
+      </div>
+  <div class = "white_bg"></div>
+  <div class = "lspu_header"> 
+          <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+  <div class = "avatar_bg"></div>
+  <div class = "avatar">
+      <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+  <div class = "acc_name_bg"></div>
+  <div class = "acc_name_placeholder">Account name </div>
+  <div class ="logout_bg">
+      <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+  </head>
+
+   <body>
+      <div class = "home_bg_submit">
+          <form method="POST" action="{% url 'IPCR_Form_Submit' %}">
+            {% csrf_token %}
+            <div class = "quest"> Are you sure you want to submit your IPCR form?</div>
+            <button class = "yes" type="submit">Yes</button>
+            <button class = "no" type="submit" name="no">No</button>
+        </form></div>
+        <section class ="ipcr_menu" id="ipcr_menu">
+            <!-- <div class ="ipcr_home"></div> -->
+                 <button class="ipcr_home"><a href="{% url 'member_home' %}">Home</a></button>
+             <!--<div class ="menu_ipcr"> -->
+                 <div class ="ipcr_ipcr"></div>
+                 <div class ="ipcr">IPCR</div>
+             <!--<div class ="menu_downloads"> -->
+                 <button class="ipcr_downloads"><a href="{% url 'download' %}">Downloads</a></button>
+             <!--<div class ="menu_dashboard"></div> -->
+                 <button class="ipcr_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+             <!--<div class ="menu_faculty_list"></div> -->
+                 <button class="ipcr_faculty_list"><a href="{% url 'member_faculty_list' %}">Faculty List</a></button>
+             <!--<div class ="menu_notifications"></div>-->
+                 <button class="ipcr_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
+             <!--<div class ="menu_settings"></div>-->
+                 <button class="ipcr_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+                 <div class ="ipcr_ipcr_form"></div>
+                 <div class ="ipcr_form">IPCR FORM</div>
+                 <button class="ipcr_coachingform"><a href="{% url 'member_notification' %}">COACHING FORM</a></button>
+                 <button class="ipcr_iptm_form"><a href="{% url 'member_notification' %}">IPTM FORM</a></button>
+          </section>
+       </body>
+      

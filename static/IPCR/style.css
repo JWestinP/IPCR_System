@@ -84,7 +84,7 @@ body {
 }
 a:link {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
+    color: white;
     display: block;
 }
 a:active {
@@ -193,7 +193,6 @@ a:active {
     position: absolute;
     width: 172px;
     height: 42px;
-    position: absolute;
     left: 920px;
     top: 273px;
     background: #7a7979;
@@ -209,7 +208,6 @@ a:active {
     font-style: italic;
     font-weight: 700;
     font-size: 16px;
-    position: absolute;
     width: 172px;
     height: 42px;
     position: absolute;
@@ -1480,22 +1478,105 @@ a:active {
     letter-spacing: 0.01em;
     color: black;}
 
-.submit{
+.save{
     
         position: absolute;
         font-family:'Inter';
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
-        color:white;
+        color:#5C85B3;
         width: 172px;
         height: 42px;
-        left: 1152px;
+        left: 940px;
         top: 2910px;
-        background: #5C85B3;
+        
         border-radius: 18px;
-        border: 0px solid;
+        border: 2px solid;
+}
+.save:hover{
+    background-color: white;
+}
+.submit{
+    
+    position: absolute;
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color:white;
+    width: 172px;
+    height: 42px;
+    left: 1400px;
+    top: 3155px;
+    background: #5C85B3;
+    border-radius: 18px;
+    border: 0px solid;
 }
 .submit:hover{
-    background-color: #7a7979;
+background-color: #3F6DEB;
+
 }
+/*SUBMIT */
+.quest{
+    position: absolute;
+    font-family:'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color:Black;
+    height: 42px;
+    left: 340px;
+    top: 120px;
+    background: white;
+    border-radius: 18px; 
+    padding-top: 20px;
+    padding-bottom:200px;
+    padding-left:20px;
+    padding-right:20px;
+    
+    
+}
+
+.home_bg_submit{
+   position : absolute;
+    width: 1399px;
+    height: 300px;
+    left: 262px;
+    top: 244px;
+    background: #282525;
+    box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 18px; 
+    padding-top : 200px;
+}
+.yes
+{position: absolute;
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color:white;
+    width: 172px;
+    height: 42px;
+    left: 520px;
+    top: 250px;
+    background: #5C85B3;
+    border-radius: 18px;
+    border: 0px solid;}
+.yes:hover{
+        background-color: #3F6DEB;}
+.no
+{position: absolute;
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color:#5C85B3;
+    width: 172px;
+    height: 42px;
+    left: 780px;
+    top: 250px;
+    border-radius: 18px;
+    border: 2px solid;}
+.no:hover{
+    background-color: white;}
