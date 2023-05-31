@@ -1,2 +1,66 @@
-<h1>test superadmin</h1>
-<button><a href="{% url 'logout' %}">logout</a></button>
+<html>
+    <head>
+    {% load static %}
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+    <div class="title"> 
+        <div class = "lspu_bg">
+            <img src="{% static 'home/img/background.png' %} "class="center" >
+        </div>
+        <div class = "white_bg"></div>
+        <div class = "lspu_header"> 
+            <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+    </div>
+    <div class = "avatar_bg"></div>
+    <div class = "avatar">
+        <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+    <div class = "acc_name_bg"></div>
+    <div class = "acc_name_placeholder">Account name </div>
+    <div class = "home_bg"></div>
+    <div class ="logout_bg">
+        <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+    
+<!--   W/O Style
+    <section class ="menu" id="menu">
+            <div class ="menu_home_super"></div>
+            <div class ="home_super">Home</div>
+            <button class="menu_dashboard_super"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+            <button class="menu_faculty_list_super"><a href="{% url 'admin_faculty_list' %}">Faculty List</a></button>
+            <button class="menu_notifications_super"><a href="{% url 'admin_notification' % }">Notifications</a></button>
+            <button class="settings_icon_super"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+    </section>
+     -->
+     <section class="menu" id="menu">
+        <div class="menu_home_super" style="position: absolute; width: 172px; height: 42px; left: 480px; top: 273px; background-color: #ffffff; opacity: 0.4; border-radius: 18px;"></div>
+        <div class="home__super" style="position: absolute; width: 139px; height: 20px; left: 495px; top: 284px; font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF;">Home</div>
+        <button class="menu_dashboard__super" style="position: absolute; width: 172px; height: 42px; left: 696px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF"><a href="{% url 'dashboard' %}">Dashboard</a></button>
+        <button class="menu_faculty_list__super" style="position: absolute; width: 172px; height: 42px; left: 904px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'superadmin_faculty_list' %} ">Faculty List</a></button>
+        <button class="menu_notifications__super" style="position: absolute; width: 172px; height: 42px; left: 1112px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'admin_notification' %}">Notifications</a></button>
+        <button class="settings_icon_super" style="position: absolute; width: 75px; height: 42px; left: 1312px; top: 273px; background: #7d7676; opacity: 0.4; border-radius: 18px;"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+    </section>
+
+   <!--<div class ="BANNERS"></div>-->     
+    <section class = "ipcr_banner" id = "ipcr_banner">
+        <div class="ipcr_banner_box"></div>
+        <div class="ipcr_banner_content">Access and monitor members’ documents in the faculty list</div>
+        <div class="ipcr_banner_image"><img src="{% static 'home/img/ipcr_banner_image.png' %}"></div>
+        <button class="ipcr_button"><a href="{% url 'superadmin_faculty_list' %}"> Go to Faculty List</a></button>
+    </section>
+
+    <section class = "dashboard_banner" id="dashboard_banner">
+        <div class="dashboard_banner_box"></div>
+        <div class="dashboard_banner_content">View the Summary of reports here in the dashbpard</div>
+        <div class="dashboard_banner_image"><img src="{% static 'home/img/dashboard_banner_image.png' %}"></div>
+        <button class="dashboard_button"><b href = "{% url 'dashboard' %}">Dashboard</b></button>
+    </section>
+    <section class = "faq_banner" id="faq_banner">
+        <div class="faq_banner_box"></div>
+        <div class="faq_banner_title">FAQ's</div>

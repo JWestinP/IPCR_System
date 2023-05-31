@@ -1,8 +1,24 @@
 <h1>member_faculty_list</h1>
 <button><a href="{% url 'logout' %}">logout</a></button>
-<button><a href="{% url 'IPCR_pg1' %}">IPCR_Form</a></button>
+<button><a href="{% url 'IPCR_Form' %}">IPCR_Form</a></button>
 <button><a href="{% url 'download' %}">download</a></button>
 <button><a href="{% url 'member_home' %}">home</a></button>
 <button><a href="{% url 'dashboard' %}">dashboard</a></button>
 <button><a href="{% url 'member_notification' %}">notification</a></button>
 <button><a href="{% url 'settings' %}">settings</a></button>
+<ul>
+    {% for user in matching_users %}
+      <li>
+        <a href="{% url 'member_faculty_list' user_id=user.id%}">{{ user.get_full_name }}</a>
+      </li>
+    {% endfor %}
+</ul>
+
+{% if selected_user %}
+  <div>
+    <h3>User Details</h3>
+    <p>Username: {{ selected_user.username }}</p>
+    <p>Full Name: {{ selected_user.get_full_name }}</p>
+    <p>Email: {{ selected_user.email }}</p>
+  </div>
+{% endif %}

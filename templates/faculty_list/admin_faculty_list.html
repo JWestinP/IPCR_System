@@ -1,11 +1,27 @@
 {% if matching_users %}
     <ul>
-        {% for user in matching_users %}
-        <li><a href="{% url 'IPCR_Remarks_Create' user_id=user.id %}" target="_blank">{{ user.get_full_name }}</a></li>
-
+        {% for user in matching_users.distinct %}
+        <li><a href="{% url 'admin_faculty_list' user_id=user.id %}" >{{ user.get_full_name }}</a></li>
+        
         {% endfor %}
     </ul>
 {% else %}
     <p>No matching users found.</p>
 {% endif %}
 
+{% if selected_user %}
+  <div>
+    <h3>User Details</h3>
+    <p>Username: {{ selected_user.username }}</p>
+    <p>Full Name: {{ selected_user.get_full_name }}</p>
+    <p>Email: {{ selected_user.email }}</p>
+
+    {% if 'Admin_Dean' in user_group_names %}
+    <button><a href="{% url 'IPCR_Remarks_Create' user_id=selected_user.id %}" target="_blank">Review IPCR</a></button>
+    {% endif %}
+
+    {% if 'Admin_Director' in user_group_names %}
+    <button><a href="{% url 'IPCR_Approval' user_id=selected_user.id %}" target="_blank">Approve IPCR</a></button>
+    {% endif %}
+  </div>
+{% endif %}

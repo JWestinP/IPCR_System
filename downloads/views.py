@@ -1,25 +1,41 @@
 from django.shortcuts import render
 from forms.forms import *
 from forms.models import *
-from django.template import loader
 from django.template.loader import get_template
 import pdfkit
 from django.http import HttpResponse
 from django.conf import settings
+from home.decorators import allowed_users
 import os
 import base64
-from django.templatetags.static import static
+
 
 
 # Create your views here.
 def download(request):
     return render(request, ('downloads/IPCR_Download.html'))
 
+@allowed_users(allowed_roles=['Member'])
 def Show_IPCR(request):
-    data = IPCR_Form_model_submitted.objects.get(author=request.user)
+    try: 
+        data = IPCR_Form_model_submitted.objects.get(author=request.user)
+    except IPCR_Form_model_submitted.DoesNotExist:
+        data = None
+
+    try:
+        data2 = IPCR_Remarks.objects.get(author = request.user)
+    except IPCR_Remarks.DoesNotExist:
+        data2 = None
+    
+    try: 
+        data3 = IPCR_Rating.objects.get(author=request.user)
+    except IPCR_Rating.DoesNotExist:
+        data3 = None
 
     context = {
-        'data': data
+        'data': data,
+        'data2' : data2,
+        'data3' : data3
     }
 
     return render(request, 'downloads/IPCRForm.html', context)
@@ -29,6 +45,7 @@ def image_to_base64(image_path):
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
     return encoded_string
 
+@allowed_users(allowed_roles=['Member'])
 def download_pdf(request):
     data = IPCR_Form_model_submitted.objects.get(author=request.user)
 

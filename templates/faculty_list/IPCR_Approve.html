@@ -30,6 +30,8 @@
 <body bgcolor="#A0A0A0" vlink="blue" link="blue">
 <div id="page1-div" style="position:relative;width:918px;height:1188px;">
 <img width="918" height="1188" src="{% static 'IPCR/target001.png' %} " alt="background image"/>
+<form method="POST" action="{% url 'IPCR_Approval' user_id=selected_user.id %}">
+{% csrf_token %}
 <p style="position:absolute;top:57px;left:370px;white-space:nowrap" class="ft10">Republic&#160;of&#160;the&#160;Philippines&#160;</p>
 <p style="position:absolute;top:78px;left:255px;white-space:nowrap" class="ft11">Laguna&#160;State&#160;Polytechnic&#160;University</p>
 <p style="position:absolute;top:89px;left:663px;white-space:nowrap" class="ft10">&#160;</p>
@@ -43,7 +45,7 @@
 <p style="position:absolute;top:309px;left:166px;white-space:nowrap" class="ft10">NAME&#160;</p>
 <p style="position:absolute;top:268px;left:336px;white-space:nowrap" class="ft18">Reviewed&#160;by:&#160;<br/>{{ data2.reviewer }}&#160;</p>
 <p style="position:absolute;top:309px;left:447px;white-space:nowrap" class="ft10">NAME&#160; </p>
-<p style="position:absolute;top:268px;left:617px;white-space:nowrap" class="ft18">Approved&#160;by:&#160;<br/>&#160;</p>
+<p style="position:absolute;top:268px;left:617px;white-space:nowrap" class="ft18">Approved&#160;by:&#160;<br/>{{ data.approver }}&#160;</p>
 <p style="position:absolute;top:309px;left:729px;white-space:nowrap" class="ft10">NAME&#160;</p>
 <p style="position:absolute;top:329px;left:165px;white-space:nowrap" class="ft10">RATEE&#160;</p>
 <p style="position:absolute;top:329px;left:403px;white-space:nowrap" class="ft10">CAMPUS&#160;DIRECTOR&#160;</p>
@@ -912,6 +914,8 @@
 <p style="position:absolute;top:1003px;left:867px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:1056px;left:651px;white-space:nowrap" class="ft35">&#160;<br/>&#160;<br/>&#160;</p>
 <p style="position:absolute;top:1056px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
+<button type="submit" style="position:absolute;top:1056px;left:736px;white-space:nowrap" class="ft31">Approve</button>
+</form>
 </div>
 </body>
 </html>
