@@ -5,7 +5,7 @@ from .decorators import allowed_users
 # Create your views here.
 
 @login_required(login_url = 'login')
-@allowed_users(allowed_roles=['CCS_Faculty', 'CAS_Faculty', 'CBA_Faculty', 'CCJE_Faculty', 'CHMT_Faculty', 'CIT_Faculty', 'COE_Faculty'])
+@allowed_users(allowed_roles=['Member'])
 def member_home(request):
     return render(request, ('home/member_home.html'))
 

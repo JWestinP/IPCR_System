@@ -85,6 +85,7 @@ class IPCR_Form_model (models.Model):
     IPCR_Submitted = models.DateField(null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     department = models.CharField(max_length=255)
+    
 
 class IPCR_Form_model_submitted (models.Model):
     syllabus_Target = models.IntegerField(default = 0, null = True, blank = True)
@@ -168,6 +169,7 @@ class IPCR_Form_model_submitted (models.Model):
     IPCR_Submitted = models.DateField(null=True, blank=True)
     department = models.CharField(max_length=255)
     user_fullname = models.CharField(max_length=255)
+    approver = models.CharField(max_length=255)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class IPCR_Remarks (models.Model):
@@ -210,6 +212,200 @@ class IPCR_Remarks (models.Model):
     AccreditationAttendance_Remarks = models.CharField(max_length=100)
     SpiritualActivityAttendance_Remarks = models.CharField(max_length=100)
     
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    reviewer = models.CharField(max_length=100)
+
+class IPCR_Rating (models.Model):
+    syllabus_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    syllabus_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    syllabus_T = models.IntegerField(default = 0, null = True, blank = True)
+    syllabus_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    CourseGuide_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    CourseGuide_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    CourseGuide_T = models.IntegerField(default = 0, null = True, blank = True)
+    CourseGuide_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    SLM_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    SLM_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    SLM_T = models.IntegerField(default = 0, null = True, blank = True)
+    SLM_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    SubjectAreas_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    SubjectAreas_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    SubjectAreas_T = models.IntegerField(default = 0, null = True, blank = True)
+    SubjectAreas_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    AttendanceSheet_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    AttendanceSheet_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    AttendanceSheet_T = models.IntegerField(default = 0, null = True, blank = True)
+    AttendanceSheet_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ClassRecord_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ClassRecord_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ClassRecord_T = models.IntegerField(default = 0, null = True, blank = True)
+    ClassRecord_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    TeachingEffectiveness_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    TeachingEffectiveness_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    TeachingEffectiveness_T = models.IntegerField(default = 0, null = True, blank = True)
+    TeachingEffectiveness_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ClassroomObservation_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ClassroomObservation_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ClassroomObservation_T = models.IntegerField(default = 0, null = True, blank = True)
+    ClassroomObservation_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    MidtermTOSRubrics_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermTOSRubrics_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermTOSRubrics_T = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermTOSRubrics_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    FinaltermTOSRubrics_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermTOSRubrics_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermTOSRubrics_T = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermTOSRubrics_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    MidtermTestQuestions_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermTestQuestions_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermTestQuestions_T = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermTestQuestions_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    FinaltermTestQuestions_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermTestQuestions_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermTestQuestions_T = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermTestQuestions_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    MidtermAnswerKey_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermAnswerKey_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermAnswerKey_T = models.IntegerField(default = 0, null = True, blank = True)
+    MidtermAnswerKey_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    FinaltermAnswerKey_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermAnswerKey_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermAnswerKey_T = models.IntegerField(default = 0, null = True, blank = True)
+    FinaltermAnswerKey_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    GradingSheet_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    GradingSheet_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    GradingSheet_T = models.IntegerField(default = 0, null = True, blank = True)
+    GradingSheet_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    StudentAdviced_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    StudentAdviced_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    StudentAdviced_T = models.IntegerField(default = 0, null = True, blank = True)
+    StudentAdviced_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    AccomplishmentReport_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    AccomplishmentReport_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    AccomplishmentReport_T = models.IntegerField(default = 0, null = True, blank = True)
+    AccomplishmentReport_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ResearchProposalSubmitted_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchProposalSubmitted_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchProposalSubmitted_T = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchProposalSubmitted_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ResearchImplemented_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchImplemented_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchImplemented_T = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchImplemented_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ResearchPresented_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchPresented_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchPresented_T = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchPresented_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ResearchPublished_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchPublished_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchPublished_T = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchPublished_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ApprovedIPRights_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ApprovedIPRights_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ApprovedIPRights_T = models.IntegerField(default = 0, null = True, blank = True)
+    ApprovedIPRights_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ResearchUtilized_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchUtilized_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchUtilized_T = models.IntegerField(default = 0, null = True, blank = True)
+    ResearchUtilized_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    NumberOfCitations_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    NumberOfCitations_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    NumberOfCitations_T = models.IntegerField(default = 0, null = True, blank = True)
+    NumberOfCitations_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    ExtensionProposalSubmitted_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    ExtensionProposalSubmitted_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    ExtensionProposalSubmitted_T = models.IntegerField(default = 0, null = True, blank = True)
+    ExtensionProposalSubmitted_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    PersonTrained_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    PersonTrained_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    PersonTrained_T = models.IntegerField(default = 0, null = True, blank = True)
+    PersonTrained_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    PersonAvailedRatedGood_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    PersonAvailedRatedGood_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    PersonAvailedRatedGood_T = models.IntegerField(default = 0, null = True, blank = True)
+    PersonAvailedRatedGood_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    PersonTrainedRatedGood_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    PersonTrainedRatedGood_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    PersonTrainedRatedGood_T = models.IntegerField(default = 0, null = True, blank = True)
+    PersonTrainedRatedGood_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    TechnicalAdvice_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    TechnicalAdvice_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    TechnicalAdvice_T = models.IntegerField(default = 0, null = True, blank = True)
+    TechnicalAdvice_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    AccomplishmentReportDeligatedAssignment_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    AccomplishmentReportDeligatedAssignment_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    AccomplishmentReportDeligatedAssignment_T = models.IntegerField(default = 0, null = True, blank = True)
+    AccomplishmentReportDeligatedAssignment_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    FlagRaisingAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    FlagRaisingAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    FlagRaisingAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    FlagRaisingAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    FlagLoweringAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    FlagLoweringAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    FlagLoweringAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    FlagLoweringAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    WellnessProgramAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    WellnessProgramAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    WellnessProgramAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    WellnessProgramAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    SchoolCelebrationAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    SchoolCelebrationAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    SchoolCelebrationAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    SchoolCelebrationAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    TrainingAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    TrainingAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    TrainingAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    TrainingAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    FacultyMeetingAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    FacultyMeetingAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    FacultyMeetingAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    FacultyMeetingAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    AccreditationAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    AccreditationAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    AccreditationAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    AccreditationAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+    
+    SpiritualActivityAttendance_QTY = models.IntegerField(default = 0, null = True, blank = True)
+    SpiritualActivityAttendance_QLE = models.IntegerField(default = 0, null = True, blank = True)
+    SpiritualActivityAttendance_T = models.IntegerField(default = 0, null = True, blank = True)
+    SpiritualActivityAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
+   
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     
 class IPMT_Form_model (models.Model):

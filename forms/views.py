@@ -7,11 +7,13 @@ from django.contrib.auth.models import User
 from datetime import date, datetime
 from django.forms import modelform_factory
 from django.db.models import Sum
-
+from home.decorators import allowed_users
+import random
 # Create your views here.
 
+@allowed_users(allowed_roles=['Member'])
 def IPCR_Form(request):
-    IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'department', 'IPCR_Submitted', 'IPCR_Deadline'])
+    IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'department', 'IPCR_Submitted', 'IPCR_Deadline', 'approver'])
 
     # Check if the user already has a saved instance of IPCR_Form_model
     try:
@@ -182,6 +184,203 @@ def IPCR_Form_Submit(request):
             user = request.user
             first_name = user.first_name
             last_name = user.last_name
+            random_number = random.randint(1, 10)
+            
+            if IPCR_Rating.objects.filter(author = request.user).exists() == False:
+                grade_instance = IPCR_Rating.objects.create(author = user)
+                
+                grade_instance.syllabus_QTY = random.randint(1, 10)
+                grade_instance.syllabus_QLE = random.randint(1, 10)
+                grade_instance.syllabus_T = random.randint(1, 10)
+                grade_instance.syllabus_A = (grade_instance.syllabus_QTY + grade_instance.syllabus_QLE + grade_instance.syllabus_T)/3
+                
+                grade_instance.CourseGuide_QTY = random.randint(1, 10)
+                grade_instance.CourseGuide_QLE = random.randint(1, 10)
+                grade_instance.CourseGuide_T = random.randint(1, 10)
+                grade_instance.CourseGuide_A = (grade_instance.CourseGuide_QTY + grade_instance.CourseGuide_QLE + grade_instance.CourseGuide_T)/3
+                
+                grade_instance.SLM_QTY = random.randint(1, 10)
+                grade_instance.SLM_QLE = random.randint(1, 10)
+                grade_instance.SLM_T = random.randint(1, 10)
+                grade_instance.SLM_A = (grade_instance.SLM_QTY + grade_instance.SLM_QLE + grade_instance.SLM_T)/3
+                
+                grade_instance.SubjectAreas_QTY = random.randint(1, 10)
+                grade_instance.SubjectAreas_QLE = random.randint(1, 10)
+                grade_instance.SubjectAreas_T = random.randint(1, 10)
+                grade_instance.SubjectAreas_A = (grade_instance.SubjectAreas_QTY + grade_instance.SubjectAreas_QLE + grade_instance.SubjectAreas_T)/3
+                
+                grade_instance.AttendanceSheet_QTY = random.randint(1, 10)
+                grade_instance.AttendanceSheet_QLE = random.randint(1, 10)
+                grade_instance.AttendanceSheet_T = random.randint(1, 10)
+                grade_instance.AttendanceSheet_A = (grade_instance.AttendanceSheet_QTY + grade_instance.AttendanceSheet_QLE + grade_instance.AttendanceSheet_T)/3
+                
+                grade_instance.ClassRecord_QTY = random.randint(1, 10)
+                grade_instance.ClassRecord_QLE = random.randint(1, 10)
+                grade_instance.ClassRecord_T = random.randint(1, 10)
+                grade_instance.ClassRecord_A = (grade_instance.ClassRecord_QTY + grade_instance.ClassRecord_QLE + grade_instance.ClassRecord_T)/3
+                
+                grade_instance.TeachingEffectiveness_QTY = random.randint(1, 10)
+                grade_instance.TeachingEffectiveness_QLE = random.randint(1, 10)
+                grade_instance.TeachingEffectiveness_T = random.randint(1, 10)
+                grade_instance.TeachingEffectiveness_A = (grade_instance.TeachingEffectiveness_QTY + grade_instance.TeachingEffectiveness_QLE + grade_instance.TeachingEffectiveness_T)/3
+                
+                grade_instance.ClassroomObservation_QTY = random.randint(1, 10)
+                grade_instance.ClassroomObservation_QLE = random.randint(1, 10)
+                grade_instance.ClassroomObservation_T = random.randint(1, 10)
+                grade_instance.ClassroomObservation_A = (grade_instance.ClassroomObservation_QTY + grade_instance.ClassroomObservation_QLE + grade_instance.ClassroomObservation_T)/3
+                
+                grade_instance.MidtermTOSRubrics_QTY = random.randint(1, 10)
+                grade_instance.MidtermTOSRubrics_QLE = random.randint(1, 10)
+                grade_instance.MidtermTOSRubrics_T = random.randint(1, 10)
+                grade_instance.MidtermTOSRubrics_A = (grade_instance.MidtermTOSRubrics_QTY + grade_instance.MidtermTOSRubrics_QLE + grade_instance.MidtermTOSRubrics_T)/3
+                
+                grade_instance.FinaltermTOSRubrics_QTY = random.randint(1, 10)
+                grade_instance.FinaltermTOSRubrics_QLE = random.randint(1, 10)
+                grade_instance.FinaltermTOSRubrics_T = random.randint(1, 10)
+                grade_instance.FinaltermTOSRubrics_A = (grade_instance.FinaltermTOSRubrics_QTY + grade_instance.FinaltermTOSRubrics_QLE + grade_instance.FinaltermTOSRubrics_T)/3
+                
+                grade_instance.MidtermTestQuestions_QTY = random.randint(1, 10)
+                grade_instance.MidtermTestQuestions_QLE = random.randint(1, 10)
+                grade_instance.MidtermTestQuestions_T = random.randint(1, 10)
+                grade_instance.MidtermTestQuestions_A = (grade_instance.MidtermTestQuestions_QTY + grade_instance.MidtermTestQuestions_QLE + grade_instance.MidtermTestQuestions_T)/3
+                
+                grade_instance.FinaltermTestQuestions_QTY = random.randint(1, 10)
+                grade_instance.FinaltermTestQuestions_QLE = random.randint(1, 10)
+                grade_instance.FinaltermTestQuestions_T = random.randint(1, 10)
+                grade_instance.FinaltermTestQuestions_A = (grade_instance.FinaltermTestQuestions_QTY + grade_instance.FinaltermTestQuestions_QLE + grade_instance.FinaltermTestQuestions_T)/3
+                
+                grade_instance.MidtermAnswerKey_QTY = random.randint(1, 10)
+                grade_instance.MidtermAnswerKey_QLE = random.randint(1, 10)
+                grade_instance.MidtermAnswerKey_T = random.randint(1, 10)
+                grade_instance.MidtermAnswerKey_A = (grade_instance.MidtermAnswerKey_QTY + grade_instance.MidtermAnswerKey_QLE + grade_instance.MidtermAnswerKey_T)/3
+                
+                grade_instance.FinaltermAnswerKey_QTY = random.randint(1, 10)
+                grade_instance.FinaltermAnswerKey_QLE = random.randint(1, 10)
+                grade_instance.FinaltermAnswerKey_T = random.randint(1, 10)
+                grade_instance.FinaltermAnswerKey_A = (grade_instance.FinaltermAnswerKey_QTY + grade_instance.FinaltermAnswerKey_QLE + grade_instance.FinaltermAnswerKey_T)/3
+                
+                grade_instance.GradingSheet_QTY = random.randint(1, 10)
+                grade_instance.GradingSheet_QLE = random.randint(1, 10)
+                grade_instance.GradingSheet_T = random.randint(1, 10)
+                grade_instance.GradingSheet_A = (grade_instance.GradingSheet_QTY + grade_instance.GradingSheet_QLE + grade_instance.GradingSheet_T)/3
+                
+                grade_instance.StudentAdviced_QTY = random.randint(1, 10)
+                grade_instance.StudentAdviced_QLE = random.randint(1, 10)
+                grade_instance.StudentAdviced_T = random.randint(1, 10)
+                grade_instance.StudentAdviced_A = (grade_instance.StudentAdviced_QTY + grade_instance.StudentAdviced_QLE + grade_instance.StudentAdviced_T)/3
+                
+                grade_instance.AccomplishmentReport_QTY = random.randint(1, 10)
+                grade_instance.AccomplishmentReport_QLE = random.randint(1, 10)
+                grade_instance.AccomplishmentReport_T = random.randint(1, 10)
+                grade_instance.AccomplishmentReport_A = (grade_instance.AccomplishmentReport_QTY + grade_instance.AccomplishmentReport_QLE + grade_instance.AccomplishmentReport_T)/3
+                
+                grade_instance.ResearchProposalSubmitted_QTY = random.randint(1, 10)
+                grade_instance.ResearchProposalSubmitted_QLE = random.randint(1, 10)
+                grade_instance.ResearchProposalSubmitted_T = random.randint(1, 10)
+                grade_instance.ResearchProposalSubmitted_A = (grade_instance.ResearchProposalSubmitted_QTY + grade_instance.ResearchProposalSubmitted_QLE + grade_instance.ResearchProposalSubmitted_T)/3
+                
+                grade_instance.ResearchImplemented_QTY = random.randint(1, 10)
+                grade_instance.ResearchImplemented_QLE = random.randint(1, 10)
+                grade_instance.ResearchImplemented_T = random.randint(1, 10)
+                grade_instance.ResearchImplemented_A = (grade_instance.ResearchImplemented_QTY + grade_instance.ResearchImplemented_QLE + grade_instance.ResearchImplemented_T)/3
+                
+                grade_instance.ResearchPresented_QTY = random.randint(1, 10)
+                grade_instance.ResearchPresented_QLE = random.randint(1, 10)
+                grade_instance.ResearchPresented_T = random.randint(1, 10)
+                grade_instance.ResearchPresented_A = (grade_instance.ResearchPresented_QTY + grade_instance.ResearchPresented_QLE + grade_instance.ResearchPresented_T)/3
+                
+                grade_instance.ResearchPublished_QTY = random.randint(1, 10)
+                grade_instance.ResearchPublished_QLE = random.randint(1, 10)
+                grade_instance.ResearchPublished_T = random.randint(1, 10)
+                grade_instance.ResearchPublished_A = (grade_instance.ResearchPublished_QTY + grade_instance.ResearchPublished_QLE + grade_instance.ResearchPublished_T)/3
+                
+                grade_instance.ApprovedIPRights_QTY = random.randint(1, 10)
+                grade_instance.ApprovedIPRights_QLE = random.randint(1, 10)
+                grade_instance.ApprovedIPRights_T = random.randint(1, 10)
+                grade_instance.ApprovedIPRights_A = (grade_instance.ApprovedIPRights_QTY + grade_instance.ApprovedIPRights_QLE + grade_instance.ApprovedIPRights_T)/3
+                
+                grade_instance.ResearchUtilized_QTY = random.randint(1, 10)
+                grade_instance.ResearchUtilized_QLE = random.randint(1, 10)
+                grade_instance.ResearchUtilized_T = random.randint(1, 10)
+                grade_instance.ResearchUtilized_A = (grade_instance.ResearchUtilized_QTY + grade_instance.ResearchUtilized_QLE + grade_instance.ResearchUtilized_T)/3
+                
+                grade_instance.NumberOfCitations_QTY = random.randint(1, 10)
+                grade_instance.NumberOfCitations_QLE = random.randint(1, 10)
+                grade_instance.NumberOfCitations_T = random.randint(1, 10)
+                grade_instance.NumberOfCitations_A = (grade_instance.NumberOfCitations_QTY + grade_instance.NumberOfCitations_QLE + grade_instance.NumberOfCitations_T)/3
+                
+                grade_instance.ExtensionProposalSubmitted_QTY = random.randint(1, 10)
+                grade_instance.ExtensionProposalSubmitted_QLE = random.randint(1, 10)
+                grade_instance.ExtensionProposalSubmitted_T = random.randint(1, 10)
+                grade_instance.ExtensionProposalSubmitted_A = (grade_instance.ExtensionProposalSubmitted_QTY + grade_instance.ExtensionProposalSubmitted_QLE + grade_instance.ExtensionProposalSubmitted_T)/3
+                
+                grade_instance.PersonTrained_QTY = random.randint(1, 10)
+                grade_instance.PersonTrained_QLE = random.randint(1, 10)
+                grade_instance.PersonTrained_T = random.randint(1, 10)
+                grade_instance.PersonTrained_A = (grade_instance.PersonTrained_QTY + grade_instance.PersonTrained_QLE + grade_instance.PersonTrained_T)/3
+                
+                grade_instance.PersonAvailedRatedGood_QTY = random.randint(1, 10)
+                grade_instance.PersonAvailedRatedGood_QLE = random.randint(1, 10)
+                grade_instance.PersonAvailedRatedGood_T = random.randint(1, 10)
+                grade_instance.PersonAvailedRatedGood_A = (grade_instance.PersonAvailedRatedGood_QTY + grade_instance.PersonAvailedRatedGood_QLE + grade_instance.PersonAvailedRatedGood_T)/3
+                
+                grade_instance.PersonTrainedRatedGood_QTY = random.randint(1, 10)
+                grade_instance.PersonTrainedRatedGood_QLE = random.randint(1, 10)
+                grade_instance.PersonTrainedRatedGood_T = random.randint(1, 10)
+                grade_instance.PersonTrainedRatedGood_A = (grade_instance.PersonTrainedRatedGood_QTY + grade_instance.PersonTrainedRatedGood_QLE + grade_instance.PersonTrainedRatedGood_T)/3
+                
+                grade_instance.TechnicalAdvice_QTY = random.randint(1, 10)
+                grade_instance.TechnicalAdvice_QLE = random.randint(1, 10)
+                grade_instance.TechnicalAdvice_T = random.randint(1, 10)
+                grade_instance.TechnicalAdvice_A = (grade_instance.TechnicalAdvice_QTY + grade_instance.TechnicalAdvice_QLE + grade_instance.TechnicalAdvice_T)/3
+                
+                grade_instance.AccomplishmentReportDeligatedAssignment_QTY = random.randint(1, 10)
+                grade_instance.AccomplishmentReportDeligatedAssignment_QLE = random.randint(1, 10)
+                grade_instance.AccomplishmentReportDeligatedAssignment_T = random.randint(1, 10)
+                grade_instance.AccomplishmentReportDeligatedAssignment_A = (grade_instance.AccomplishmentReportDeligatedAssignment_QTY + grade_instance.AccomplishmentReportDeligatedAssignment_QLE + grade_instance.AccomplishmentReportDeligatedAssignment_T)/3
+                
+                grade_instance.FlagRaisingAttendance_QTY = random.randint(1, 10)
+                grade_instance.FlagRaisingAttendance_QLE = random.randint(1, 10)
+                grade_instance.FlagRaisingAttendance_T = random.randint(1, 10)
+                grade_instance.FlagRaisingAttendance_A = (grade_instance.FlagRaisingAttendance_QTY + grade_instance.FlagRaisingAttendance_QLE + grade_instance.FlagRaisingAttendance_T)/3
+                
+                grade_instance.FlagLoweringAttendance_QTY = random.randint(1, 10)
+                grade_instance.FlagLoweringAttendance_QLE = random.randint(1, 10)
+                grade_instance.FlagLoweringAttendance_T = random.randint(1, 10)
+                grade_instance.FlagLoweringAttendance_A = (grade_instance.FlagLoweringAttendance_QTY + grade_instance.FlagLoweringAttendance_QLE + grade_instance.FlagLoweringAttendance_T)/3
+                
+                grade_instance.WellnessProgramAttendance_QTY = random.randint(1, 10)
+                grade_instance.WellnessProgramAttendance_QLE = random.randint(1, 10)
+                grade_instance.WellnessProgramAttendance_T = random.randint(1, 10)
+                grade_instance.WellnessProgramAttendance_A = (grade_instance.WellnessProgramAttendance_QTY + grade_instance.WellnessProgramAttendance_QLE + grade_instance.WellnessProgramAttendance_T)/3
+                
+                grade_instance.SchoolCelebrationAttendance_QTY = random.randint(1, 10)
+                grade_instance.SchoolCelebrationAttendance_QLE = random.randint(1, 10)
+                grade_instance.SchoolCelebrationAttendance_T = random.randint(1, 10)
+                grade_instance.SchoolCelebrationAttendance_A = (grade_instance.SchoolCelebrationAttendance_QTY + grade_instance.SchoolCelebrationAttendance_QLE + grade_instance.SchoolCelebrationAttendance_T)/3
+                
+                grade_instance.TrainingAttendance_QTY = random.randint(1, 10)
+                grade_instance.TrainingAttendance_QLE = random.randint(1, 10)
+                grade_instance.TrainingAttendance_T = random.randint(1, 10)
+                grade_instance.TrainingAttendance_A = (grade_instance.TrainingAttendance_QTY + grade_instance.TrainingAttendance_QLE + grade_instance.TrainingAttendance_T)/3
+                
+                grade_instance.FacultyMeetingAttendance_QTY = random.randint(1, 10)
+                grade_instance.FacultyMeetingAttendance_QLE = random.randint(1, 10)
+                grade_instance.FacultyMeetingAttendance_T = random.randint(1, 10)
+                grade_instance.FacultyMeetingAttendance_A = (grade_instance.FacultyMeetingAttendance_QTY + grade_instance.FacultyMeetingAttendance_QLE + grade_instance.FacultyMeetingAttendance_T)/3
+                
+                grade_instance.AccreditationAttendance_QTY = random.randint(1, 10)
+                grade_instance.AccreditationAttendance_QLE = random.randint(1, 10)
+                grade_instance.AccreditationAttendance_T = random.randint(1, 10)
+                grade_instance.AccreditationAttendance_A = (grade_instance.AccreditationAttendance_QTY + grade_instance.AccreditationAttendance_QLE + grade_instance.AccreditationAttendance_T)/3
+                
+                grade_instance.SpiritualActivityAttendance_QTY = random.randint(1, 10)
+                grade_instance.SpiritualActivityAttendance_QLE = random.randint(1, 10)
+                grade_instance.SpiritualActivityAttendance_T = random.randint(1, 10)
+                grade_instance.SpiritualActivityAttendance_A = (grade_instance.SpiritualActivityAttendance_QTY + grade_instance.SpiritualActivityAttendance_QLE + grade_instance.SpiritualActivityAttendance_T)/3
+                
+                grade_instance.save()
+                
             new_instance = IPCR_Form_model_submitted.objects.create(author = user, user_fullname = f"{first_name} {last_name}")
             source_instance = IPCR_Form_model.objects.get(author = request.user)
             
