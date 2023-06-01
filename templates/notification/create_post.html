@@ -1,0 +1,5 @@
+<form action="{% url 'create_notification' %}" method="POST">
+    {% csrf_token %}
+    {{ forms }}
+    <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,14 @@
+{% for notification in recent_notifications %}
+    <div>
+        <h3>Posted by {{ notification.author.get_full_name}}</h3>
+        <p>Date Posted: {{ notification.date_posted }}</p>
+        <p>{{ notification.new_post }}</p>
+    </div>
+{% endfor %}
+
+<button><a href="{% url 'create_notification' %}">Create post</a></button>
+
+{% if current_date <= deadline_date and days_until_deadline <= 15 %}
+    <h2>Deadline Upcoming!!</h2>
+    <p>The deadline is approaching within {{ days_until_deadline }} days. The upcoming deadline date is: {{ deadline_date }}</p>
+{% endif %}

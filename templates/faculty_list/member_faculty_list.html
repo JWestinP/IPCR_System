@@ -7,7 +7,7 @@
 <button><a href="{% url 'member_notification' %}">notification</a></button>
 <button><a href="{% url 'settings' %}">settings</a></button>
 <ul>
-    {% for user in matching_users %}
+    {% for user in matching_users.distinct %}
       <li>
         <a href="{% url 'member_faculty_list' user_id=user.id%}">{{ user.get_full_name }}</a>
       </li>

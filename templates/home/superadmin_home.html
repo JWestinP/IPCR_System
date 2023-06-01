@@ -34,7 +34,7 @@
             <div class ="home_super">Home</div>
             <button class="menu_dashboard_super"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
             <button class="menu_faculty_list_super"><a href="{% url 'admin_faculty_list' %}">Faculty List</a></button>
-            <button class="menu_notifications_super"><a href="{% url 'admin_notification' % }">Notifications</a></button>
+            <button class="menu_notifications_super"><a href="{% url 'admin_superadmin_notification' % }">Notifications</a></button>
             <button class="settings_icon_super"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
     </section>
      -->
@@ -43,7 +43,7 @@
         <div class="home__super" style="position: absolute; width: 139px; height: 20px; left: 495px; top: 284px; font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF;">Home</div>
         <button class="menu_dashboard__super" style="position: absolute; width: 172px; height: 42px; left: 696px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF"><a href="{% url 'dashboard' %}">Dashboard</a></button>
         <button class="menu_faculty_list__super" style="position: absolute; width: 172px; height: 42px; left: 904px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'superadmin_faculty_list' %} ">Faculty List</a></button>
-        <button class="menu_notifications__super" style="position: absolute; width: 172px; height: 42px; left: 1112px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'admin_notification' %}">Notifications</a></button>
+        <button class="menu_notifications__super" style="position: absolute; width: 172px; height: 42px; left: 1112px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'admin_superadmin_notification' %}">Notifications</a></button>
         <button class="settings_icon_super" style="position: absolute; width: 75px; height: 42px; left: 1312px; top: 273px; background: #7d7676; opacity: 0.4; border-radius: 18px;"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
     </section>
 

@@ -1,8 +1,23 @@
 <h1>notification</h1>
 <button><a href="{% url 'logout' %}">logout</a></button>
-<button><a href="{% url 'IPCR_pg1' %}">IPCR_Form</a></button>
+<button><a href="{% url 'IPCR_Form' %}">IPCR_Form</a></button>
 <button><a href="{% url 'download' %}">download</a></button>
 <button><a href="{% url 'member_home' %}">home</a></button>
 <button><a href="{% url 'member_faculty_list' %}">faculty list</a></button>
 <button><a href="{% url 'dashboard' %}">dashboard</a></button>
 <button><a href="{% url 'settings' %}">settings</a></button>
+
+{% for notification in recent_notifications %}
+    <div>
+        <h3>Posted by {{ notification.author.get_full_name }}</h3>
+        <p>Date Posted: {{ notification.date_posted }}</p>
+        <p>{{ notification.new_post }}</p>
+    </div>
+{% empty %}
+    <p>No notifications found.</p>
+{% endfor %}
+
+{% if current_date <= deadline_date and days_until_deadline <= 15 %}
+    <h2>Deadline Upcoming!!</h2>
+    <p>The deadline for the IPCR form is approaching within {{ days_until_deadline }} days. The upcoming deadline date is: {{ deadline_date }}</p>
+{% endif %}
