@@ -5,6 +5,7 @@ from django.contrib.auth.models import User, Group
 from home.decorators import allowed_users
 
 
+
 # Create your views here.
 @allowed_users(allowed_roles=['Member'])
 def member_faculty_list(request, user_id=None):
