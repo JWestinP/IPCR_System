@@ -14,12 +14,47 @@ import random
 @allowed_users(allowed_roles=['Member'])
 def IPCR_Form(request):
     IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude= ['author', 'department', 'IPCR_Submitted', 'IPCR_Deadline', 'approver'])
-
+    check_instance = IPCR_Form_model_submitted.objects.filter(author=request.user).order_by('-IPCR_Submitted').first()
+    current_date = datetime.now().date()
+    current_year = datetime.now().year
+    firstmidsem_month = 8
+    firstfinalsem_month = 10
+    firstsem_endmonth = 1
+    firstsem_day = 25
+    secondmidsem_month = 2
+    secondfinalsem_month = 4
+    secondsem_endmonth = 6
+    secondsem_day = 5
+    
+    firstmidsem_date = datetime(current_year, firstmidsem_month, firstsem_day).date()
+    firstfinalsem_date = datetime(current_year, firstfinalsem_month, firstsem_day).date()
+    firstsem_enddate = datetime(current_year, firstsem_endmonth, firstsem_day).date()
+    
+    secondmidsem_date = datetime(current_year, secondmidsem_month, secondsem_day).date()
+    secondfinalsem_date = datetime(current_year, secondfinalsem_month, secondsem_day).date()
+    secondsem_enddate = datetime(current_year, secondsem_endmonth, secondsem_day).date()
+    
     # Check if the user already has a saved instance of IPCR_Form_model
     try:
         existing_instance = IPCR_Form_model.objects.get(author=request.user)
     except IPCR_Form_model.DoesNotExist:
         existing_instance = None
+    
+    if current_date >= firstmidsem_date and current_date <= firstfinalsem_date:
+        if existing_instance and check_instance.IPCR_Submitted < firstmidsem_date:
+            existing_instance = None
+    
+    elif current_date >= firstfinalsem_date and current_date <= firstsem_enddate:
+        if existing_instance and check_instance.IPCR_Submitted < firstfinalsem_date:
+            existing_instance = None
+    
+    elif current_date >= secondmidsem_date and current_date <= secondfinalsem_date:
+        if existing_instance and check_instance.IPCR_Submitted < secondmidsem_date:
+            existing_instance = None
+            
+    elif current_date >= secondfinalsem_date and current_date <= secondsem_enddate:
+        if existing_instance and check_instance.IPCR_Submitted < secondfinalsem_date:
+            existing_instance = None
 
     if request.method == 'POST':
         forms = IPCRForm(request.POST, instance=existing_instance)
@@ -29,12 +64,22 @@ def IPCR_Form(request):
             model_instance = forms.save(commit=False)
             model_instance.author = current_user
             model_instance.department = ', '.join(group_names)
-            current_date = datetime.now().date()
-            deadline_date = datetime.strptime("2023-06-16", "%Y-%m-%d").date()
-                
-            if current_date <= deadline_date:
-                model_instance.IPCR_Deadline = date(2023, 6, 16)
+            
+            if current_date <= secondsem_enddate:
+                model_instance.IPCR_Deadline = secondsem_enddate
                 model_instance.save()
+
+            elif current_date <= firstfinalsem_date:
+                model_instance.IPCR_Deadline = firstfinalsem_date
+                model_instance.save()
+
+            elif current_date <= firstsem_enddate:
+                model_instance.IPCR_Deadline = firstsem_enddate
+                model_instance.save()
+
+            elif current_date <= secondfinalsem_date:
+                model_instance.IPCR_Deadline = secondfinalsem_date
+                model_instance.save()  
                 
             model_instance.save()
             
