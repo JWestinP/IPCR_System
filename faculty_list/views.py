@@ -6,10 +6,12 @@ from home.decorators import allowed_users
 from django.db.models import Q
 from django.contrib.auth import get_user_model
 from datetime import date, datetime
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
 # Create your views here.
+@login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Member'])
 def member_faculty_list(request, user_id=None):
     current_user = request.user
@@ -32,6 +34,7 @@ def member_faculty_list(request, user_id=None):
     
     return render(request, 'faculty_list/member_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user})
 
+@login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Admin_Dean', 'Admin_Director'])
 def admin_faculty_list(request, user_id=None):
     current_user = request.user
@@ -56,6 +59,7 @@ def admin_faculty_list(request, user_id=None):
 
     return render(request, 'faculty_list/admin_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user, 'current_user' : current_user, 'user_group_names': user_group_names})
 
+@login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Superadmin'])
 def superadmin_faculty_list(request,  group_id=None, user_id=None):
     groups = Group.objects.filter(name__icontains='faculty')
@@ -90,6 +94,7 @@ def superadmin_faculty_list(request,  group_id=None, user_id=None):
         'query': query,
     })
 
+@login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Admin_Dean'])
 def IPCR_Remarks_Create(request, user_id):
     selected_user = get_object_or_404(User, id=user_id)
@@ -117,6 +122,8 @@ def IPCR_Remarks_Create(request, user_id):
 
     return render(request, 'faculty_list/IPCR_Remarks.html', {'selected_user': selected_user, 'data': data, 'forms': forms})
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Superadmin'])
 def IPCR_Approval(request, user_id):
     selected_user = get_object_or_404(User, id=user_id)
     try: 

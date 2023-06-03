@@ -3,8 +3,13 @@ from .forms import user_post_forms
 from .models import user_post
 from datetime import date, datetime
 from django.db.models import Q
-# Create your views here.
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from home.decorators import allowed_users
 
+# Create your views here.
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def member_notification(request):
     current_user = request.user
     user_groups = current_user.groups.values_list('name', flat=True)
@@ -35,6 +40,8 @@ def member_notification(request):
 
     return render(request, 'notification/member_notification.html', {'recent_notifications': recent_notifications, 'deadline_date': deadline_date, 'current_date': current_date, 'days_until_deadline': days_until_deadline})
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Admin_Dean', 'Admin_Director', 'Superadmin'])
 def admin_superadmin_notification(request): 
     recent_notifications = user_post.objects.order_by('-date_posted')[:10]
     
@@ -75,6 +82,7 @@ def create_notification(request):
         if forms.is_valid():
             model_instance = forms.save(commit=False)
             model_instance.save()
+            messages.success(request, "Your new post has been created.")
             # Redirect to a success page or perform any other desired action
     
     return render(request, 'notification/create_post.html', {'forms': forms})

@@ -10,10 +10,12 @@ from django.db.models import Sum
 from home.decorators import allowed_users
 import random
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def IPCR_Form(request):
     IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude=['author', 'department', 'IPCR_Saved', 'IPCR_Deadline', 'approver'])
     current_date = datetime.now().date()
@@ -380,6 +382,8 @@ def IPCR_Form(request):
     }
     return render(request, 'forms/IPCRForm_Submit.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def IPCR_Form_Submit(request):
     check_instance = IPCR_Form_model_submitted.objects.filter(author=request.user).order_by('-IPCR_Submitted').first()
     current_date = datetime.now().date()
@@ -1294,6 +1298,7 @@ def IPCR_Form_Submit_snip(request):
         October_IPMT.save()
         November_IPMT.save()
         December_IPMT.save()
+        messages.success(request, "You've successfully submitted your IPCR form.")
         
         if new_instance.syllabus_Accomplished >= new_instance.syllabus_Target:
             Remarks_IPMT.Remarks_syllabus_Accomplished = "Met"
@@ -1509,6 +1514,8 @@ def IPCR_Form_Submit_snip(request):
         Remarks_IPMT.IPMT_Submitted = datetime.now().date()
         Remarks_IPMT.save()
         return redirect('IPCR_Form')
-    
+
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])  
 def IPCR_Form_Already_Submitted(request):
     return render(request, 'forms/IPCRForm_AlreadySubmitted.html')

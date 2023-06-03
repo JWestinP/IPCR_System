@@ -9,10 +9,13 @@ from home.decorators import allowed_users
 import os
 import base64
 from datetime import date, datetime
+from django.contrib.auth.decorators import login_required
 
 
 
 # Create your views here.
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def download(request):
     current_SY1 = datetime.now().year
     current_SY2 = current_SY1 - 1
@@ -39,6 +42,8 @@ def image_to_base64(image_path):
         encoded_string = base64.b64encode(image_file.read()).decode('utf-8')
     return encoded_string
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def firstmidsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -71,6 +76,8 @@ def firstmidsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def firstfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -104,6 +111,8 @@ def firstfinalsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def secondmidsem_ViewIPCR(request):
     current_year = datetime.now().year
     secondmidsem_month = 2
@@ -136,6 +145,8 @@ def secondmidsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def secondfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     secondfinalsem_month = 4
@@ -169,6 +180,8 @@ def secondfinalsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def firstmidsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -237,6 +250,8 @@ def firstmidsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_FirstSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def firstfinalsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -306,6 +321,8 @@ def firstfinalsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_FirstSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def secondmidsem_download_pdf(request):
     current_year = datetime.now().year
     secondmidsem_month = 2
@@ -374,6 +391,8 @@ def secondmidsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_SecondSemMidTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def secondfinalsem_download_pdf(request):
     current_year = datetime.now().year
     secondfinalsem_month = 4
@@ -442,6 +461,8 @@ def secondfinalsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_SecondSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_firstmidsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -474,6 +495,8 @@ def last_firstmidsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_firstfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -508,6 +531,8 @@ def last_firstfinalsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_secondmidsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -541,6 +566,8 @@ def last_secondmidsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_secondfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -575,6 +602,8 @@ def last_secondfinalsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_firstmidsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -644,6 +673,8 @@ def last_firstmidsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_FirstSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_firstfinalsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -714,6 +745,8 @@ def last_firstfinalsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_FirstSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_secondmidsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -783,6 +816,8 @@ def last_secondmidsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_SecondSemMidTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_secondfinalsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 1
@@ -853,6 +888,8 @@ def last_secondfinalsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_SecondSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_firstmidsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 3
@@ -885,6 +922,8 @@ def last_last_firstmidsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_firstfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 3
@@ -919,6 +958,8 @@ def last_last_firstfinalsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_secondmidsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -952,6 +993,8 @@ def last_last_secondmidsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_secondfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -986,6 +1029,8 @@ def last_last_secondfinalsem_ViewIPCR(request):
 
     return render(request, 'downloads/IPCRForm.html', context)
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_firstmidsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 3
@@ -1055,6 +1100,8 @@ def last_last_firstmidsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_FirstSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_firstfinalsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 3
@@ -1125,6 +1172,8 @@ def last_last_firstfinalsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_FirstSemFinalTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_secondmidsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
@@ -1194,6 +1243,8 @@ def last_last_secondmidsem_download_pdf(request):
     response['Content-Disposition'] = 'attachment; filename="IPCRForm_SecondSemMidTerm.pdf"'
     return response
 
+@login_required(login_url = 'login')
+@allowed_users(allowed_roles=['Member'])
 def last_last_secondfinalsem_download_pdf(request):
     current_year = datetime.now().year
     actual_year = current_year - 2
