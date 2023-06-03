@@ -6,6 +6,12 @@
 <button><a href="{% url 'dashboard' %}">dashboard</a></button>
 <button><a href="{% url 'member_notification' %}">notification</a></button>
 <button><a href="{% url 'settings' %}">settings</a></button>
+
+<form method="GET">
+  <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+  <button type="submit">Search</button>
+</form>
+
 <ul>
     {% for user in matching_users.distinct %}
       <li>

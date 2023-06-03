@@ -1,26 +1,37 @@
-<ul>
+<h1>Superadmin Faculty List</h1>
+
+<form method="GET" action="{% url 'superadmin_faculty_list' %}">
+  <label for="group_id">Select Group:</label>
+  <select name="group_id" id="group_id">
+    <option value="">All</option>
     {% for group in groups %}
-      <li>
-        <a href="?group_id={{ group.id }}">{{ group.name }}</a>
-      </li>
+      <option value="{{ group.id }}" {% if selected_group and selected_group.id == group.id %}selected{% endif %}>{{ group.name }}</option>
     {% endfor %}
-  </ul>
+  </select>
   
-  {% if selected_group %}
-    <h2>Users in Group: {{ selected_group.name }}</h2>
-    <ul>
-      {% for user in users %}
-        <li>
-          <a href="?group_id={{ selected_group.id }}&user_id={{ user.id }}">{{ user.get_full_name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  
-  {% if selected_user %}
-    <h2>User Details</h2>
+  <input type="text" name="q" placeholder="Search" value="{{ query }}">
+  <button type="submit">Search</button>
+</form>
+
+<ul>
+  {% for user in users %}
+    <li>
+      {% if selected_group %}
+        <a href="{% url 'superadmin_faculty_list' group_id=selected_group.id user_id=user.id %}">{{ user.get_full_name }}</a>
+      {% else %}
+        <a href="{% url 'superadmin_faculty_list' user_id=user.id %}">{{ user.get_full_name }}</a>
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>No users found.</li>
+  {% endfor %}
+</ul>
+
+{% if selected_user %}
+  <div>
+    <h3>User Details</h3>
     <p>Username: {{ selected_user.username }}</p>
     <p>Full Name: {{ selected_user.get_full_name }}</p>
     <p>Email: {{ selected_user.email }}</p>
-  {% endif %}
-  
+  </div>
+{% endif %}

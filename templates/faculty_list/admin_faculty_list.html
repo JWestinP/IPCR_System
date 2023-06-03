@@ -1,3 +1,9 @@
+<form method="GET">
+  <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+  <button type="submit">Search</button>
+</form>
+
+
 {% if matching_users %}
     <ul>
         {% for user in matching_users.distinct %}

@@ -3,8 +3,10 @@ from forms.forms import *
 from forms.models import *
 from django.contrib.auth.models import User, Group
 from home.decorators import allowed_users
+from django.db.models import Q
+from django.contrib.auth import get_user_model
 
-
+User = get_user_model()
 
 # Create your views here.
 @allowed_users(allowed_roles=['Member'])
@@ -14,10 +16,18 @@ def member_faculty_list(request, user_id=None):
     matching_users = User.objects.filter(groups__in=current_user_groups).exclude(id=current_user.id)
     
     selected_user = None
+    
+    query = request.GET.get('q')
 
     if user_id is not None:
         selected_user = get_object_or_404(User, id=user_id)
     
+    if query:
+        matching_users = matching_users.filter(
+            Q(username__icontains=query) |  # Search by username (case-insensitive)
+            Q(first_name__icontains=query) |  # Search by first name (case-insensitive)
+            Q(last_name__icontains=query)  # Search by last name (case-insensitive)
+        )
     
     return render(request, 'faculty_list/member_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user})
 
@@ -29,30 +39,55 @@ def admin_faculty_list(request, user_id=None):
     
     selected_user = None
     
+    query = request.GET.get('q')
+    
     if user_id is not None:
         selected_user = get_object_or_404(User, id=user_id)
+        
+    if query:
+        matching_users = matching_users.filter(
+            Q(username__icontains=query) |  # Search by username (case-insensitive)
+            Q(first_name__icontains=query) |  # Search by first name (case-insensitive)
+            Q(last_name__icontains=query)  # Search by last name (case-insensitive)
+        )
         
     user_group_names = current_user.groups.values_list('name', flat=True)
 
     return render(request, 'faculty_list/admin_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user, 'current_user' : current_user, 'user_group_names': user_group_names})
 
 @allowed_users(allowed_roles=['Superadmin'])
-def superadmin_faculty_list(request):
+def superadmin_faculty_list(request,  group_id=None, user_id=None):
     groups = Group.objects.filter(name__icontains='faculty')
     selected_group = None
     users = None
     selected_user = None
+    query = request.GET.get('q')
 
     if 'group_id' in request.GET:
         group_id = request.GET['group_id']
-        selected_group = get_object_or_404(Group, id=group_id)
-        users = User.objects.filter(groups=selected_group)
+        if group_id:
+            selected_group = get_object_or_404(Group, id=group_id)
+            users = User.objects.filter(groups=selected_group)
+        else:
+            selected_group = None
+            users = User.objects.all()
 
-        if 'user_id' in request.GET:
-            user_id = request.GET['user_id']
-            selected_user = get_object_or_404(User, id=user_id)
+        if query:
+            users = users.filter(
+                Q(username__icontains=query) | Q(first_name__icontains=query) | Q(last_name__icontains=query)
+            )
+            
+    elif user_id is not None:
+        selected_user = get_object_or_404(User, id=user_id)
 
-    return render(request, 'faculty_list/superadmin_faculty_list.html', {'groups': groups, 'selected_group': selected_group, 'users': users, 'selected_user': selected_user})
+
+    return render(request, 'faculty_list/superadmin_faculty_list.html', {
+        'groups': groups,
+        'selected_group': selected_group,
+        'users': users,
+        'selected_user': selected_user,
+        'query': query,
+    })
 
 @allowed_users(allowed_roles=['Admin_Dean'])
 def IPCR_Remarks_Create(request, user_id):
