@@ -14,12 +14,10 @@ from django.contrib.auth.decorators import login_required
 def dashboard (request):
     return render(request, ('dashboard/dashboard.html'))
 
-@login_required(login_url = 'login')
 class HomeView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'dashboard/dashboard.html')
     
-@login_required(login_url = 'login')
 class ChartData(APIView):
     
     authentication_classes = []
