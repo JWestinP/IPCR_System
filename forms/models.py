@@ -214,6 +214,7 @@ class IPCR_Remarks (models.Model):
     
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     reviewer = models.CharField(max_length=100)
+    IPCR_Submitted = models.DateField(null=True, blank=True)
 
 class IPCR_Rating (models.Model):
     syllabus_QTY = models.IntegerField(default = 0, null = True, blank = True)
@@ -407,6 +408,7 @@ class IPCR_Rating (models.Model):
     SpiritualActivityAttendance_A = models.IntegerField(default = 0, null = True, blank = True)
    
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    IPCR_Submitted = models.DateField(null=True, blank=True)
     
 class IPMT_Form_model (models.Model):
     syllabus_Accomplished = models.IntegerField(null = True, blank = True)

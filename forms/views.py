@@ -633,6 +633,7 @@ def IPCR_Form_Submit_snip(request):
     grade_instance.SpiritualActivityAttendance_T = random.randint(1, 10)
     grade_instance.SpiritualActivityAttendance_A = (grade_instance.SpiritualActivityAttendance_QTY + grade_instance.SpiritualActivityAttendance_QLE + grade_instance.SpiritualActivityAttendance_T)/3
     
+    grade_instance.IPCR_Submitted = datetime.now().date()
     grade_instance.save()
         
     new_instance = IPCR_Form_model_submitted.objects.create(author = user, user_fullname = f"{first_name} {last_name}")
