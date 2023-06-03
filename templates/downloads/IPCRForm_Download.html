@@ -20,12 +20,16 @@
 	.ft18{font-size:14px;line-height:20px;font-family:Times;color:#000000;}
 	.ft19{font-size:14px;line-height:20px;font-family:Times;color:#1f1f1f;}
 	.ft110{font-size:10px;line-height:16px;font-family:Times;color:#000000;}
+    input[type="text"] {
+        width: 80px; /* Adjust the width as needed */
+        height: 10px; /* Adjust the height as needed */
+    }
 -->
 </style>
 </head>
 <body bgcolor="#A0A0A0" vlink="blue" link="blue">
 <div id="page1-div" style="position:relative;width:918px;height:1188px;">
-<img width="918" height="1188" src="data:image/png;base64,{{ image_base64 }}" alt="Image"/>
+<img width="918" height="1188" src="data:image/png;base64,{{ base64_string1 }}" alt="Image 1"/>
 <p style="position:absolute;top:57px;left:370px;white-space:nowrap" class="ft10">Republic&#160;of&#160;the&#160;Philippines&#160;</p>
 <p style="position:absolute;top:78px;left:255px;white-space:nowrap" class="ft11">Laguna&#160;State&#160;Polytechnic&#160;University</p>
 <p style="position:absolute;top:89px;left:663px;white-space:nowrap" class="ft10">&#160;</p>
@@ -35,10 +39,10 @@
 <p style="position:absolute;top:183px;left:108px;white-space:nowrap" class="ft12">I,&#160;<i>______</i>,-&#160;&#160;<i>______________&#160;&#160;&#160;</i>of&#160;the&#160;Laguna&#160;State&#160;Polytechnic&#160;University,&#160;commit&#160;to&#160;deliver&#160;and&#160;agree&#160;to&#160;be&#160;rated&#160;on&#160;</p>
 <p style="position:absolute;top:215px;left:54px;white-space:nowrap" class="ft12">the&#160;attainment&#160;of&#160;the&#160;following&#160;in&#160;accordance&#160;with&#160;the&#160;indicated&#160;measures&#160;for&#160;the&#160;_____&#160;Semester&#160;of&#160;Academic&#160;Year&#160;</p>
 <p style="position:absolute;top:247px;left:54px;white-space:nowrap" class="ft12">______________.&#160;</p>
-<p style="position:absolute;top:268px;left:54px;white-space:nowrap" class="ft18">Conforme:&#160;<br/>&#160;</p>
+<p style="position:absolute;top:268px;left:54px;white-space:nowrap" class="ft18">Conforme:&#160;<br/>{{ data.user_fullname }}&#160;</p>
 <p style="position:absolute;top:309px;left:166px;white-space:nowrap" class="ft10">NAME&#160;</p>
-<p style="position:absolute;top:268px;left:336px;white-space:nowrap" class="ft18">Reviewed&#160;by:&#160;<br/>&#160;</p>
-<p style="position:absolute;top:309px;left:447px;white-space:nowrap" class="ft10">NAME&#160;</p>
+<p style="position:absolute;top:268px;left:336px;white-space:nowrap" class="ft18">Reviewed&#160;by:&#160;<br/>{{ data2.reviewer }}&#160;</p>
+<p style="position:absolute;top:309px;left:447px;white-space:nowrap" class="ft10">NAME&#160; </p>
 <p style="position:absolute;top:268px;left:617px;white-space:nowrap" class="ft18">Approved&#160;by:&#160;<br/>&#160;</p>
 <p style="position:absolute;top:309px;left:729px;white-space:nowrap" class="ft10">NAME&#160;</p>
 <p style="position:absolute;top:329px;left:165px;white-space:nowrap" class="ft10">RATEE&#160;</p>
@@ -111,49 +115,49 @@
 <p style="position:absolute;top:635px;left:54px;white-space:nowrap" class="ft12">a)&#160;No.&#160;of&#160;Syllabus&#160;prepared</p>
 <p style="position:absolute;top:635px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.syllabus_Target }}</p>
 <p style="position:absolute;top:635px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.syllabus_Accomplished }}</p>
-<p style="position:absolute;top:635px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline }}</p>
-<p style="position:absolute;top:635px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted }}</p>
-<p style="position:absolute;top:635px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:635px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:635px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:635px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:635px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:635px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:635px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:635px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.syllabus_QTY }}</p>
+<p style="position:absolute;top:635px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.syllabus_QLE }}</p>
+<p style="position:absolute;top:635px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.syllabus_T }}</p>
+<p style="position:absolute;top:635px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.syllabus_A }}</p>
+<p style="position:absolute;top:635px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.syllabus_Remarks }}</p>
 <p style="position:absolute;top:635px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:655px;left:54px;white-space:nowrap" class="ft12">b)&#160;No.&#160;of&#160;Course&#160;Guide</p>
 <p style="position:absolute;top:655px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.CourseGuide_Target }}</p>
 <p style="position:absolute;top:655px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.CourseGuide_Accomplished }}</p>
-<p style="position:absolute;top:655px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline }}</p>
-<p style="position:absolute;top:655px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted }}</p>
-<p style="position:absolute;top:655px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:655px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:655px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:655px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:655px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:655px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:655px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:655px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.CourseGuide_QTY }}</p>
+<p style="position:absolute;top:655px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.CourseGuide_QLE }}</p>
+<p style="position:absolute;top:655px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.CourseGuide_T }}</p>
+<p style="position:absolute;top:655px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.CourseGuide_A }}</p>
+<p style="position:absolute;top:655px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.CourseGuide_Remarks }}</p>
 <p style="position:absolute;top:655px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:676px;left:54px;white-space:nowrap" class="ft12">c)&#160;No.&#160;of&#160;SLM</p>
 <p style="position:absolute;top:676px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.SLM_Target }}</p>
 <p style="position:absolute;top:676px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.SLM_Accomplished }}</p>
-<p style="position:absolute;top:676px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline }}</p>
-<p style="position:absolute;top:676px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted }}</p>
-<p style="position:absolute;top:676px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:676px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:676px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:676px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:676px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:676px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:676px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:676px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.SLM_QTY }}</p>
+<p style="position:absolute;top:676px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.SLM_QLE }}</p>
+<p style="position:absolute;top:676px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.SLM_T }}</p>
+<p style="position:absolute;top:676px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.SLM_A }}</p>
+<p style="position:absolute;top:676px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.SLM_Remarks }}</p>
 <p style="position:absolute;top:676px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:697px;left:54px;white-space:nowrap" class="ft19">d)&#160;&#160;Number&#160;&#160;of&#160;&#160;subject&#160;&#160;areas&#160;<br/>with&#160;</p>
 <p style="position:absolute;top:717px;left:183px;white-space:nowrap" class="ft12">community&#160;</p>
 <p style="position:absolute;top:738px;left:54px;white-space:nowrap" class="ft19">immersion/involvement&#160;<br/>component</p>
-<p style="position:absolute;top:758px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.SubjectAreas_Target }}</p>
-<p style="position:absolute;top:697px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.SubjectAreas_Accomplished }}</p>
-<p style="position:absolute;top:697px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline }}</p>
-<p style="position:absolute;top:697px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted }}</p>
-<p style="position:absolute;top:697px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:697px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:697px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:697px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:697px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:697px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:730px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.SubjectAreas_Target }}</p>
+<p style="position:absolute;top:730px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:730px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:730px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:730px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:730px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.SubjectAreas_QTY }}</p>
+<p style="position:absolute;top:730px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.SubjectAreas_QLE }}</p>
+<p style="position:absolute;top:730px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.SubjectAreas_T }}</p>
+<p style="position:absolute;top:730px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.SubjectAreas_A }}</p>
+<p style="position:absolute;top:730px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.SubjectAreas_Remarks }}</p>
 <p style="position:absolute;top:779px;left:54px;white-space:nowrap" class="ft12">2.&#160;</p>
 <p style="position:absolute;top:779px;left:96px;white-space:nowrap" class="ft12">Organizes&#160;</p>
 <p style="position:absolute;top:779px;left:192px;white-space:nowrap" class="ft12">classroom&#160;</p>
@@ -169,26 +173,26 @@
 <p style="position:absolute;top:779px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:779px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:819px;left:54px;white-space:nowrap" class="ft12">a)&#160;Attendance&#160;Sheet</p>
-<p style="position:absolute;top:819px;left:189px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:819px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:819px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.AttendanceSheet_Target }}</p>
+<p style="position:absolute;top:819px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:819px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:819px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:819px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.AttendanceSheet_QTY }}</p>
+<p style="position:absolute;top:819px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.AttendanceSheet_QLE }}</p>
+<p style="position:absolute;top:819px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.AttendanceSheet_T }}</p>
+<p style="position:absolute;top:819px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.AttendanceSheet_A }}</p>
+<p style="position:absolute;top:819px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.AttendanceSheet_Remarks }}</p>
 <p style="position:absolute;top:819px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:840px;left:54px;white-space:nowrap" class="ft12">b)&#160;Class&#160;records</p>
-<p style="position:absolute;top:840px;left:158px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:840px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:840px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ClassRecord_Target }}</p>
+<p style="position:absolute;top:840px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:840px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:840px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:840px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassRecord_QTY }}</p>
+<p style="position:absolute;top:840px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassRecord_QLE }}</p>
+<p style="position:absolute;top:840px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassRecord_T }}</p>
+<p style="position:absolute;top:840px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassRecord_A }}</p>
+<p style="position:absolute;top:840px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ClassRecord_Remarks }}</p>
 <p style="position:absolute;top:840px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:861px;left:54px;white-space:nowrap" class="ft12">3.&#160;Teaching&#160;effectiveness</p>
 <p style="position:absolute;top:861px;left:221px;white-space:nowrap" class="ft10">&#160;</p>
@@ -202,29 +206,29 @@
 <p style="position:absolute;top:861px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:861px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:882px;left:54px;white-space:nowrap" class="ft19">a)&#160;&#160;Evaluation&#160;&#160;of&#160;&#160;Teaching&#160;<br/>Effectivess&#160;(CQA-SF-012)</p>
-<p style="position:absolute;top:902px;left:217px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:882px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:892px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.TeachingEffectiveness_Target }}</p>
+<p style="position:absolute;top:892px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:892px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:892px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:892px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.TeachingEffectiveness_QTY }}</p>
+<p style="position:absolute;top:892px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.TeachingEffectiveness_QLE }}</p>
+<p style="position:absolute;top:892px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.TeachingEffectiveness_T }}</p>
+<p style="position:absolute;top:892px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.TeachingEffectiveness_A }}</p>
+<p style="position:absolute;top:892px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.TeachingEffectiveness_Remarks }}</p>
 <p style="position:absolute;top:882px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:923px;left:54px;white-space:nowrap" class="ft12">b)&#160;</p>
 <p style="position:absolute;top:923px;left:88px;white-space:nowrap" class="ft12">Classroom&#160;</p>
 <p style="position:absolute;top:923px;left:178px;white-space:nowrap" class="ft12">Observation&#160;</p>
 <p style="position:absolute;top:943px;left:54px;white-space:nowrap" class="ft12">(CQA-SF-012)</p>
-<p style="position:absolute;top:943px;left:143px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:923px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:933px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ClassroomObservation_Target }}</p>
+<p style="position:absolute;top:933px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:933px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:933px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:933px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassroomObservation_QTY }}</p>
+<p style="position:absolute;top:933px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassroomObservation_QLE }}</p>
+<p style="position:absolute;top:933px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassroomObservation_T }}</p>
+<p style="position:absolute;top:933px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ClassroomObservation_A }}</p>
+<p style="position:absolute;top:933px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ClassroomObservation_Remarks }}</p>
 <p style="position:absolute;top:923px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:964px;left:54px;white-space:nowrap" class="ft12">4.&#160;</p>
 <p style="position:absolute;top:964px;left:92px;white-space:nowrap" class="ft12">Prepare&#160;</p>
@@ -242,37 +246,37 @@
 <p style="position:absolute;top:964px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:964px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:1026px;left:54px;white-space:nowrap" class="ft12">a.1)&#160;TOS/&#160;Rubrics&#160;(Midterm)</p>
-<p style="position:absolute;top:1026px;left:239px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1026px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:1026px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.MidtermTOSRubrics_Target }}</p>
+<p style="position:absolute;top:1026px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.MidtermTOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:1026px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1026px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1026px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTOSRubrics_QTY }}</p>
+<p style="position:absolute;top:1026px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTOSRubrics_QLE }}</p>
+<p style="position:absolute;top:1026px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTOSRubrics_T }}</p>
+<p style="position:absolute;top:1026px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTOSRubrics_A }}</p>
+<p style="position:absolute;top:1026px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.MidtermTOSRubrics_Remarks }}</p>
 <p style="position:absolute;top:1026px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:1046px;left:54px;white-space:nowrap" class="ft12">a.2)&#160;TOS/&#160;Rubrics&#160;(Final&#160;Term)</p>
-<p style="position:absolute;top:1046px;left:251px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1046px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:1046px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.FinaltermTOSRubrics_Target }}</p>
+<p style="position:absolute;top:1046px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.FinaltermTOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:1046px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1046px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1046px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTOSRubrics_QTY }}</p>
+<p style="position:absolute;top:1046px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTOSRubrics_QLE }}</p>
+<p style="position:absolute;top:1046px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTOSRubrics_T }}</p>
+<p style="position:absolute;top:1046px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTOSRubrics_A }}</p>
+<p style="position:absolute;top:1046px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.FinaltermTOSRubrics_Remarks }}</p>
 <p style="position:absolute;top:1046px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:1067px;left:54px;white-space:nowrap" class="ft19">b.1)&#160;&#160;Test&#160;&#160;Questions&#160;&#160;(term&#160;<br/>exams)&#160;&#160;/&#160;&#160;Performance's&#160;based&#160;<br/>activities&#160;(Midterm)</p>
-<p style="position:absolute;top:1107px;left:185px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:275px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:339px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:456px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:551px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:651px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:700px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:736px;white-space:nowrap" class="ft10">&#160;</p>
-<p style="position:absolute;top:1067px;left:772px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:1088px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.MidtermTestQuestions_Target }}</p>
+<p style="position:absolute;top:1088px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.MidtermTestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:1088px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1088px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1088px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTestQuestions_QTY }}</p>
+<p style="position:absolute;top:1088px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTestQuestions_QLE }}</p>
+<p style="position:absolute;top:1088px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTestQuestions_T }}</p>
+<p style="position:absolute;top:1088px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermTestQuestions_A }}</p>
+<p style="position:absolute;top:1088px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.MidtermTestQuestions_Remarks }}</p>
 <p style="position:absolute;top:1067px;left:808px;white-space:nowrap" class="ft10">&#160;</p>
 <p style="position:absolute;top:56px;left:733px;white-space:nowrap" class="ft110"><i>SPS&#160;Form:&#160;02&#160;<br/>Date:September&#160;2021&#160;<br/>Revised:03&#160;<br/>&#160;</i></p>
 </div>
@@ -297,39 +301,39 @@
 </head>
 <body bgcolor="#A0A0A0" vlink="blue" link="blue">
 <div id="page2-div" style="position:relative;width:918px;height:1188px;">
-<img width="918" height="1188" src="{% static 'IPCR/target002.png' %} " alt="background image"/>
+<img width="918" height="1188" src="data:image/png;base64,{{ base64_string2 }}" alt="Image 2"/>
 <p style="position:absolute;top:58px;left:54px;white-space:nowrap" class="ft24">b.2)&#160;&#160;Test&#160;&#160;Questions&#160;&#160;(term&#160;<br/>exams)&#160;&#160;/&#160;&#160;Performance's&#160;based&#160;<br/>activities&#160;(Final&#160;Term)</p>
-<p style="position:absolute;top:98px;left:196px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:58px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:80px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.FinaltermTestQuestions_Target }}</p>
+<p style="position:absolute;top:80px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.FinaltermTestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:80px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:80px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:80px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTestQuestions_QTY }}</p>
+<p style="position:absolute;top:80px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTestQuestions_QLE }}</p>
+<p style="position:absolute;top:80px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTestQuestions_T }}</p>
+<p style="position:absolute;top:80px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermTestQuestions_A }}</p>
+<p style="position:absolute;top:80px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.FinaltermTestQuestions_Remarks }}</p>
 <p style="position:absolute;top:58px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:119px;left:54px;white-space:nowrap" class="ft20">c.1)&#160;Answer&#160;Keys&#160;(Midterm)</p>
-<p style="position:absolute;top:119px;left:238px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:119px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:119px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.MidtermAnswerKey_Target }}</p>
+<p style="position:absolute;top:119px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.MidtermAnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:119px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:119px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:119px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermAnswerKey_QTY }}</p>
+<p style="position:absolute;top:119px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermAnswerKey_QLE }}</p>
+<p style="position:absolute;top:119px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermAnswerKey_T }}</p>
+<p style="position:absolute;top:119px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.MidtermAnswerKey_A }}</p>
+<p style="position:absolute;top:119px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.MidtermAnswerKey_Remarks }}</p>
 <p style="position:absolute;top:119px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:140px;left:54px;white-space:nowrap" class="ft20">c.2)&#160;Answer&#160;Keys&#160;(Final&#160;Term)</p>
-<p style="position:absolute;top:140px;left:249px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:140px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:140px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.FinaltermAnswerKey_Target }}</p>
+<p style="position:absolute;top:140px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.FinaltermAnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:140px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:140px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:140px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermAnswerKey_QTY }}</p>
+<p style="position:absolute;top:140px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermAnswerKey_QLE }}</p>
+<p style="position:absolute;top:140px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermAnswerKey_T }}</p>
+<p style="position:absolute;top:140px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.FinaltermAnswerKey_A }}</p>
+<p style="position:absolute;top:140px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.FinaltermAnswerKey_Remarks }}</p>
 <p style="position:absolute;top:140px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:161px;left:54px;white-space:nowrap" class="ft20">5.&#160;</p>
 <p style="position:absolute;top:161px;left:87px;white-space:nowrap" class="ft20">Compute&#160;</p>
@@ -347,15 +351,15 @@
 <p style="position:absolute;top:161px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:161px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:202px;left:54px;white-space:nowrap" class="ft24">a)&#160;&#160;No.&#160;&#160;of&#160;&#160;grading&#160;&#160;sheets&#160;<br/>submitted&#160;&amp;&#160;encoded</p>
-<p style="position:absolute;top:222px;left:198px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:202px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:211px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.GradingSheet_Target }}</p>
+<p style="position:absolute;top:211px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:211px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:211px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:211px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.GradingSheet_QTY }}</p>
+<p style="position:absolute;top:211px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.GradingSheet_QLE }}</p>
+<p style="position:absolute;top:211px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.GradingSheet_T }}</p>
+<p style="position:absolute;top:211px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.GradingSheet_A }}</p>
+<p style="position:absolute;top:211px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.GradingSheet_Remarks }}</p>
 <p style="position:absolute;top:202px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:243px;left:54px;white-space:nowrap" class="ft24">6.&#160;&#160;Consultation&#160;&#160;services&#160;&#160;to&#160;<br/>faculty&#160;and&#160;students.</p>
 <p style="position:absolute;top:263px;left:193px;white-space:nowrap" class="ft21">&#160;</p>
@@ -369,15 +373,15 @@
 <p style="position:absolute;top:243px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:243px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:284px;left:54px;white-space:nowrap" class="ft24">a)&#160;&#160;No.&#160;&#160;of&#160;&#160;faculty&#160;&#160;&amp;&#160;&#160;students&#160;<br/>seek&#160;&#160;advises&#160;&#160;(LSPU-ACAD-SF-<br/>011)</p>
-<p style="position:absolute;top:324px;left:84px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:284px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:305px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.StudentAdviced_Target }}</p>
+<p style="position:absolute;top:305px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:305px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:305px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:305px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.StudentAdviced_QTY }}</p>
+<p style="position:absolute;top:305px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.StudentAdviced_QLE }}</p>
+<p style="position:absolute;top:305px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.StudentAdviced_T }}</p>
+<p style="position:absolute;top:305px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.StudentAdviced_A }}</p>
+<p style="position:absolute;top:305px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.StudentAdviced_Remarks }}</p>
 <p style="position:absolute;top:284px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:345px;left:54px;white-space:nowrap" class="ft24">7.&#160;&#160;Prepare&#160;&#160;accomplishment&#160;<br/>report.</p>
 <p style="position:absolute;top:365px;left:100px;white-space:nowrap" class="ft21">&#160;</p>
@@ -391,15 +395,15 @@
 <p style="position:absolute;top:345px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:345px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:386px;left:54px;white-space:nowrap" class="ft20">a)&#160;Accomplishment&#160;Report</p>
-<p style="position:absolute;top:386px;left:230px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:386px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:386px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.AccomplishmentReport_Target }}</p>
+<p style="position:absolute;top:386px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:386px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:386px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:386px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReport_QTY }}</p>
+<p style="position:absolute;top:386px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReport_QLE }}</p>
+<p style="position:absolute;top:386px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReport_T }}</p>
+<p style="position:absolute;top:386px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReport_A }}</p>
+<p style="position:absolute;top:386px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.AccomplishmentReport_Remarks }}</p>
 <p style="position:absolute;top:386px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:407px;left:122px;white-space:nowrap" class="ft22"><i>RESEARCH</i></p>
 <p style="position:absolute;top:407px;left:190px;white-space:nowrap" class="ft23"><i>&#160;</i></p>
@@ -427,68 +431,68 @@
 <p style="position:absolute;top:469px;left:103px;white-space:nowrap" class="ft20">Research&#160;</p>
 <p style="position:absolute;top:469px;left:201px;white-space:nowrap" class="ft20">Proposal&#160;</p>
 <p style="position:absolute;top:489px;left:54px;white-space:nowrap" class="ft20">submitted/&#160;Activity&#160;Conducted</p>
-<p style="position:absolute;top:489px;left:257px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:469px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:478px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchProposalSubmitted_Target }}</p>
+<p style="position:absolute;top:478px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:478px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:478px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:478px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchProposalSubmitted_QTY }}</p>
+<p style="position:absolute;top:478px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchProposalSubmitted_QLE }}</p>
+<p style="position:absolute;top:478px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchProposalSubmitted_T }}</p>
+<p style="position:absolute;top:478px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchProposalSubmitted_A }}</p>
+<p style="position:absolute;top:478px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ResearchProposalSubmitted_Remarks }}</p>
 <p style="position:absolute;top:469px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:510px;left:54px;white-space:nowrap" class="ft20">b)&#160;</p>
 <p style="position:absolute;top:510px;left:88px;white-space:nowrap" class="ft20">Research&#160;</p>
 <p style="position:absolute;top:510px;left:169px;white-space:nowrap" class="ft20">Implemented&#160;</p>
 <p style="position:absolute;top:530px;left:54px;white-space:nowrap" class="ft24">and/or&#160;&#160;Completed&#160;&#160;within&#160;&#160;the&#160;<br/>Timeframe</p>
-<p style="position:absolute;top:551px;left:126px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:510px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:530px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchImplemented_Target }}</p>
+<p style="position:absolute;top:530px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:530px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:530px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:530px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchImplemented_QTY }}</p>
+<p style="position:absolute;top:530px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchImplemented_QLE }}</p>
+<p style="position:absolute;top:530px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchImplemented_T }}</p>
+<p style="position:absolute;top:530px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchImplemented_A }}</p>
+<p style="position:absolute;top:530px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ResearchImplemented_Remarks }}</p>
 <p style="position:absolute;top:510px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:571px;left:54px;white-space:nowrap" class="ft24">c)&#160;&#160;Research&#160;&#160;Presented&#160;&#160;in&#160;<br/>Regional/National/Internation<br/>al&#160;Conferences</p>
-<p style="position:absolute;top:612px;left:152px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:571px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:592px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchPresented_Target }}</p>
+<p style="position:absolute;top:592px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:592px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:592px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:592px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPresented_QTY }}</p>
+<p style="position:absolute;top:592px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPresented_QLE }}</p>
+<p style="position:absolute;top:592px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPresented_T }}</p>
+<p style="position:absolute;top:592px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPresented_A }}</p>
+<p style="position:absolute;top:592px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ResearchPresented_Remarks }}</p>
 <p style="position:absolute;top:571px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:632px;left:54px;white-space:nowrap" class="ft24">d)&#160;Research&#160;Published&#160;in&#160;Peer-<br/>reviewed&#160;Journals</p>
-<p style="position:absolute;top:653px;left:173px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:632px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:643px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchPublished_Target }}</p>
+<p style="position:absolute;top:643px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:643px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:643px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:643px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPublished_QTY }}</p>
+<p style="position:absolute;top:643px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPublished_QLE }}</p>
+<p style="position:absolute;top:643px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPublished_T }}</p>
+<p style="position:absolute;top:643px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchPublished_A }}</p>
+<p style="position:absolute;top:643px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ResearchPublished_Remarks }}</p>
 <p style="position:absolute;top:632px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:674px;left:54px;white-space:nowrap" class="ft24">e)&#160;&#160;Filed/Published/Approved&#160;<br/>Intellectual&#160;Property&#160;Rights</p>
-<p style="position:absolute;top:694px;left:234px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:674px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:683px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ApprovedIPRights_Target }}</p>
+<p style="position:absolute;top:683px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:683px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:683px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:683px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ApprovedIPRights_QTY }}</p>
+<p style="position:absolute;top:683px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ApprovedIPRights_QLE }}</p>
+<p style="position:absolute;top:683px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ApprovedIPRights_T }}</p>
+<p style="position:absolute;top:683px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ApprovedIPRights_A }}</p>
+<p style="position:absolute;top:683px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ApprovedIPRights_Remarks }}</p>
 <p style="position:absolute;top:674px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:715px;left:54px;white-space:nowrap" class="ft24">f)&#160;&#160;Research&#160;&#160;Utilized/Deployed&#160;<br/>through&#160;<br/>Commercialization/Extension/<br/>Policy</p>
-<p style="position:absolute;top:775px;left:93px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:715px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:715px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:715px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:747px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchUtilized_Target }}</p>
+<p style="position:absolute;top:747px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:747px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:747px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
 <p style="position:absolute;top:715px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:715px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:715px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
@@ -499,22 +503,22 @@
 <p style="position:absolute;top:796px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:796px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:796px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:796px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:796px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:796px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:796px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:796px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:747px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchUtilized_QTY }}</p>
+<p style="position:absolute;top:747px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchUtilized_QLE }}</p>
+<p style="position:absolute;top:747px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchUtilized_T }}</p>
+<p style="position:absolute;top:747px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ResearchUtilized_A }}</p>
+<p style="position:absolute;top:747px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ResearchUtilized_Remarks }}</p>
 <p style="position:absolute;top:796px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:817px;left:54px;white-space:nowrap" class="ft24">g)&#160;&#160;Number&#160;&#160;of&#160;&#160;citations&#160;&#160;in&#160;<br/>journals/books</p>
-<p style="position:absolute;top:837px;left:152px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:817px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:826px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.NumberOfCitations_Target }}</p>
+<p style="position:absolute;top:826px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:826px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:826px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:826px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.NumberOfCitations_QTY }}</p>
+<p style="position:absolute;top:826px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.NumberOfCitations_QLE }}</p>
+<p style="position:absolute;top:826px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.NumberOfCitations_T }}</p>
+<p style="position:absolute;top:826px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.NumberOfCitations_A }}</p>
+<p style="position:absolute;top:826px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.NumberOfCitations_Remarks }}</p>
 <p style="position:absolute;top:817px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:858px;left:119px;white-space:nowrap" class="ft22"><i>EXTENSION</i></p>
 <p style="position:absolute;top:858px;left:193px;white-space:nowrap" class="ft23"><i>&#160;</i></p>
@@ -542,52 +546,52 @@
 <p style="position:absolute;top:900px;left:101px;white-space:nowrap" class="ft20">Extension&#160;</p>
 <p style="position:absolute;top:900px;left:201px;white-space:nowrap" class="ft20">proposal&#160;</p>
 <p style="position:absolute;top:920px;left:54px;white-space:nowrap" class="ft20">submitted/activity&#160;conducted</p>
-<p style="position:absolute;top:920px;left:249px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:900px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:910px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.ExtensionProposalSubmitted_Target }}</p>
+<p style="position:absolute;top:910px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:910px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:910px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:910px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.ExtensionProposalSubmitted_QTY }}</p>
+<p style="position:absolute;top:910px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.ExtensionProposalSubmitted_QLE }}</p>
+<p style="position:absolute;top:910px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.ExtensionProposalSubmitted_T }}</p>
+<p style="position:absolute;top:910px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.ExtensionProposalSubmitted_A }}</p>
+<p style="position:absolute;top:910px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.ExtensionProposalSubmitted_Remarks }}</p>
 <p style="position:absolute;top:900px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:941px;left:54px;white-space:nowrap" class="ft24">b)&#160;&#160;Persons&#160;&#160;trained/provided&#160;<br/>with&#160;technical&#160;advise</p>
-<p style="position:absolute;top:961px;left:192px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:941px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:952px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.PersonTrained_Target }}</p>
+<p style="position:absolute;top:952px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:952px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:952px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:952px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrained_QTY }}</p>
+<p style="position:absolute;top:952px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrained_QLE }}</p>
+<p style="position:absolute;top:952px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrained_T }}</p>
+<p style="position:absolute;top:952px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrained_A }}</p>
+<p style="position:absolute;top:952px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.PersonTrained_Remarks }}</p>
 <p style="position:absolute;top:941px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:982px;left:54px;white-space:nowrap" class="ft24">c)&#160;&#160;Persons&#160;&#160;who&#160;&#160;avail&#160;&#160;the&#160;<br/>service&#160;&#160;who&#160;&#160;rated&#160;&#160;the&#160;&#160;service&#160;<br/>as&#160;good&#160;or&#160;better</p>
-<p style="position:absolute;top:1022px;left:169px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:982px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:1003px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.PersonAvailedRatedGood_Target }}</p>
+<p style="position:absolute;top:1003px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:1003px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1003px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1003px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonAvailedRatedGood_QTY }}</p>
+<p style="position:absolute;top:1003px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonAvailedRatedGood_QLE }}</p>
+<p style="position:absolute;top:1003px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonAvailedRatedGood_T }}</p>
+<p style="position:absolute;top:1003px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonAvailedRatedGood_A }}</p>
+<p style="position:absolute;top:1003px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.PersonAvailedRatedGood_Remarks }}</p>
 <p style="position:absolute;top:982px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 <p style="position:absolute;top:1043px;left:54px;white-space:nowrap" class="ft24">d)&#160;&#160;Persons&#160;&#160;given&#160;&#160;training&#160;&#160;or&#160;<br/>advisory&#160;</p>
 <p style="position:absolute;top:1063px;left:130px;white-space:nowrap" class="ft20">who&#160;</p>
 <p style="position:absolute;top:1063px;left:180px;white-space:nowrap" class="ft20">rated&#160;</p>
 <p style="position:absolute;top:1063px;left:237px;white-space:nowrap" class="ft20">the&#160;</p>
 <p style="position:absolute;top:1083px;left:54px;white-space:nowrap" class="ft24">timeliness&#160;&#160;of&#160;&#160;service&#160;&#160;delivery&#160;<br/>as&#160;good&#160;or&#160;better</p>
-<p style="position:absolute;top:1104px;left:169px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:275px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:339px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:456px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:551px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:651px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:700px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:736px;white-space:nowrap" class="ft21">&#160;</p>
-<p style="position:absolute;top:1043px;left:772px;white-space:nowrap" class="ft21">&#160;</p>
+<p style="position:absolute;top:1073px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.PersonTrainedRatedGood_Target }}</p>
+<p style="position:absolute;top:1073px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:1073px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1073px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:1073px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrainedRatedGood_QTY }}</p>
+<p style="position:absolute;top:1073px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrainedRatedGood_QLE }}</p>
+<p style="position:absolute;top:1073px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrainedRatedGood_T }}</p>
+<p style="position:absolute;top:1073px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.PersonTrainedRatedGood_A }}</p>
+<p style="position:absolute;top:1073px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.PersonTrainedRatedGood_Remarks }}</p>
 <p style="position:absolute;top:1043px;left:808px;white-space:nowrap" class="ft21">&#160;</p>
 </div>
 </body>
@@ -612,17 +616,17 @@
 </head>
 <body bgcolor="#A0A0A0" vlink="blue" link="blue">
 <div id="page3-div" style="position:relative;width:918px;height:1188px;">
-<img width="918" height="1188" src="{% static 'IPCR/target003.png' %} " alt="background image"/>
+<img width="918" height="1188" src="data:image/png;base64,{{ base64_string3 }}" alt="Image 3"/>
 <p style="position:absolute;top:58px;left:54px;white-space:nowrap" class="ft34">e)&#160;Technical&#160;advice&#160;responded&#160;<br/>within&#160;3&#160;days&#160;upon&#160;request</p>
-<p style="position:absolute;top:78px;left:234px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:58px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:69px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.TechnicalAdvice_Target }}</p>
+<p style="position:absolute;top:69px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:69px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:69px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:69px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.TechnicalAdvice_QTY }}</p>
+<p style="position:absolute;top:69px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.TechnicalAdvice_QLE }}</p>
+<p style="position:absolute;top:69px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.TechnicalAdvice_T }}</p>
+<p style="position:absolute;top:69px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.TechnicalAdvice_A }}</p>
+<p style="position:absolute;top:69px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.TechnicalAdvice_Remarks }}</p>
 <p style="position:absolute;top:58px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:99px;left:89px;white-space:nowrap" class="ft32"><i>SUPPORT&#160;FUNCTION</i></p>
 <p style="position:absolute;top:99px;left:223px;white-space:nowrap" class="ft33"><i>&#160;</i></p>
@@ -650,15 +654,15 @@
 <p style="position:absolute;top:120px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:120px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:161px;left:54px;white-space:nowrap" class="ft30">a)&#160;Accomplishment&#160;Report</p>
-<p style="position:absolute;top:161px;left:230px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:161px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:161px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.AccomplishmentReportDeligatedAssignment_Target }}</p>
+<p style="position:absolute;top:161px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:161px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:161px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:161px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReportDeligatedAssignment_QTY }}</p>
+<p style="position:absolute;top:161px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReportDeligatedAssignment_QLE }}</p>
+<p style="position:absolute;top:161px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReportDeligatedAssignment_T }}</p>
+<p style="position:absolute;top:161px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.AccomplishmentReportDeligatedAssignment_A }}</p>
+<p style="position:absolute;top:161px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.AccomplishmentReportDeligatedAssignment_Remarks }}</p>
 <p style="position:absolute;top:161px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:182px;left:54px;white-space:nowrap" class="ft34">11.&#160;&#160;Participate&#160;&#160;in&#160;&#160;the&#160;&#160;Flag&#160;<br/>Raising&#160;Ceremony</p>
 <p style="position:absolute;top:202px;left:173px;white-space:nowrap" class="ft31">&#160;</p>
@@ -672,15 +676,15 @@
 <p style="position:absolute;top:182px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:182px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:223px;left:54px;white-space:nowrap" class="ft30">a)&#160;Attendance</p>
-<p style="position:absolute;top:223px;left:147px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:223px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:223px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.FlagRaisingAttendance_Target }}</p>
+<p style="position:absolute;top:223px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:223px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:223px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:223px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagRaisingAttendance_QTY }}</p>
+<p style="position:absolute;top:223px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagRaisingAttendance_QLE }}</p>
+<p style="position:absolute;top:223px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagRaisingAttendance_T }}</p>
+<p style="position:absolute;top:223px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagRaisingAttendance_A }}</p>
+<p style="position:absolute;top:223px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.FlagRaisingAttendance_Remarks }}</p>
 <p style="position:absolute;top:223px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:244px;left:54px;white-space:nowrap" class="ft34">12.&#160;&#160;Participate&#160;&#160;in&#160;&#160;the&#160;&#160;Flag&#160;<br/>lowering</p>
 <p style="position:absolute;top:264px;left:112px;white-space:nowrap" class="ft31">&#160;</p>
@@ -694,15 +698,15 @@
 <p style="position:absolute;top:244px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:244px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:285px;left:54px;white-space:nowrap" class="ft30">a)&#160;Attendance</p>
-<p style="position:absolute;top:285px;left:147px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:285px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:285px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.FlagLoweringAttendance_Target }}</p>
+<p style="position:absolute;top:285px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:285px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:285px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:285px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagLoweringAttendance_QTY }}</p>
+<p style="position:absolute;top:285px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagLoweringAttendance_QLE }}</p>
+<p style="position:absolute;top:285px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagLoweringAttendance_T }}</p>
+<p style="position:absolute;top:285px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.FlagLoweringAttendance_A }}</p>
+<p style="position:absolute;top:285px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.FlagLoweringAttendance_Remarks }}</p>
 <p style="position:absolute;top:285px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:306px;left:54px;white-space:nowrap" class="ft34">13.&#160;&#160;Participate&#160;&#160;in&#160;&#160;the&#160;&#160;health&#160;<br/>and&#160;wellness&#160;program</p>
 <p style="position:absolute;top:326px;left:200px;white-space:nowrap" class="ft31">&#160;</p>
@@ -716,15 +720,15 @@
 <p style="position:absolute;top:306px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:306px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:347px;left:54px;white-space:nowrap" class="ft34">a)&#160;&#160;Attendance&#160;&#160;sheet/Program&#160;<br/>of&#160;&#160;activities/other&#160;&#160;document&#160;<br/>as&#160;proof</p>
-<p style="position:absolute;top:387px;left:108px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:347px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:368px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.WellnessProgramAttendance_Target }}</p>
+<p style="position:absolute;top:368px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:368px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:368px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:368px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.WellnessProgramAttendance_QTY }}</p>
+<p style="position:absolute;top:368px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.WellnessProgramAttendance_QLE }}</p>
+<p style="position:absolute;top:368px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.WellnessProgramAttendance_T }}</p>
+<p style="position:absolute;top:368px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.WellnessProgramAttendance_A }}</p>
+<p style="position:absolute;top:368px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.WellnessProgramAttendance_Remarks }}</p>
 <p style="position:absolute;top:347px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:408px;left:54px;white-space:nowrap" class="ft34">14.&#160;&#160;Participate&#160;&#160;in&#160;&#160;school&#160;<br/>celebrations&#160;&#160;and&#160;&#160;other&#160;&#160;allied&#160;<br/>activities</p>
 <p style="position:absolute;top:448px;left:112px;white-space:nowrap" class="ft31">&#160;</p>
@@ -738,15 +742,15 @@
 <p style="position:absolute;top:408px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:408px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:469px;left:54px;white-space:nowrap" class="ft34">a)&#160;&#160;Attendance&#160;&#160;sheet/Program&#160;<br/>of&#160;&#160;activities/other&#160;&#160;document&#160;<br/>as&#160;proof</p>
-<p style="position:absolute;top:509px;left:108px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:469px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:490px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.SchoolCelebrationAttendance_Target }}</p>
+<p style="position:absolute;top:490px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:490px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:490px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:490px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.SchoolCelebrationAttendance_QTY }}</p>
+<p style="position:absolute;top:490px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.SchoolCelebrationAttendance_QLE }}</p>
+<p style="position:absolute;top:490px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.SchoolCelebrationAttendance_T }}</p>
+<p style="position:absolute;top:490px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.SchoolCelebrationAttendance_A }}</p>
+<p style="position:absolute;top:490px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.SchoolCelebrationAttendance_Remarks }}</p>
 <p style="position:absolute;top:469px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:530px;left:54px;white-space:nowrap" class="ft30">15.&#160;</p>
 <p style="position:absolute;top:530px;left:115px;white-space:nowrap" class="ft30">Attend&#160;</p>
@@ -766,15 +770,15 @@
 <p style="position:absolute;top:612px;left:142px;white-space:nowrap" class="ft30">of&#160;</p>
 <p style="position:absolute;top:612px;left:177px;white-space:nowrap" class="ft30">attendance/&#160;</p>
 <p style="position:absolute;top:632px;left:54px;white-space:nowrap" class="ft30">participation</p>
-<p style="position:absolute;top:632px;left:138px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:571px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:605px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.TrainingAttendance_Target }}</p>
+<p style="position:absolute;top:605px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:605px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:605px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:605px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.TrainingAttendance_QTY }}</p>
+<p style="position:absolute;top:605px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.TrainingAttendance_QLE }}</p>
+<p style="position:absolute;top:605px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.TrainingAttendance_T }}</p>
+<p style="position:absolute;top:605px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.TrainingAttendance_A }}</p>
+<p style="position:absolute;top:605px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.TrainingAttendance_Remarks }}</p>
 <p style="position:absolute;top:571px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:653px;left:54px;white-space:nowrap" class="ft30">16.&#160;Attend&#160;Faculty&#160;Meeting</p>
 <p style="position:absolute;top:653px;left:234px;white-space:nowrap" class="ft31">&#160;</p>
@@ -788,15 +792,15 @@
 <p style="position:absolute;top:653px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:653px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:674px;left:54px;white-space:nowrap" class="ft30">a)&#160;Attendance</p>
-<p style="position:absolute;top:674px;left:147px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:674px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:674px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.FacultyMeetingAttendance_Target }}</p>
+<p style="position:absolute;top:674px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:674px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:674px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:674px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.FacultyMeetingAttendance_QTY }}</p>
+<p style="position:absolute;top:674px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.FacultyMeetingAttendance_QLE }}</p>
+<p style="position:absolute;top:674px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.FacultyMeetingAttendance_T }}</p>
+<p style="position:absolute;top:674px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.FacultyMeetingAttendance_A }}</p>
+<p style="position:absolute;top:674px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.FacultyMeetingAttendance_Remarks }}</p>
 <p style="position:absolute;top:674px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:695px;left:54px;white-space:nowrap" class="ft30">17.&#160;</p>
 <p style="position:absolute;top:695px;left:119px;white-space:nowrap" class="ft30">Involvement&#160;</p>
@@ -813,15 +817,15 @@
 <p style="position:absolute;top:695px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:695px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:756px;left:54px;white-space:nowrap" class="ft30">a)&#160;Attendance</p>
-<p style="position:absolute;top:756px;left:147px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:756px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:756px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.AccreditationAttendance_Target }}</p>
+<p style="position:absolute;top:756px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:756px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:756px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:756px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.AccreditationAttendance_QTY }}</p>
+<p style="position:absolute;top:756px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.AccreditationAttendance_QLE }}</p>
+<p style="position:absolute;top:756px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.AccreditationAttendance_T }}</p>
+<p style="position:absolute;top:756px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.AccreditationAttendance_A }}</p>
+<p style="position:absolute;top:756px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.AccreditationAttendance_Remarks }}</p>
 <p style="position:absolute;top:756px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:777px;left:54px;white-space:nowrap" class="ft34">18.&#160;&#160;Participate&#160;&#160;in&#160;&#160;the&#160;&#160;spiritual&#160;<br/>activities</p>
 <p style="position:absolute;top:797px;left:112px;white-space:nowrap" class="ft31">&#160;</p>
@@ -835,15 +839,15 @@
 <p style="position:absolute;top:777px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:777px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:818px;left:54px;white-space:nowrap" class="ft34">a)&#160;&#160;Attendance&#160;&#160;sheet/Program&#160;<br/>of&#160;&#160;activities/other&#160;&#160;document&#160;<br/>as&#160;proof</p>
-<p style="position:absolute;top:858px;left:108px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:275px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:339px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:456px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:551px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:651px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:700px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:736px;white-space:nowrap" class="ft31">&#160;</p>
-<p style="position:absolute;top:818px;left:772px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:837px;left:290px;white-space:nowrap" class="ft10">&#160;{{ data.SpiritualActivityAttendance_Target }}</p>
+<p style="position:absolute;top:837px;left:373px;white-space:nowrap" class="ft10">&#160;{{ data.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:837px;left:450px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Deadline|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:837px;left:550px;white-space:nowrap" class="ft10">&#160;{{ data.IPCR_Submitted|date:"m-d-Y" }}</p>
+<p style="position:absolute;top:837px;left:656px;white-space:nowrap" class="ft10">&#160;{{ data3.SpiritualActivityAttendance_QTY }}</p>
+<p style="position:absolute;top:837px;left:698px;white-space:nowrap" class="ft10">&#160;{{ data3.SpiritualActivityAttendance_QLE }}</p>
+<p style="position:absolute;top:837px;left:738px;white-space:nowrap" class="ft10">&#160;{{ data3.SpiritualActivityAttendance_T }}</p>
+<p style="position:absolute;top:837px;left:774px;white-space:nowrap" class="ft10">&#160;{{ data3.SpiritualActivityAttendance_A }}</p>
+<p style="position:absolute;top:837px;left:800px;white-space:nowrap" class="ft10">&#160;{{ data2.SpiritualActivityAttendance_Remarks }}</p>
 <p style="position:absolute;top:818px;left:808px;white-space:nowrap" class="ft31">&#160;</p>
 <p style="position:absolute;top:879px;left:60px;white-space:nowrap" class="ft32"><i>ADMINISTRATIVE&#160;FUNCTIONS</i></p>
 <p style="position:absolute;top:879px;left:252px;white-space:nowrap" class="ft33"><i>&#160;</i></p>
@@ -927,7 +931,7 @@
 </head>
 <body bgcolor="#A0A0A0" vlink="blue" link="blue">
 <div id="page4-div" style="position:relative;width:918px;height:1188px;">
-<img width="918" height="1188" src="{% static 'IPCR/target004.png' %} " alt="background image"/>
+<img width="918" height="1188" src="data:image/png;base64,{{ base64_string4 }}" alt="Image 4"/>
 <p style="position:absolute;top:58px;left:651px;white-space:nowrap" class="ft40">&#160;</p>
 <p style="position:absolute;top:79px;left:54px;white-space:nowrap" class="ft41">Discussed&#160;with:&#160;<br/>&#160;</p>
 <p style="position:absolute;top:119px;left:130px;white-space:nowrap" class="ft40">Name&#160;</p>
