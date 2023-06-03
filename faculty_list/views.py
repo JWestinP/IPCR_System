@@ -5,6 +5,7 @@ from django.contrib.auth.models import User, Group
 from home.decorators import allowed_users
 from django.db.models import Q
 from django.contrib.auth import get_user_model
+from datetime import date, datetime
 
 User = get_user_model()
 
@@ -104,6 +105,8 @@ def IPCR_Remarks_Create(request, user_id):
         last_name = user.last_name
         forms.instance.reviewer = f"{first_name} {last_name}"
         forms.instance.author = selected_user
+        forms.instance.IPCR_Submitted = datetime.now().date()
+
         
         if forms.is_valid():
             model_instance = forms.save(commit=False)
