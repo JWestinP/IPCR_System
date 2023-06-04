@@ -1,13 +1,48 @@
-<h1>dashboard</h1>
-<button><a href="{% url 'logout' %}">logout</a></button>
-<button><a href="{% url 'IPCR_Form' %}">IPCR_Form</a></button>
-<button><a href="{% url 'download' %}">download</a></button>
-<button><a href="{% url 'member_home' %}">home</a></button>
-<button><a href="{% url 'member_faculty_list' %}">faculty list</a></button>
-<button><a href="{% url 'member_notification' %}">notification</a></button>
-<button><a href="{% url 'settings' %}">settings</a></button>
+<html>
+    <head>
+    {% load static %}
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="dashboard/style.css">
+    <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'dashboard/style.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+    <div class="title"> 
+        <div class = "lspu_bg">
+            <img src="{% static 'home/img/background.png' %} "class="center" >
+        </div>
+        <div class = "white_bg"></div>
+        <div class = "lspu_header"> 
+            <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+    </div>
+    <div class = "avatar_bg"></div>
+    <div class = "avatar">
+        <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+    <div class = "acc_name_bg"></div>
+    <div class = "acc_name_placeholder">Account name </div>
+    <div class = "home_bg"></div>
+    <div class ="logout_bg">
+        <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+<section class ="menu" id="menu">
+	<div class ="menu_home"></div>
+	<button class ="home">Home</div>
+	<button class="home_ipcr"><a href="{% url 'IPCR_Form' %}">IPCR</a></button> 
+	<button class="home_downloads"><a href="{% url 'download' %}">Downloads</a></button>
+	<button class="home_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+	<button class="home_faculty_list"><a href="{% url 'member_faculty_list' %}">Faculty List</a></button>
+	<button class="home_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
+	<button class="home_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+</section>
 
-<head>
+	<div class="card"></div>
+	<div class="cardii"></div>
+	<div class="cardtext"></div>
+	<div class="cardtexti"></div>
+	<div class="cardtextii"></div>
 <meta charset="utf-8">
 <title>Dashboard</title>
 <!-- Latest compiled and minified CSS -->
@@ -21,17 +56,21 @@
 
 
 
-</head>
-
+<h1 class="linetext">IPCR COMPLETED</h1>
+<h1 class="bartext">RESEARCH PUBLISHED</h1>
 <body class="container-fluid">
-<center class="row">
+<div>
+	<center class="textdash">
 	<h1>COLLEGE RESEARCH RANKING</h1>
 </center>
+</div>
 <hr />
-<div class="row">
+<div class="rowline">
 	<div class="col-md-6">
 	<canvas id="myChartline"></canvas>
-	</div>
+	</div>	
+</div>
+	<div class="rowbar">
 	<div class="col-md-6">
 	<canvas id="myChartBar"></canvas>
 	</div>
@@ -40,7 +79,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-<script>
+<script class="dashboardViewer">
 
 	
 	var endpoint = '/api';
@@ -73,7 +112,7 @@
 		labels: labels,
 		datasets: [{
 			label: chartLabel,
-			backgroundColor: 'rgb(255, 100, 200)',
+			backgroundColor: 'rgb(0, 150, 255)',
 			borderColor: 'rgb(55, 99, 132)',
 			data: chartdata,
 		}]
@@ -112,7 +151,7 @@
 			'rgba(255, 99, 132, 0.2)',
 			'rgba(54, 162, 235, 0.2)',
 			'rgba(255, 206, 86, 0.2)',
-			'rgba(75, 192, 192, 0.2)',
+			'rgba(0, 150, 250, 0.2)',
 			'rgba(153, 102, 255, 0.2)',
 			'rgba(255, 159, 64, 0.2)'
 			],
@@ -125,6 +164,7 @@
 			'rgba(255, 159, 64, 1)'
 			],
 			borderWidth: 1
+			
 		}]
 		},
 		options: {
@@ -138,9 +178,9 @@
 		}
 	});
 	}
+
 </script>
 </body>
-
 </html>
-
+</head>
 

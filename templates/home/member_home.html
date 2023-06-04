@@ -3,7 +3,7 @@
     {% load static %}
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type = "text/css" href="css/style.css">
+    <link rel="stylesheet" type = "text/css" href="css/home/style.css">
     <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,9 +54,24 @@
         <div class="dashboard_banner_image"><img src="{% static 'home/img/dashboard_banner_image.png' %}"></div>
         <button class="dashboard_button"><b href = "{% url 'dashboard' %}">Dashboard</b></button>
     </section>
+
     <section class = "faq_banner" id="faq_banner">
         <div class="faq_banner_box"></div>
         <div class="faq_banner_title">FAQ's</div>
+        <div class="faq_banner_question1">1. How do I create an account?</div>
+            <div class="faq_banner_answer1"> <ul><li>You can’t create an account, the email and password will be provided by the organization for security purposes. </li></ul></div>
+        <div class="faq_banner_question2">2. How do I change my password?</div>
+            <div class="faq_banner_answer2"> <ul><li>You can change the password by clicking the forgot password button, then a reset password link will be sent to the email provided by the organization. </li></ul></div>
+        <div class="faq_banner_question3">3. How do I update my personal information in the system?</div>
+            <div class="faq_banner_answer3"> <ul><li>After opening the system, there will be a setting icon on the upper right of the screen, click that button then you will see another button for editing your profile information. </li></ul></div>
+        <div class="faq_banner_question4">4. Can I view and manage my IPCR status and history?</div>
+            <div class="faq_banner_answer4"> <ul><li>Yes, you can see your IPCR’s status and history, all of your forms from the recent school years will be saved if you submit it here. </li></ul></div>
+        <div class="faq_banner_question5">5. Can I search for and view other members' IPCR form?</div>
+            <div class="faq_banner_answer5"> <ul><li>This feature will only be available for deans/ admin. </li></ul></div>
+        <div class="faq_banner_question6">6. Where can I find my forms?</div>
+            <div class="faq_banner_answer6"> <ul><li>You can find all your saved documents in the download tab. </li></ul></div>
+
+     </section>
         
 
 

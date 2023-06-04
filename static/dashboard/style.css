@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
     overflow-y : scroll;
 } 
+
 .lspu_bg{
     box-sizing: border-box;
     opacity : 0.3;
@@ -156,8 +157,8 @@ b:active{
     font-family:'Inter';
     font-style: normal;
     font-weight: 700;
+    color:white;
     position: absolute;
-    color : white;
     width: 147px;
     height: 35px;
     left: 389px;
@@ -241,179 +242,21 @@ b:active{
     text-align: center;
     color: #FFFFFF;
 }
-.faq_banner_question1{
+.faq_banner_content{
     position: absolute;
     width: 705px;
     height: 549px;
-    left: 920px;
-    top: 415px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 19px;
-    color: #ffffff;
-    text-align : left;
-}
-
-.faq_banner_answer1{
-    position: absolute;
-    width: 690px;
-    height: 549px;
-    left: 920px;
-    top: 435px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 19px;
-    color: #3d3558;
-    text-align : left;
-}
-.faq_banner_question2{
-    position: absolute;
-    width: 705px;
-    height: 549px;
-    left: 920px;
+    left: 906px;
     top: 500px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 19px;
-    color: #ffffff;
-    text-align : left;
+    color: #000000;
+    text-align : center;
 }
 
-.faq_banner_answer2{
-    position: absolute;
-    width: 690px;
-    height: 549px;
-    left: 920px;
-    top: 515px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 19px;
-    color: #3d3558;
-    text-align : left;
-}
-.faq_banner_question3{
-    position: absolute;
-    width: 705px;
-    height: 549px;
-    left: 920px;
-    top: 580px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 19px;
-    color: #ffffff;
-    text-align : left;
-}
-
-.faq_banner_answer3{
-    position: absolute;
-    width: 690px;
-    height: 549px;
-    left: 920px;
-    top: 595px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 19px;
-    color: #3d3558;
-    text-align : left;
-}
-.faq_banner_question4{
-    position: absolute;
-    width: 705px;
-    height: 549px;
-    left: 920px;
-    top: 660px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 19px;
-    color: #ffffff;
-    text-align : left;
-}
-
-.faq_banner_answer4{
-    position: absolute;
-    width: 690px;
-    height: 549px;
-    left: 920px;
-    top: 675px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 19px;
-    color: #3d3558;
-    text-align : left;
-}
-.faq_banner_question5{
-    position: absolute;
-    width: 705px;
-    height: 549px;
-    left: 920px;
-    top: 740px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 19px;
-    color: #ffffff;
-    text-align : left;
-}
-.faq_banner_answer5{
-    position: absolute;
-    width: 690px;
-    height: 549px;
-    left: 920px;
-    top: 755px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 19px;
-    color: #3d3558;
-    text-align : left;
-}
-
-.faq_banner_question6{
-    position: absolute;
-    width: 705px;
-    height: 549px;
-    left: 920px;
-    top: 810px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 19px;
-    color: #ffffff;
-    text-align : left;
-}
-.faq_banner_answer6{
-    position: absolute;
-    width: 690px;
-    height: 549px;
-    left: 920px;
-    top: 825px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    line-height: 19px;
-    color: #3d3558;
-    text-align : left;
-}
 /*Menu_member */
 
 
@@ -423,8 +266,7 @@ b:active{
     width: 172px;
     height: 42px;
     left: 296px;
-    top: 273px;
-    background: #3F6DEB;
+    top: 23px;
     opacity: 0.4;
     border-radius: 18px;
 }
@@ -486,6 +328,7 @@ b:active{
     width: 172px;
     height: 42px;
     position: absolute;
+    background: #3F6DEB;
     left: 920px;
     top: 273px;
     background: #7a7979;
@@ -664,4 +507,88 @@ b:active{
     left: 1120px;
     top: 279px;
     }
-
+.rowline{
+    position: absolute;
+    top: 560px;
+    width: 1200px;
+    left: 350px;
+    line-height: 50px;
+}
+.rowbar{
+    position: absolute;
+    top: 560px;
+    width: 1200px;
+    left: 978px;
+    line-height: 50px;
+}
+.textdash{
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 100px;
+    top: 350px;
+    width: 1200px;
+    left: 340px;
+    
+}
+.card{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    left: 348px;
+    top: 550px;
+    border-radius: 18px;
+    background: #FFFFFF;
+}
+.cardii{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    left: 978px;
+    top: 550px;
+    border-radius: 18px;
+    background: #FFFFFF;
+}
+.linetext{
+    position: absolute;
+    color: #FFFFFF;
+    font-family: inter;
+    top: 480px;
+    left: 500px;
+}
+.bartext{
+    position: absolute;
+    color: #FFFFFF;
+    font-family: inter;
+    top: 480px;
+    left: 1090px;
+}
+.cardtext{
+    width: 350px;
+    height: 45px;
+    position: absolute;
+    left: 480px;
+    top: 495px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+.cardtexti{
+    width: 435px;
+    height: 45px;
+    position: absolute;
+    left: 1071px;
+    top: 496px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+.cardtextii{
+    width: 590px;
+    height: 45px;
+    position: absolute;
+    left: 645px;
+    top: 365px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}

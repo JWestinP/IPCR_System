@@ -1,30 +1,89 @@
-<h1>member_faculty_list</h1>
-<button><a href="{% url 'logout' %}">logout</a></button>
-<button><a href="{% url 'IPCR_Form' %}">IPCR_Form</a></button>
-<button><a href="{% url 'download' %}">download</a></button>
-<button><a href="{% url 'member_home' %}">home</a></button>
-<button><a href="{% url 'dashboard' %}">dashboard</a></button>
-<button><a href="{% url 'member_notification' %}">notification</a></button>
-<button><a href="{% url 'settings' %}">settings</a></button>
+<html>
+    <head>
+    {% load static %}
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="css/faculty_list/style.css">
+    <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'faculty_list/style.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+    <div class="title"> 
+        <div class = "lspu_bg">
+            <img src="{% static 'home/img/background.png' %} "class="center" >
+        </div>
+        <div class = "white_bg"></div>
+        <div class = "lspu_header"> 
+            <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+    </div>
+    <div class = "avatar_bg"></div>
+    <div class = "avatar">
+        <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+    <div class = "acc_name_bg"></div>
+    <div class = "acc_name_placeholder">{{ user.get_full_name }}</div>
+    <div class = "home_bg"></div>
+    <div class ="logout_bg">
+        <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+    </head>  
 
+ 
+<section class ="faculty_list_menu" id="faculty_list_menu">
+    <button class="faculty_list_home"><a href="{% url 'member_home' %}"">Home</a></button> 
+    <button class="faculty_list_ipcr"><a href="{% url 'IPCR_Form' %}">IPCR</a></button> 
+    <button class="faculty_list_downloads"><a href="{% url 'download' %}">Downloads</a></button>
+    <button class="faculty_list_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+      <div class ="faculty_list_faculty_list"></div>
+      <div class ="faculty_list">Faculty List</div>
+    <button class="faculty_list_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
+    <button class="faculty_list_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+</section>
+
+<section class ="faculty_list_search">
+  <h1 class="FacultyList">Faculty List: </h1>
+<hr>
+<div class="verticalLine"></div>
 <form method="GET">
-  <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
-  <button type="submit">Search</button>
+   <div class="wrap">
+      <div class="search">
+         <input type="text" class="searchTerm" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+         <button type="submit" class="searchButton">Search</button>
+         
+      </div>
+      <h1 class="FacultyList_dean">Dean</h1>
+   </div>
 </form>
 
-<ul>
-    {% for user in matching_users.distinct %}
-      <li>
-        <a href="{% url 'member_faculty_list' user_id=user.id%}">{{ user.get_full_name }}</a>
-      </li>
-    {% endfor %}
-</ul>
+<section class = "faculty_list_member">
+  <h1>Members: </h1>
+    <ul >
+      
+      {% for user in matching_users.distinct %}
+        <li>
+          <a href="{% url 'member_faculty_list' user_id=user.id%}">{{ user.get_full_name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+</section>
 
-{% if selected_user %}
-  <div>
-    <h3>User Details</h3>
-    <p>Username: {{ selected_user.username }}</p>
-    <p>Full Name: {{ selected_user.get_full_name }}</p>
-    <p>Email: {{ selected_user.email }}</p>
-  </div>
-{% endif %}
+<section class = "faculty_list_userinfo">
+      {% if selected_user %}
+        <div>
+          <h3>User Details</h3>
+          <p>Username: {{ selected_user.username }}</p>
+          <p>Full Name: {{ selected_user.get_full_name }}</p>
+          <p>Email: {{ selected_user.email }}</p>
+        </div>
+      {% endif %}
+</section>
+</section>
+
+
+
+
+
+
+
+

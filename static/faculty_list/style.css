@@ -1,0 +1,389 @@
+
+body {
+    line-height:1;
+    height: 100%;
+    width : 100%;
+    min-height : 100vh;
+    background: linear-gradient(179.82deg, #5C85B3 -3.97%, #451212 111.83%);
+    margin: 0; 
+    overflow-x: hidden;
+    overflow-y : scroll;
+} 
+.lspu_bg{
+    box-sizing: border-box;
+    opacity : 0.3;
+    background: linear-gradient(180deg, #5C85B3 0%, #ED353D 95.93%, rgba(179, 92, 92, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-repeat: no-repeat;
+} 
+.white_bg {
+    position: absolute;
+    width: 1179px;
+    height: 147px;
+    left: 262px;
+    top: 54px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    border-radius: 18px;
+}
+.lspu_header{
+    position: absolute;
+    width: 1155px;
+    height: 125px;
+    left: 274px;
+    top: 67px;
+} 
+.avatar_bg {
+    position: absolute;
+    width: 119px;
+    height: 114px;
+    left: 1525px;
+    top: 54px;
+    background: #282525;
+    border-radius : 100px;
+  }
+.avatar{
+    position: absolute;
+    width: 53px;
+    height: 61px;
+    left: 1558px;
+    top: 80px;
+        
+}
+.acc_name_bg{
+    position: absolute;
+    width: 153px;
+    height: 30px;
+    left: 1508px;
+    top: 178px;
+    background: #282525;
+    border-radius: 7px; 
+}
+.acc_name_placeholder{
+    position: absolute;
+    width: 117px;
+    height: 20px;
+    left: 1526px;
+    top: 183px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+.Home_bg {
+    position: absolute;
+    width: 1399px;
+    height: 699px;
+    left: 262px;
+    top: 244px;
+    background: #282525;
+    box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 18px; 
+}
+a:link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    display: block;
+}
+a:active {
+    color: black;
+  }
+b:link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    display: block;
+}
+b:active{
+    color: rgb(0, 0, 0);
+}
+
+.logout{
+    font-family:'Inter';
+    font-style: italic;
+    font-weight: 700;
+    width: 153px;
+    height: 30px;
+    position: absolute;
+    left: 1508px;
+    top: 20px;
+    background: #282525;
+    margin-bottom: 20px;
+    margin-top: 190px;
+    border-radius: 7px;
+    border : 0px solid;
+}
+/*Menu_member */
+.faculty_list_home{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 296px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+   
+}
+.faculty_list_home:hover{
+    background-color: #5C85B3;
+}
+
+.faculty_list_ipcr{
+    font-family:'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 504px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;
+}
+.faculty_list_ipcr:hover{
+    background-color: #5C85B3; 
+}
+.faculty_list_downloads{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 712px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid; 
+   
+}
+.faculty_list_downloads:hover{
+    background-color: #5C85B3;
+}
+.faculty_list_dashboard{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 920px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid; 
+    
+}
+.home_dashboard:hover{
+    background-color: #5C85B3;
+}
+
+
+.faculty_list_faculty_list{
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 1128px;
+    top: 273px;
+    background: #3F6DEB;
+    opacity: 0.4;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+.faculty_list{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 139px;
+    height: 20px;
+    left: 1144px;
+    top: 285px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 19px;
+    border-radius: 18px;
+    border : 0px solid;   
+}
+.faculty_list_notifications{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 1336px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;   
+}
+.faculty_list_notifications:hover{
+    background-color: #5C85B3;
+}
+.faculty_list_settings {
+    
+    font-weight: 700;
+    font-size: 16px;
+    width: 60px;
+    height: 42px;
+    position: absolute;
+    left: 1544px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+.faculty_list_settings:hover{
+    background-color: #5C85B3;
+}
+
+
+
+/* Faculty list labels */
+.FacultyList{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.FacultyList_dean{
+    top: 120px;
+    left: 213px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.faculty_list_member{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    top: 225px;
+    left: 16px;
+    color: #FFFFFF;
+}
+.faculty_list_userinfo{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    top: 100px;
+    right: 600px;
+    color: #FFFFFF;
+}
+/* Horizontal and vertical line */
+  hr {
+    height:5px;
+    width: 1295px;
+    margin-left: 0;
+    border-width:0;
+    background-color:#ffffff;
+  }
+  .verticalLine {
+    height: 500px;
+    border-left: 5px solid #ffffff;
+    position: absolute;
+    right: 900px;
+    box-sizing: border-box;
+  }
+  /*Search Bar */
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #7a7979;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus {
+    color: #1e1f1f;
+  }
+  
+  .searchButton {
+    width: 80px;
+    height: 36px;
+    border: 1px solid #7a7979;
+    background: #7a7979;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  
+  .wrap {
+    width: 30%;
+    position: absolute;
+    top: 100px;
+    left: 15px;
+  }
+  
+  .faculty_list_search {
+    background-color: #e9e9e9;
+  }
+  
+  .faculty_list_search {
+    float: left;
+    display: block;
+    color: rgb(248, 245, 245);
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    position: absolute;
+    left: 292px;
+    top: 320px;
+    border-radius: 0px 0px 0px 0px;
+    background: #282525;
+  }
+  
+  .faculty_list_search_input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    position: absolute;
+    width: 300px;
+    height: 16px;
+    left: 292px;
+    top: 375px;
+    border-radius: 18px 18px 18px 18px;
+    background: #6991BB
+  }
+  
+  .faculty_list_search_input:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
