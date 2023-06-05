@@ -1507,15 +1507,39 @@ a:active {
     color:white;
     width: 172px;
     height: 42px;
-    left: 1400px;
-    top: 3155px;
+    left: 1100px;
+    top: 2920px;
     background: #5C85B3;
     border-radius: 18px;
     border: 0px solid;
 }
 .submit:hover{
 background-color: #3F6DEB;
+}
+.submission{
+    
+    position: absolute;
+    font-family:'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color:white;
+    width: 172px;
+    height: 42px;
+    left: 600px;
+    top: 3170px;
+    background: #5C85B3;
+    border-radius: 18px;
+    border: 0px solid;
+}
+.submission:hover{
+background-color: #3F6DEB;
+}
 
+.submission_text{
+    position: absolute;
+    left: 580px;
+    top: 3130px;
 }
 /*SUBMIT */
 .quest{

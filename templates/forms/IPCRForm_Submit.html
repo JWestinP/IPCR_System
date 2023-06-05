@@ -11,7 +11,7 @@
   {% load static %}
   <meta charset = "utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type = "text/css" href="css/style.css">
+  <link rel="stylesheet" type = "text/css" href="static/IPCR/style.css">
   <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
   <div class = "avatar">
       <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
   <div class = "acc_name_bg"></div>
-  <div class = "acc_name_placeholder">Account name </div>
+  <div class = "acc_name_placeholder">{{ current_user.get_full_name }}</div>
   <div class ="logout_bg">
       <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
   </head>
@@ -152,12 +152,11 @@
               <div class="form-field-container">
             {% endif %}
           {% endfor %}
-          
         </div>
         <button class="submit">Save</button>
-       
-        
       </form></div>
+      <h4 class="submission_text">Do you want to submit your form?</h4>
+      <button class="submission"><a href="{% url 'IPCR_Form_Submit' %}">Submit</a></button>
       <section class ="ipcr_menu" id="ipcr_menu">
         <!-- <div class ="ipcr_home"></div> -->
              <button class="ipcr_home"><a href="{% url 'member_home' %}">Home</a></button>
@@ -174,13 +173,9 @@
              <button class="ipcr_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
          <!--<div class ="menu_settings"></div>-->
              <button class="ipcr_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
-             <div class ="ipcr_ipcr_form"></div>
-             <div class ="ipcr_form">IPCR FORM</div>
-             <button class="ipcr_coachingform"><a href="{% url 'member_notification' %}">COACHING FORM</a></button>
-             <button class="ipcr_iptm_form"><a href="{% url 'member_notification' %}">IPTM FORM</a></button>
+
       </section>
    </body>
   
-   <!--Ate mina palagay neto sa baba-->
-   <h4>Do you want to submit your form?</h4>
-   <button><a href="{% url 'IPCR_Form_Submit' %}">Submit</a></button>
+
+   

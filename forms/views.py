@@ -17,6 +17,7 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Member'])
 def IPCR_Form(request):
+    current_user = request.user
     IPCRForm = modelform_factory(IPCR_Form_model, fields="__all__", exclude=['author', 'department', 'IPCR_Saved', 'IPCR_Deadline', 'approver'])
     current_date = datetime.now().date()
     current_year = datetime.now().year
@@ -42,6 +43,7 @@ def IPCR_Form(request):
     except IPCR_Form_model.DoesNotExist:
         existing_instance = None
 
+    #Conditional statements for checking the date and creating a new IPCR form if ever a specific date has passed
     if existing_instance:
         if current_date >= firstmidsem_date and current_date <= firstfinalsem_date:
             if existing_instance and existing_instance.IPCR_Saved and existing_instance.IPCR_Saved >= firstmidsem_date and existing_instance.IPCR_Saved <= firstfinalsem_date:
@@ -66,7 +68,8 @@ def IPCR_Form(request):
                 existing_instance = IPCR_Form_model.objects.filter(author=request.user).order_by('-IPCR_Saved').first()
             else:
                 existing_instance = None
-                
+    
+    #Instantiate the form for handling user input           
     if request.method == 'POST':
         forms = IPCRForm(request.POST, instance=existing_instance)
         if forms.is_valid():
@@ -95,6 +98,7 @@ def IPCR_Form(request):
                 
             model_instance.save()
             
+            #Handling the gathering of IPMT data
             try:
                 existing_instance = IPMT_Form_model.objects.filter(author=request.user).order_by('-IPCR_Saved').first()
             except IPMT_Form_model.DoesNotExist:
@@ -124,7 +128,8 @@ def IPCR_Form(request):
                         existing_instance = "Exists"
                     else:
                         existing_instance = None
-                    
+            
+            #Generate a new model instance for IPMT if it doesn't exist yet      
             if existing_instance == None:
                 source_instance = IPCR_Form_model.objects.filter(author=request.user).order_by('-IPCR_Saved').first()
                 destination_instance = IPMT_Form_model.objects.create(author = request.user)
@@ -167,6 +172,7 @@ def IPCR_Form(request):
                 
                 destination_instance.save()
             
+            #Getting the existing instance of IPMT and getting the total accomplished number per field
             else:
                 if current_date >= firstmidsem_date and current_date <= firstfinalsem_date:
                     firstmidterm_instance = IPMT_Form_model.objects.filter(author = request.user, IPCR_Saved__range=(firstmidsem_date, firstfinalsem_date))
@@ -328,6 +334,7 @@ def IPCR_Form(request):
                         total_SpiritualActivityAttendance = Sum('SpiritualActivityAttendance_Accomplished')
                     )    
                 
+                #Obtaining the new accomplished data for a new IPMT model instance
                 source_instance = IPCR_Form_model.objects.filter(author=request.user).order_by('-id').last()
                 destination_instance = IPMT_Form_model.objects.create(author = request.user) 
                 
@@ -378,13 +385,15 @@ def IPCR_Form(request):
         forms = IPCRForm(instance=existing_instance)
 
     context = {
-        'forms': forms
+        'forms': forms,
+        'current_user' : current_user,
     }
     return render(request, 'forms/IPCRForm_Submit.html', context)
 
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Member'])
 def IPCR_Form_Submit(request):
+    #This handles the submission of the user's IPCR form
     check_instance = IPCR_Form_model_submitted.objects.filter(author=request.user).order_by('-IPCR_Submitted').first()
     current_date = datetime.now().date()
     current_year = datetime.now().year
@@ -441,6 +450,7 @@ def IPCR_Form_Submit(request):
     return render(request, 'forms/IPCRForm_SubmitNow.html')
 
 def IPCR_Form_Submit_snip(request):
+    #The function for handling the submission of the user
     user = request.user
     first_name = user.first_name
     last_name = user.last_name

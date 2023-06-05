@@ -33,7 +33,8 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='forget_password/password_reset_complete.html'), name='password_reset_complete'),
     path('api-auth/', include('rest_framework.urls')),
     path('', views.HomeView.as_view()),
-    # path('test-api', views.get_data),
     path('api', views.ChartData.as_view()),
+    path('', views.HomeView2.as_view()),
+    path('api', views.ChartData2.as_view()),
 ]
 

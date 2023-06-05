@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from forms.forms import *
 from forms.models import *
 from django.contrib.auth.models import User, Group
@@ -15,9 +15,12 @@ User = get_user_model()
 @allowed_users(allowed_roles=['Member'])
 def member_faculty_list(request, user_id=None):
     current_user = request.user
+    admin_dean_group = Group.objects.get(name='Admin_Dean')
+
     current_user_groups = current_user.groups.all()
-    matching_users = User.objects.filter(groups__in=current_user_groups).exclude(id=current_user.id)
-    
+    department_dean = User.objects.filter(groups__in=current_user_groups).filter(groups=admin_dean_group)
+    matching_users = User.objects.filter(groups__in=current_user_groups).exclude(groups__name=admin_dean_group).exclude(id=current_user.id)
+
     selected_user = None
     
     query = request.GET.get('q')
@@ -27,19 +30,31 @@ def member_faculty_list(request, user_id=None):
     
     if query:
         matching_users = matching_users.filter(
-            Q(username__icontains=query) |  # Search by username (case-insensitive)
-            Q(first_name__icontains=query) |  # Search by first name (case-insensitive)
-            Q(last_name__icontains=query)  # Search by last name (case-insensitive)
+            Q(username__icontains=query) |  
+            Q(first_name__icontains=query) |  
+            Q(last_name__icontains=query) 
+        )
+        department_dean = department_dean.filter(
+            Q(username__icontains=query) |  
+            Q(first_name__icontains=query) |  
+            Q(last_name__icontains=query)  
         )
     
-    return render(request, 'faculty_list/member_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user})
+    return render(request, 'faculty_list/member_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user, 'department_dean' : department_dean})
 
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Admin_Dean', 'Admin_Director'])
 def admin_faculty_list(request, user_id=None):
     current_user = request.user
+    
+    if current_user.groups.filter(name='Admin_Director').exists():
+        return redirect('superadmin_faculty_list')
+    
+    admin_dean_group = Group.objects.get(name='Admin_Dean')
+
     current_user_groups = current_user.groups.all()
-    matching_users = User.objects.filter(groups__in=current_user_groups).exclude(id=current_user.id)
+    department_dean = User.objects.filter(groups__in=current_user_groups).filter(groups=admin_dean_group)
+    matching_users = User.objects.filter(groups__in=current_user_groups).exclude(groups__name=admin_dean_group).exclude(id=current_user.id)
     
     selected_user = None
     
@@ -54,37 +69,56 @@ def admin_faculty_list(request, user_id=None):
             Q(first_name__icontains=query) |  # Search by first name (case-insensitive)
             Q(last_name__icontains=query)  # Search by last name (case-insensitive)
         )
+        department_dean = department_dean.filter(
+            Q(username__icontains=query) |  
+            Q(first_name__icontains=query) |  
+            Q(last_name__icontains=query)  
+        )
         
     user_group_names = current_user.groups.values_list('name', flat=True)
 
-    return render(request, 'faculty_list/admin_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user, 'current_user' : current_user, 'user_group_names': user_group_names})
+    return render(request, 'faculty_list/admin_faculty_list.html', {'matching_users': matching_users, 'selected_user': selected_user, 'current_user' : current_user, 'user_group_names': user_group_names, 'department_dean' : department_dean})
 
 @login_required(login_url = 'login')
-@allowed_users(allowed_roles=['Superadmin'])
-def superadmin_faculty_list(request,  group_id=None, user_id=None):
+@allowed_users(allowed_roles=['Superadmin', 'Admin_Director'])
+def superadmin_faculty_list(request, group_id=None, user_id=None):
+    current_user = request.user
     groups = Group.objects.filter(name__icontains='faculty')
     selected_group = None
     users = None
     selected_user = None
     query = request.GET.get('q')
+    user_group_names = current_user.groups.values_list('name', flat=True)
+    admin_dean_group = Group.objects.get(name='Admin_Dean')
 
+    # Initialize the department_dean variable outside the if block
+    department_dean = None
+    
     if 'group_id' in request.GET:
         group_id = request.GET['group_id']
         if group_id:
             selected_group = get_object_or_404(Group, id=group_id)
-            users = User.objects.filter(groups=selected_group)
+            users = User.objects.filter(groups=selected_group).exclude(groups__name=admin_dean_group)
+            # Create a list containing the selected_group and pass it to the Q object
+            department_dean = User.objects.filter(groups=selected_group).filter(groups=admin_dean_group)
         else:
             selected_group = None
             users = User.objects.all()
 
         if query:
             users = users.filter(
-                Q(username__icontains=query) | Q(first_name__icontains=query) | Q(last_name__icontains=query)
+                Q(username__icontains=query) |
+                Q(first_name__icontains=query) |
+                Q(last_name__icontains=query)
             )
-            
+            department_dean = department_dean.filter(
+                Q(username__icontains=query) |
+                Q(first_name__icontains=query) |
+                Q(last_name__icontains=query)
+            )
+
     elif user_id is not None:
         selected_user = get_object_or_404(User, id=user_id)
-
 
     return render(request, 'faculty_list/superadmin_faculty_list.html', {
         'groups': groups,
@@ -92,7 +126,11 @@ def superadmin_faculty_list(request,  group_id=None, user_id=None):
         'users': users,
         'selected_user': selected_user,
         'query': query,
+        'user_group_names': user_group_names,
+        'department_dean': department_dean
     })
+
+
 
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Admin_Dean'])
@@ -123,7 +161,7 @@ def IPCR_Remarks_Create(request, user_id):
     return render(request, 'faculty_list/IPCR_Remarks.html', {'selected_user': selected_user, 'data': data, 'forms': forms})
 
 @login_required(login_url = 'login')
-@allowed_users(allowed_roles=['Superadmin'])
+@allowed_users(allowed_roles=['Admin_Director'])
 def IPCR_Approval(request, user_id):
     selected_user = get_object_or_404(User, id=user_id)
     try: 

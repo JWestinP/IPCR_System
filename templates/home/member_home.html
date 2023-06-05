@@ -23,7 +23,7 @@
     <div class = "avatar">
         <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
     <div class = "acc_name_bg"></div>
-    <div class = "acc_name_placeholder">Account name </div>
+    <div class = "acc_name_placeholder">{{ current_user.get_full_name }}</div>
     <div class = "home_bg"></div>
     <div class ="logout_bg">
         <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>

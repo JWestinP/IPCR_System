@@ -1,0 +1,347 @@
+body {
+    line-height:1;
+    min-height : 100vh;
+    background: linear-gradient(179.82deg, #5C85B3 -3.97%, #451212 111.83%);
+    margin: 0; 
+    overflow-x: hidden;
+    overflow-y : scroll;
+    background-repeat: repeat;
+    
+} 
+.lspu_bg{
+    
+    opacity : 0.3;
+    background: linear-gradient(180deg, #5C85B3 0%, #ED353D 95.93%, rgba(179, 92, 92, 0) 100%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+} 
+.white_bg {
+    position: absolute;
+    width: 1179px;
+    height: 147px;
+    left: 262px;
+    top: 54px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    border-radius: 18px;
+}
+.lspu_header{
+    position: absolute;
+    width: 1155px;
+    height: 125px;
+    left: 274px;
+    top: 67px;
+} 
+.avatar_bg {
+    position: absolute;
+    width: 119px;
+    height: 114px;
+    left: 1525px;
+    top: 54px;
+    background: #282525;
+    border-radius : 100px;
+  }
+.avatar{
+    position: absolute;
+    width: 53px;
+    height: 61px;
+    left: 1558px;
+    top: 80px;
+        
+}
+.acc_name_bg{
+    position: absolute;
+    width: 153px;
+    height: 30px;
+    left: 1508px;
+    top: 178px;
+    background: #282525;
+    border-radius: 7px; 
+}
+.acc_name_placeholder{
+    position: absolute;
+    width: 117px;
+    height: 20px;
+    left: 1526px;
+    top: 183px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+.Home_bg {
+    position: absolute;
+    width: 1359px;
+    height: 1300px;
+    left: 262px;
+    top: 244px;
+    background: #282525;
+    box-shadow: 10px 4px 14px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 18px; 
+    padding-top:150px;
+    padding-left:40px;
+}
+a:link {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+a:active {
+    color: black;
+  }
+
+.logout{
+    font-family:'Inter';
+    font-style: italic;
+    font-weight: 700;
+    width: 153px;
+    height: 30px;
+    position: absolute;
+    left: 1508px;
+    top: 20px;
+    background: #282525;
+    margin-bottom: 20px;
+    margin-top: 190px;
+    border-radius: 7px;
+    border : 0px solid;
+}
+/*Menu_member */
+/*#ipcr_menu{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    
+} */
+.download_home {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 35px;
+    top: 30px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+     
+}
+.download_home:hover{
+    background-color: #5C85B3;
+}
+.download_ipcr{
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 242px;
+    top: 29px;
+    background:#7a7979;
+    border-radius: 18px;
+    border : 0px solid; 
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px; 
+}
+
+
+.download_download{
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 450px;
+    top: 30px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+
+.download_ipcr:hover{
+    background-color: #5C85B3;
+}    
+
+
+
+.download_dashboard{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 658px;
+    top: 30px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+    
+}
+.download_dashboard:hover{
+    background-color: #5C85B3;
+}
+.download_faculty_list{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 866px;
+    top: 30px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+    
+}
+.download_faculty_list:hover{
+    background-color: #5C85B3;
+}
+
+.download{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 139px;
+    height: 20px;
+    left: 1090px;
+    top: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 19px;
+    border-radius: 18px;
+    border : 0px solid;  
+    z-index: 2;
+
+}
+.download_notifications{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 1074px;
+    top: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 19px;
+    background: #3F6DEB;
+    border-radius: 18px;
+    border : 0px solid; 
+    z-index: 1;
+ 
+}
+.download_settings {
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+    width: 60px;
+    height: 42px;
+    position: absolute;
+    left: 1282px;
+    top: 30px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+.download_settings:hover{
+        background-color: #5C85B3;
+}
+.collapsible {
+    background-color: #5C85B3;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        border: none;
+        width : 1290px;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        margin:5px;
+        border-radius: 18px 18px 0px 0px;
+  }
+  
+.content {
+    padding: 10px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius:0px 0px 18px 18px;
+    width : 1253px;
+    margin-left:5px;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .notify{
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    width: 60px;
+    height: 42px;
+    position: absolute;
+    left: 50px;
+    top: 120px;
+    color : white;
+    font-family:'Outfit';
+    letter-spacing: 1px;
+     
+  }
+  .deadlines{
+    font-weight: 600;
+    font-size: 20px;
+    width: 60px;
+    height: 42px;
+    left: 50px;
+    color : white;
+    font-family:'Outfit';
+    letter-spacing: 1px;
+    margin-top : 20px;
+     
+  }
+.collapsible_2{background-color: #5C85B3;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        border: none;
+        width : 1290px;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        margin:5px;
+        border-radius: 18px 18px 0px 0px;
+  }
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+.active:after {
+    content: "\2212";
+  }
+
+.collapsible_2:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  

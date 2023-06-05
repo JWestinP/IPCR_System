@@ -7,14 +7,26 @@ from .decorators import allowed_users
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Member'])
 def member_home(request):
-    return render(request, ('home/member_home.html'))
+    current_user = request.user
+    context = {
+        'current_user' : current_user
+    }
+    return render(request, ('home/member_home.html'), context)
 
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Admin_Dean', 'Admin_Director'])
 def admin_home(request):
-    return render(request, ('home/admin_home.html'))
+    current_user = request.user
+    context = {
+        'current_user' : current_user
+    }
+    return render(request, ('home/admin_home.html'), context)
 
 @login_required(login_url = 'login')
 @allowed_users(allowed_roles=['Superadmin'])
 def superadmin_home(request):
-    return render(request, ('home/superadmin_home.html'))
+    current_user = request.user
+    context = {
+        'current_user' : current_user
+    }
+    return render(request, ('home/superadmin_home.html'), context)

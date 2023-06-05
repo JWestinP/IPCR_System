@@ -1,0 +1,728 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft10{font-size:14px;font-family:Times;color:#000000;}
+	.ft11{font-size:25px;font-family:Times;color:#000000;}
+	.ft12{font-size:16px;font-family:Times;color:#000000;}
+	.ft13{font-size:16px;font-family:Times;color:#000000;}
+	.ft14{font-size:16px;font-family:Times;color:#000000;}
+	.ft15{font-size:8px;font-family:Times;color:#000000;}
+	.ft16{font-size:16px;line-height:20px;font-family:Times;color:#000000;}
+	.ft17{font-size:14px;line-height:19px;font-family:Times;color:#000000;}
+	.ft18{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page1-div" style="position:relative;width:1262px;height:893px;">
+<img width="1262" height="893" src="{% static 'IPMT/target001.png' %} " alt="background image"/>
+<p style="position:absolute;top:111px;left:108px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:131px;left:542px;white-space:nowrap" class="ft10">Republic&#160;of&#160;the&#160;Philippines&#160;</p>
+<p style="position:absolute;top:152px;left:427px;white-space:nowrap" class="ft11">Laguna&#160;State&#160;Polytechnic&#160;University&#160;</p>
+<p style="position:absolute;top:184px;left:568px;white-space:nowrap" class="ft10">Province&#160;of&#160;Laguna&#160;</p>
+<p style="position:absolute;top:205px;left:108px;white-space:nowrap" class="ft10">&#160;</p>
+<p style="position:absolute;top:225px;left:418px;white-space:nowrap" class="ft12"><b>INDIVIDUAL&#160;PERFORMANCE&#160;MONITORING&#160;TOOL&#160;</b></p>
+<p style="position:absolute;top:246px;left:631px;white-space:nowrap" class="ft13">&#160;</p>
+<p style="position:absolute;top:266px;left:108px;white-space:nowrap" class="ft16">Office/College/Unit:&#160;_________________________&#160;<br/>Name&#160;of&#160;Employee:&#160;{{ data.author.get_full_name }}&#160;<br/>Position&#160;Title:&#160;Faculty Member&#160;<br/>&#160;<br/>&#160;</p>
+<p style="position:absolute;top:371px;left:168px;white-space:nowrap" class="ft13">Success&#160;Indicators&#160;</p>
+<p style="position:absolute;top:391px;left:243px;white-space:nowrap" class="ft14"><i>&#160;</i></p>
+<p style="position:absolute;top:371px;left:629px;white-space:nowrap" class="ft13">Actual&#160;Accomplishment&#160;</p>
+<p style="position:absolute;top:371px;left:1074px;white-space:nowrap" class="ft13">Remarks&#160;</p>
+<p style="position:absolute;top:392px;left:400px;white-space:nowrap" class="ft13">Jan&#160;</p>
+<p style="position:absolute;top:392px;left:461px;white-space:nowrap" class="ft13">Feb&#160;</p>
+<p style="position:absolute;top:392px;left:517px;white-space:nowrap" class="ft13">Mar&#160;</p>
+<p style="position:absolute;top:392px;left:574px;white-space:nowrap" class="ft13">Apr&#160;</p>
+<p style="position:absolute;top:392px;left:627px;white-space:nowrap" class="ft13">May&#160;</p>
+<p style="position:absolute;top:392px;left:686px;white-space:nowrap" class="ft13">Jun&#160;</p>
+<p style="position:absolute;top:392px;left:742px;white-space:nowrap" class="ft13">Jul&#160;</p>
+<p style="position:absolute;top:392px;left:791px;white-space:nowrap" class="ft13">Aug&#160;</p>
+<p style="position:absolute;top:392px;left:848px;white-space:nowrap" class="ft13">Sep&#160;</p>
+<p style="position:absolute;top:392px;left:906px;white-space:nowrap" class="ft13">Oct&#160;</p>
+<p style="position:absolute;top:392px;left:960px;white-space:nowrap" class="ft13">Nov&#160;</p>
+<p style="position:absolute;top:392px;left:1018px;white-space:nowrap" class="ft13">Dec&#160;</p>
+<p style="position:absolute;top:391px;left:1081px;white-space:nowrap" class="ft15">(Met/Unmet)</p>
+<p style="position:absolute;top:385px;left:1139px;white-space:nowrap" class="ft13">&#160;</p>
+<p style="position:absolute;top:414px;left:121px;white-space:nowrap" class="ft10">1.&#160;&#160;Prepared&#160;Syllabus&#160;</p>
+<p style="position:absolute;top:414px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.syllabus_Accomplished }}</p>
+<p style="position:absolute;top:414px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_syllabus_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:121px;white-space:nowrap" class="ft10">2.&#160;&#160;Course&#160;Guide&#160;Submitted&#160;</p>
+<p style="position:absolute;top:435px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:435px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_CourseGuide_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:121px;white-space:nowrap" class="ft10">3.&#160;&#160;SLM&#160;Submitted&#160;</p>
+<p style="position:absolute;top:457px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.SLM_Accomplished }}</p>
+<p style="position:absolute;top:457px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_SLM_Accomplished }}</p>
+<p style="position:absolute;top:478px;left:121px;white-space:nowrap" class="ft10">4.&#160;&#160;Number&#160;&#160;of&#160;&#160;subject&#160;&#160;areas&#160;&#160;with&#160;</p>
+<p style="position:absolute;top:497px;left:148px;white-space:nowrap" class="ft18">community&#160;<br/>immersion/involvement&#160;<br/>component&#160;</p>
+<p style="position:absolute;top:497px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:497px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_SubjectAreas_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:121px;white-space:nowrap" class="ft10">5.&#160;&#160;Attendance&#160;Sheet&#160;Submitted&#160;</p>
+<p style="position:absolute;top:555px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:555px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_AttendanceSheet_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:121px;white-space:nowrap" class="ft10">6.&#160;&#160;Class&#160;Records&#160;Submitted&#160;</p>
+<p style="position:absolute;top:576px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ClassRecord_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:121px;white-space:nowrap" class="ft10">7.&#160;&#160;Teaching&#160;Effectiveness&#160;</p>
+<p style="position:absolute;top:598px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:598px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_TeachingEffectiveness_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:121px;white-space:nowrap" class="ft10">8.&#160;&#160;Class&#160;observation&#160;</p>
+<p style="position:absolute;top:619px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:619px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ClassroomObservation_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:121px;white-space:nowrap" class="ft10">9.&#160;&#160;TOS/Rubrics&#160;Submitted&#160;</p>
+<p style="position:absolute;top:641px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:641px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_TOSRubrics_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:121px;white-space:nowrap" class="ft10">10.&#160;Test&#160;&#160;Questions/&#160;&#160;Performance&#160;</p>
+<p style="position:absolute;top:681px;left:148px;white-space:nowrap" class="ft10">based&#160;activities&#160;submitted&#160;</p>
+<p style="position:absolute;top:671px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:671px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_TestQuestions_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:121px;white-space:nowrap" class="ft10">11.&#160;Answer&#160;keys&#160;submitted&#160;</p>
+<p style="position:absolute;top:701px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:701px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_AnswerKey_Accomplished }}</p>
+<p style="position:absolute;top:722px;left:121px;white-space:nowrap" class="ft10">12.&#160;Grading&#160;&#160;sheets&#160;&#160;submitted&#160;&#160;&amp;&#160;</p>
+<p style="position:absolute;top:741px;left:148px;white-space:nowrap" class="ft10">encoded&#160;</p>
+<p style="position:absolute;top:732px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:732px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_GradingSheet_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:121px;white-space:nowrap" class="ft10">13.&#160;No.&#160;of&#160;faculty&#160;&amp;&#160;students&#160;seek&#160;</p>
+<p style="position:absolute;top:761px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.StudentAdviced_Accomplished }}</p>
+<p style="position:absolute;top:761px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_StudentAdviced_Accomplished }}</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft20{font-size:14px;font-family:Times;color:#000000;}
+	.ft21{font-size:16px;font-family:Times;color:#000000;}
+	.ft22{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page2-div" style="position:relative;width:1262px;height:893px;">
+<img width="1262" height="893" src="{% static 'IPMT/target002.png' %} " alt="background image"/>
+<p style="position:absolute;top:112px;left:148px;white-space:nowrap" class="ft20">advises&#160;</p>
+<p style="position:absolute;top:132px;left:121px;white-space:nowrap" class="ft20">14.&#160;Accomplishment&#160;</p>
+<p style="position:absolute;top:132px;left:316px;white-space:nowrap" class="ft20">Reports&#160;</p>
+<p style="position:absolute;top:151px;left:148px;white-space:nowrap" class="ft20">submitted&#160;</p>
+<p style="position:absolute;top:141px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:141px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_AccomplishmentReport_Accomplished }}</p>
+<p style="position:absolute;top:171px;left:121px;white-space:nowrap" class="ft20">15.&#160;Research&#160;&#160;Proposal&#160;&#160;submitted/&#160;</p>
+<p style="position:absolute;top:190px;left:148px;white-space:nowrap" class="ft20">Activities&#160;conducted&#160;</p>
+<p style="position:absolute;top:180px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:180px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ResearchProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:209px;left:121px;white-space:nowrap" class="ft20">16.&#160;Research&#160;&#160;Implemented&#160;&#160;and/or&#160;</p>
+<p style="position:absolute;top:228px;left:148px;white-space:nowrap" class="ft20">Completed&#160;</p>
+<p style="position:absolute;top:228px;left:268px;white-space:nowrap" class="ft20">within&#160;</p>
+<p style="position:absolute;top:228px;left:350px;white-space:nowrap" class="ft20">the&#160;</p>
+<p style="position:absolute;top:247px;left:148px;white-space:nowrap" class="ft20">Timeframe&#160;</p>
+<p style="position:absolute;top:228px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:228px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ResearchImplemented_Accomplished }}</p>
+<p style="position:absolute;top:267px;left:121px;white-space:nowrap" class="ft20">17.&#160;Research&#160;</p>
+<p style="position:absolute;top:267px;left:252px;white-space:nowrap" class="ft20">Presented&#160;</p>
+<p style="position:absolute;top:267px;left:361px;white-space:nowrap" class="ft20">in&#160;</p>
+<p style="position:absolute;top:286px;left:148px;white-space:nowrap" class="ft22">Regional/National/International&#160;<br/>Conferences&#160;</p>
+<p style="position:absolute;top:286px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:286px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ResearchPresented_Accomplished }}</p>
+<p style="position:absolute;top:325px;left:121px;white-space:nowrap" class="ft20">18.&#160;Research&#160;&#160;Published&#160;&#160;in&#160;&#160;Peer-</p>
+<p style="position:absolute;top:344px;left:148px;white-space:nowrap" class="ft20">reviewed&#160;Journals&#160;</p>
+<p style="position:absolute;top:334px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:334px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ResearchPublished_Accomplished }}</p>
+<p style="position:absolute;top:364px;left:121px;white-space:nowrap" class="ft20">19.&#160;Filed/Published/Approved&#160;</p>
+<p style="position:absolute;top:382px;left:148px;white-space:nowrap" class="ft20">Intellectual&#160;Property&#160;Rights&#160;</p>
+<p style="position:absolute;top:373px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:373px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ApprovedIPRights_Accomplished }}</p>
+<p style="position:absolute;top:402px;left:121px;white-space:nowrap" class="ft20">20.&#160;Research&#160;&#160;Utilized/&#160;&#160;Deployed&#160;</p>
+<p style="position:absolute;top:421px;left:148px;white-space:nowrap" class="ft20">through&#160;</p>
+<p style="position:absolute;top:421px;left:233px;white-space:nowrap" class="ft20">Commercialization/&#160;</p>
+<p style="position:absolute;top:440px;left:148px;white-space:nowrap" class="ft20">Extension/&#160;Policy&#160;</p>
+<p style="position:absolute;top:420px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:420px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ResearchUtilized_Accomplished }}</p>
+<p style="position:absolute;top:460px;left:121px;white-space:nowrap" class="ft20">21.&#160;Number&#160;</p>
+<p style="position:absolute;top:460px;left:233px;white-space:nowrap" class="ft20">of&#160;</p>
+<p style="position:absolute;top:460px;left:274px;white-space:nowrap" class="ft20">citations&#160;</p>
+<p style="position:absolute;top:460px;left:360px;white-space:nowrap" class="ft20">in&#160;</p>
+<p style="position:absolute;top:479px;left:148px;white-space:nowrap" class="ft20">journals/books&#160;</p>
+<p style="position:absolute;top:470px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:470px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_NumberOfCitations_Accomplished }}</p>
+<p style="position:absolute;top:499px;left:121px;white-space:nowrap" class="ft20">22.&#160;Extension&#160;&#160;proposal&#160;&#160;submitted/&#160;</p>
+<p style="position:absolute;top:518px;left:148px;white-space:nowrap" class="ft20">activity&#160;conducted&#160;</p>
+<p style="position:absolute;top:510px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:510px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_ExtensionProposalSubmitted_Accomplished }}</p>
+<p style="position:absolute;top:537px;left:121px;white-space:nowrap" class="ft20">23.&#160;Persons&#160;&#160;trained/provided&#160;&#160;with&#160;</p>
+<p style="position:absolute;top:556px;left:148px;white-space:nowrap" class="ft20">technical&#160;advise&#160;</p>
+<p style="position:absolute;top:546px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:546px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_PersonTrained_Accomplished }}</p>
+<p style="position:absolute;top:576px;left:121px;white-space:nowrap" class="ft20">24.&#160;Persons&#160;&#160;who&#160;&#160;avail&#160;&#160;the&#160;&#160;service&#160;</p>
+<p style="position:absolute;top:595px;left:148px;white-space:nowrap" class="ft22">who&#160;rated&#160;the&#160;service&#160;as&#160;good&#160;<br/>or&#160;better&#160;</p>
+<p style="position:absolute;top:595px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:595px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_PersonAvailedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:634px;left:121px;white-space:nowrap" class="ft20">25.&#160;Persons&#160;&#160;given&#160;&#160;training&#160;&#160;or&#160;</p>
+<p style="position:absolute;top:653px;left:148px;white-space:nowrap" class="ft20">advisory&#160;</p>
+<p style="position:absolute;top:653px;left:234px;white-space:nowrap" class="ft20">who&#160;</p>
+<p style="position:absolute;top:653px;left:289px;white-space:nowrap" class="ft20">rated&#160;</p>
+<p style="position:absolute;top:653px;left:351px;white-space:nowrap" class="ft20">the&#160;</p>
+<p style="position:absolute;top:672px;left:148px;white-space:nowrap" class="ft22">timeliness&#160;&#160;of&#160;&#160;service&#160;&#160;delivery&#160;<br/>as&#160;good&#160;or&#160;better&#160;</p>
+<p style="position:absolute;top:662px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:662px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_PersonTrainedRatedGood_Accomplished }}</p>
+<p style="position:absolute;top:710px;left:121px;white-space:nowrap" class="ft20">26.&#160;Technical&#160;&#160;advice&#160;&#160;responded&#160;</p>
+<p style="position:absolute;top:729px;left:148px;white-space:nowrap" class="ft20">within&#160;3&#160;days&#160;upon&#160;request&#160;</p>
+<p style="position:absolute;top:719px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:719px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_TechnicalAdvice_Accomplished }}</p>
+<p style="position:absolute;top:749px;left:121px;white-space:nowrap" class="ft20">27.&#160;Accomplishment&#160;</p>
+<p style="position:absolute;top:749px;left:324px;white-space:nowrap" class="ft20">Report&#160;</p>
+<p style="position:absolute;top:768px;left:148px;white-space:nowrap" class="ft20">(Official&#160;Designation)&#160;</p>
+<p style="position:absolute;top:758px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+<p style="position:absolute;top:758px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_AccomplishmentReportDeligatedAssignment_Accomplished }}</p>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+ <br/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft30{font-size:14px;font-family:Times;color:#000000;}
+	.ft31{font-size:16px;font-family:Times;color:#000000;}
+	.ft32{font-size:14px;line-height:18px;font-family:Times;color:#000000;}
+-->
+</style>
+</head>
+<body bgcolor="#A0A0A0" vlink="blue" link="blue">
+<div id="page3-div" style="position:relative;width:1262px;height:893px;">
+<img width="1262" height="893" src="{% static 'IPMT/target003.png' %} " alt="background image"/>
+<p style="position:absolute;top:112px;left:121px;white-space:nowrap" class="ft30">28.&#160;Attendance&#160;&#160;to&#160;&#160;Flag&#160;&#160;Raising&#160;</p>
+<p style="position:absolute;top:131px;left:148px;white-space:nowrap" class="ft30">Ceremony&#160;</p>
+<p style="position:absolute;top:121px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:121px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_FlagRaisingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:121px;white-space:nowrap" class="ft30">29.&#160;Attendance&#160;to&#160;Flag&#160;Lowering&#160;</p>
+<p style="position:absolute;top:151px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:151px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_FlagLoweringAttendance_Accomplished }}</p>
+<p style="position:absolute;top:172px;left:121px;white-space:nowrap" class="ft30">30.&#160;Attendance&#160;&#160;to&#160;&#160;health&#160;&#160;and&#160;</p>
+<p style="position:absolute;top:191px;left:148px;white-space:nowrap" class="ft30">wellness&#160;program&#160;</p>
+<p style="position:absolute;top:181px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:181px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_WellnessProgramAttendance_Accomplished }}</p>
+<p style="position:absolute;top:211px;left:121px;white-space:nowrap" class="ft30">31.&#160;Attendance&#160;</p>
+<p style="position:absolute;top:211px;left:272px;white-space:nowrap" class="ft30">to&#160;</p>
+<p style="position:absolute;top:211px;left:326px;white-space:nowrap" class="ft30">school&#160;</p>
+<p style="position:absolute;top:230px;left:148px;white-space:nowrap" class="ft32">celebration&#160;&#160;and&#160;&#160;other&#160;&#160;allied&#160;<br/>activities&#160;</p>
+<p style="position:absolute;top:230px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:230px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_SchoolCelebrationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:269px;left:121px;white-space:nowrap" class="ft30">32.&#160;Attendance&#160;</p>
+<p style="position:absolute;top:269px;left:262px;white-space:nowrap" class="ft30">to&#160;</p>
+<p style="position:absolute;top:269px;left:307px;white-space:nowrap" class="ft30">trainings,&#160;</p>
+<p style="position:absolute;top:288px;left:148px;white-space:nowrap" class="ft30">seminars,&#160;&amp;&#160;conferences&#160;</p>
+<p style="position:absolute;top:278px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:278px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_TrainingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:121px;white-space:nowrap" class="ft30">33.&#160;Attendance&#160;to&#160;faculty&#160;meetings&#160;</p>
+<p style="position:absolute;top:307px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:307px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_FacultyMeetingAttendance_Accomplished }}</p>
+<p style="position:absolute;top:329px;left:121px;white-space:nowrap" class="ft30">34.&#160;Attendance&#160;&#160;to&#160;&#160;accreditation/&#160;</p>
+<p style="position:absolute;top:348px;left:148px;white-space:nowrap" class="ft30">ISO&#160;and&#160;other&#160;related&#160;activities&#160;</p>
+<p style="position:absolute;top:338px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:338px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_AccreditationAttendance_Accomplished }}</p>
+<p style="position:absolute;top:368px;left:121px;white-space:nowrap" class="ft30">35.&#160;Attendance&#160;</p>
+<p style="position:absolute;top:368px;left:267px;white-space:nowrap" class="ft30">to&#160;</p>
+<p style="position:absolute;top:368px;left:316px;white-space:nowrap" class="ft30">spiritual&#160;</p>
+<p style="position:absolute;top:387px;left:148px;white-space:nowrap" class="ft30">activities&#160;</p>
+<p style="position:absolute;top:377px;left:415px;white-space:nowrap" class="ft13">&#160;{{ data1.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:476px;white-space:nowrap" class="ft13">&#160;{{ data2.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:532px;white-space:nowrap" class="ft13">&#160;{{ data3.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:579px;white-space:nowrap" class="ft13">&#160;{{ data4.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:635px;white-space:nowrap" class="ft13">&#160;{{ data5.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:692px;white-space:nowrap" class="ft13">&#160;{{ data6.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:753px;white-space:nowrap" class="ft13">&#160;{{ data7.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:807px;white-space:nowrap" class="ft13">&#160;{{ data8.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:864px;white-space:nowrap" class="ft13">&#160;{{ data9.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:920px;white-space:nowrap" class="ft13">&#160;{{ data10.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:976px;white-space:nowrap" class="ft13">&#160;{{ data11.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:1033px;white-space:nowrap" class="ft13">&#160;{{ data12.SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:377px;left:1092px;white-space:nowrap" class="ft13">&#160;{{ data.Remarks_SpiritualActivityAttendance_Accomplished }}</p>
+<p style="position:absolute;top:406px;left:121px;white-space:nowrap" class="ft30">36.&#160;(Administrative&#160;&#160;Functions&#160;&#160;if&#160;</p>
+<p style="position:absolute;top:425px;left:148px;white-space:nowrap" class="ft30">applicable)&#160;</p>
+<p style="position:absolute;top:407px;left:415px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:476px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:532px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:588px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:644px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:701px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:753px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:807px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:864px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:920px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:976px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:1033px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:407px;left:1110px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:121px;white-space:nowrap" class="ft30">37.&#160;(Administrative&#160;&#160;Functions&#160;&#160;if&#160;</p>
+<p style="position:absolute;top:464px;left:148px;white-space:nowrap" class="ft30">applicable)&#160;</p>
+<p style="position:absolute;top:445px;left:415px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:476px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:532px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:588px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:644px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:701px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:753px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:807px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:864px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:920px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:976px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:1033px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:445px;left:1110px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:121px;white-space:nowrap" class="ft30">38.&#160;(Administrative&#160;&#160;Functions&#160;&#160;if&#160;</p>
+<p style="position:absolute;top:503px;left:148px;white-space:nowrap" class="ft30">applicable)&#160;</p>
+<p style="position:absolute;top:484px;left:415px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:476px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:532px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:588px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:644px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:701px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:753px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:807px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:864px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:920px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:976px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:1033px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:484px;left:1110px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:121px;white-space:nowrap" class="ft30">39.&#160;(Administrative&#160;&#160;Functions&#160;&#160;if&#160;</p>
+<p style="position:absolute;top:542px;left:148px;white-space:nowrap" class="ft30">applicable)&#160;</p>
+<p style="position:absolute;top:523px;left:415px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:476px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:532px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:588px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:644px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:701px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:753px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:807px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:864px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:920px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:976px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:1033px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:523px;left:1110px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:121px;white-space:nowrap" class="ft30">40.&#160;(Administrative&#160;&#160;Functions&#160;&#160;if&#160;</p>
+<p style="position:absolute;top:580px;left:148px;white-space:nowrap" class="ft30">applicable)&#160;</p>
+<p style="position:absolute;top:561px;left:415px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:476px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:532px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:588px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:644px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:701px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:753px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:807px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:864px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:920px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:976px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:1033px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:561px;left:1110px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:600px;left:631px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:108px;white-space:nowrap" class="ft31">Prepared&#160;by:&#160;&#160;</p>
+<p style="position:absolute;top:621px;left:270px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:324px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:378px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:432px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:486px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:540px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:621px;left:594px;white-space:nowrap" class="ft31">Noted&#160;by:&#160;</p>
+<p style="position:absolute;top:655px;left:108px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:690px;left:108px;white-space:nowrap" class="ft31">_________________________________&#160;</p>
+<p style="position:absolute;top:690px;left:486px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:690px;left:540px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:690px;left:594px;white-space:nowrap" class="ft31">______________________________&#160;</p>
+<p style="position:absolute;top:710px;left:108px;white-space:nowrap" class="ft31">Faculty,&#160;(College)&#160;&#160;&#160;</p>
+<p style="position:absolute;top:710px;left:324px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:710px;left:378px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:710px;left:432px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:710px;left:486px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:710px;left:540px;white-space:nowrap" class="ft31">&#160;</p>
+<p style="position:absolute;top:710px;left:594px;white-space:nowrap" class="ft31">Dean/Assoc.&#160;Dean,&#160;(College)&#160;</p>
+</div>
+</body>
+</html>

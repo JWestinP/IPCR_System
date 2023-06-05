@@ -3,7 +3,7 @@
   {% load static %}
   <meta charset = "utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type = "text/css" href="css/style.css">
+  <link rel="stylesheet" type = "text/css" href="static/downloads/style.css">
   <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
   <div class = "avatar">
       <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
   <div class = "acc_name_bg"></div>
-  <div class = "acc_name_placeholder">Account name </div>
+  <div class = "acc_name_placeholder">{{ current_user.get_full_name }}</div>
   <div class ="logout_bg">
       <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
   </head>
@@ -49,6 +49,7 @@
          <button class="download_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
      <!--<div class ="menu_settings"></div>-->
          <button class="download_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+         <button class="ipcr_ipmt_form"><a href="{% url 'download_ipmt' %}">IPMT FORM</a></button>
  </section>
 
 

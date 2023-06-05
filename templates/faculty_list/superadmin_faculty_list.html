@@ -1,17 +1,130 @@
-<h1>Superadmin Faculty List</h1>
+<html>
+    <head>
+    {% load static %}
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="css/faculty_list/style.css">
+    <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'faculty_list/style.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+    <div class="title"> 
+        <div class = "lspu_bg">
+            <img src="{% static 'home/img/background.png' %} "class="center" >
+        </div>
+        <div class = "white_bg"></div>
+        <div class = "lspu_header"> 
+            <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+    </div>
+    <div class = "avatar_bg"></div>
+    <div class = "avatar">
+        <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+    <div class = "acc_name_bg"></div>
+    <div class = "acc_name_placeholder">{{ user.get_full_name }}</div>
+    <div class = "home_bg"></div>
+    <div class ="logout_bg">
+        <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+    </head>  
 
-<form method="GET" action="{% url 'superadmin_faculty_list' %}">
-  <label for="group_id">Select Group:</label>
-  <select name="group_id" id="group_id">
-    <option value="">All</option>
-    {% for group in groups %}
-      <option value="{{ group.id }}" {% if selected_group and selected_group.id == group.id %}selected{% endif %}>{{ group.name }}</option>
+ 
+<!-- W/O Style
+         <section class ="menu" id="menu">
+            <div class ="menu_home_super"><a href="{% url 'admin_faculty_list' %}">Faculty List</a></div>
+            <button class="menu_dashboard_super"><a href = "{% url 'dashboard' %}">dashboard_admin_superadmin</a></button>
+            <div class="menu_faculty_list_super"></div>
+            <button class="menu_notifications_super"><a href="{% url 'admin_superadmin_notification' % }">Notifications</a></button>
+            <button class="settings_icon_super"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+    </section> -->
+    <section class="menu" id="menu">
+      {% if 'Admin_Director' in user_group_names %}
+      <button class="menu_home_admin" style="position: absolute; width: 172px; height: 42px; left: 480px; top: 273px; background-color: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF""><a href="{% url 'admin_home' %}">Home</a></button>
+      {% elif 'Superadmin' in user_group_names %}
+      <button class="menu_home_admin" style="position: absolute; width: 172px; height: 42px; left: 480px; top: 273px; background-color: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF""><a href="{% url 'superadmin_home' %}">Home</a></button>
+      {% endif %}
+      <div class="home_admin" style="position: absolute; width: 139px; height: 20px; left: 920px; top: 283px; font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF;">Faculty List</div>
+      <button class="menu_dashboard_admin" style="position: absolute; width: 172px; height: 42px; left: 696px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF"><a href="{% url 'dashboard_admin_superadmin' %}">Dashboard</a></button>
+      <button class="menu_faculty_list_admin" style="position: absolute; width: 172px; height: 42px; left: 904px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"></div>
+      <button class="menu_notifications_admin" style="position: absolute; width: 172px; height: 42px; left: 1112px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'admin_faculty_list' %} ">Notification</a></button>
+      <button class="settings_icon_super" style="position: absolute; width: 75px; height: 42px; left: 1312px; top: 273px; background: #7d7676; opacity: 0.4; border-radius: 18px;"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+  </section>
+
+<section class ="faculty_list_search">
+  <h1 class="FacultyList">Faculty List: </h1>
+<hr>
+<div class="verticalLine"></div>
+<form method="GET">
+   <div class="wrap">
+      <div class="search">
+        <form method="GET" action="{% url 'superadmin_faculty_list' %}">
+          <label for="group_id">Select Group:</label>
+          <select name="group_id" id="group_id">
+            <option value="">All</option>
+            {% for group in groups %}
+              <option value="{{ group.id }}" {% if selected_group and selected_group.id == group.id %}selected{% endif %}>{{ group.name }}</option>
+            {% endfor %}
+          </select>
+          
+          <input type="text" name="q" placeholder="Search" value="{{ query }}">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <h1 class="FacultyList_dean">Dean</h1>
+      <section class = "faculty_list_dean">
+      {% for users in department_dean.distinct %}
+      <li>
+        <a href="{% url 'superadmin_faculty_list' user_id=user.id%}">{{ users.get_full_name }}</a>
+      </li>
     {% endfor %}
-  </select>
-  
-  <input type="text" name="q" placeholder="Search" value="{{ query }}">
-  <button type="submit">Search</button>
+  </section>
+   </div>
 </form>
+
+<section class = "faculty_list_member">
+  <h1>Members: </h1>
+    <ul >
+      
+      <ul>
+        {% for user in users %}
+          <li>
+            {% if selected_group %}
+              <a href="{% url 'superadmin_faculty_list' group_id=selected_group.id user_id=user.id %}">{{ user.get_full_name }}</a>
+            {% else %}
+              <a href="{% url 'superadmin_faculty_list' user_id=user.id %}">{{ user.get_full_name }}</a>
+            {% endif %}
+          </li>
+        {% empty %}
+          <li>No users found.</li>
+        {% endfor %}
+      </ul>
+</section>
+
+<section class = "faculty_list_userinfo">
+  {% if selected_user %}
+  <div>
+    <h3>User Details</h3>
+    <p>Username: {{ selected_user.username }}</p>
+    <p>Full Name: {{ selected_user.get_full_name }}</p>
+    <p>Email: {{ selected_user.email }}</p>
+    {% if 'Admin_Director' in user_group_names %}
+    <button><a href="{% url 'IPCR_Approval' user_id=selected_user.id %}" target="_blank">Approve IPCR</a></button>
+    {% endif %}
+  </div>
+{% endif %}
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
 
 <ul>
   {% for user in users %}
@@ -33,5 +146,8 @@
     <p>Username: {{ selected_user.username }}</p>
     <p>Full Name: {{ selected_user.get_full_name }}</p>
     <p>Email: {{ selected_user.email }}</p>
+    {% if 'Admin_Director' in user_group_names %}
+    <button><a href="{% url 'IPCR_Approval' user_id=selected_user.id %}" target="_blank">Approve IPCR</a></button>
+    {% endif %}
   </div>
 {% endif %}

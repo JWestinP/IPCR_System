@@ -270,6 +270,16 @@ b:active{
     font-size: 30px;
     color: #FFFFFF;
 }
+.faculty_list_dean{
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    position: absolute;
+    top: 95px;
+    left: 16px;
+    color: #FFFFFF;
+}
 .faculty_list_member{
     font-family: 'Outfit';
     font-style: normal;
@@ -387,3 +397,132 @@ b:active{
     color: black;
   }
 
+  .menu_home {
+    
+    position: absolute;
+    width: 172px;
+    height: 42px;
+    left: 296px;
+    top: 273px;
+    background: #3F6DEB;
+    opacity: 0.4;
+    border-radius: 18px;
+}
+.home{
+    position: absolute;
+    width: 139px;
+    height: 20px;
+    left: 312px;
+    top: 287px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.home_ipcr{
+    font-family:'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 504px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;
+}
+.home_ipcr:hover{
+    background-color: #5C85B3; 
+}
+.home_downloads{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 712px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid; 
+   
+}
+.home_downloads:hover{
+    background-color: #5C85B3;
+}
+.home_dashboard{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 920px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid; 
+    
+}
+.home_dashboard:hover{
+    background-color: #5C85B3;
+}
+.home_faculty_list{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 1128px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;   
+}
+.home_faculty_list:hover{
+    background-color: #5C85B3;
+}
+.home_notifications{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 16px;
+    width: 172px;
+    height: 42px;
+    position: absolute;
+    left: 1336px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;   
+}
+.home_notifications:hover{
+    background-color: #5C85B3;
+}
+.home_settings {
+    
+    font-weight: 700;
+    font-size: 16px;
+    width: 60px;
+    height: 42px;
+    position: absolute;
+    left: 1544px;
+    top: 273px;
+    background: #7a7979;
+    border-radius: 18px;
+    border : 0px solid;  
+}
+.home_settings:hover{
+    background-color: #5C85B3;
+}

@@ -1,0 +1,140 @@
+<html>
+  <head>
+  {% load static %}
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type = "text/css" href="css/style.css">
+  <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'downloads/style.css' %}">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";>
+  <!--DEFAULT DESIGN-->
+  <div class="title"> 
+  <div class = "lspu_bg">
+          <img src="{% static 'home/img/background.png' %} "class="center" >
+      </div>
+  <div class = "white_bg"></div>
+  <div class = "lspu_header"> 
+          <img src="{% static 'home/img/LSPU_header.png' %}"> </div>
+  <div class = "avatar_bg"></div>
+  <div class = "avatar">
+      <img src="{% static 'home/img/avatar.png' %} "class="center" ></div>  
+  <div class = "acc_name_bg"></div>
+  <div class = "acc_name_placeholder">{{ current_user.get_full_name }}</div>
+  <div class ="logout_bg">
+      <button class="logout"><a href="{% url 'logout' %}">Logout</a></button></div>
+  </head>
+
+   <body>
+      <div class = "home_bg">
+    
+
+<section class ="download_menu" id="download_menu">
+    <!-- <div class ="ipcr_home"></div> -->
+         <button class="download_home"><a href="{% url 'member_home' %}">Home</a></button>
+     <!--<div class ="menu_ipcr"> -->
+         <button class="download_ipcr"><a href="{% url 'IPCR_Form' %}">IPCR</a></button> 
+     <!--<div class ="menu_downloads"> -->
+         <div class ="download_download"></div>
+         <div class ="download">Downloads</div>
+     <!--<div class ="menu_dashboard"></div> -->
+         <button class="download_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
+     <!--<div class ="menu_faculty_list"></div> -->
+         <button class="download_faculty_list"><a href="{% url 'member_faculty_list' %}">Faculty List</a></button>
+     <!--<div class ="menu_notifications"></div>-->
+         <button class="download_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
+     <!--<div class ="menu_settings"></div>-->
+         <button class="download_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
+         <button class="ipcr_form"><a href="{% url 'download' %}">IPCR FORM</a></button>
+
+ </section>
+
+
+        
+
+
+<div class = border1></div>
+<div class = "Title_1">Current SY {{ current_SY2 }} - {{ current_SY1 }} First semester IPMT:</div>
+<div class ="download_view">Download View</div>
+
+<div class = border2></div>
+<div class = "first_mid_1">First semester Midterms IPMT:</div>
+<button class = "eye_1"><a href="{% url 'firstmidsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_1"><a href="{% url 'firstmidsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border3></div>
+<div class = "first_final_1">First semester Finalterms IPMT:</div>
+<button class = "eye_2"><a href="{% url 'firstfinalsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_2"><a href="{% url 'firstfinalsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border4></div>
+<div class = "Title_2">Current SY {{ current_SY2 }} - {{ current_SY1 }} Second semester IPMT:</div>
+
+<div class = border5></div>
+<div class = "second_mid_1">Second semester Midterms IPMT:</div>
+<button class = "eye_3"><a href="{% url 'secondmidsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_3"><a href="{% url 'secondmidsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border6></div>
+<div class = "second_final_1">Second semester Finalterms IPMT:</div>
+<button class = "eye_4"><a href="{% url 'secondfinalsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_4"><a href="{% url 'secondfinalsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border7></div>
+<div class = "Title_3">SY {{ last_SY2 }} - {{ last_SY1 }} First semester IPMT:</div>
+
+<div class = border8></div>
+<div class = "first_mid_2">First semester Midterms IPMT:</div>
+<button class = "eye_5"><a href="{% url 'last_firstmidsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_5"><a href="{% url 'last_firstmidsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border9></div>
+<div class = "first_final_2">First semester Finalterms IPMT:</div>
+<button class = "eye_6"><a href="{% url 'last_firstfinalsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_6"><a href="{% url 'last_firstfinalsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border10></div>
+<div class = "Title_4">SY {{ last_SY2 }} - {{ last_SY1 }} Second semester IPMT:</div>
+
+<div class = border11></div>
+<div class = "second_mid_2">Second semester Midterms IPMT:</div>
+<button class = "eye_7"><a href="{% url 'last_secondmidsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_7"><a href="{% url 'last_secondmidsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border12></div>
+<div class = "second_final_2">Second semester Finalterms IPMT:</div>
+<button class = "eye_8"><a href="{% url 'last_secondfinalsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_8"><a href="{% url 'last_secondfinalsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border13></div>
+<div class = "Title_5">SY {{ last_last_SY2 }} - {{ last_last_SY1 }} First semester IPMT:</div>
+
+<div class = border14></div>
+<div class = "first_mid_3">First semester Midterms IPMT:</div>
+<button class = "eye_9"><a href="{% url 'last_last_firstmidsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_9"><a href="{% url 'last_last_firstmidsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border15></div>
+<div class = "first_final_3">First semester Finalterms IPMT:</div>
+<button class = "eye_10"><a href="{% url 'last_last_firstfinalsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_10"><a href="{% url 'last_last_firstfinalsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border16></div>
+<div class = "Title_6">SY {{ last_last_SY2 }} - {{ last_last_SY1 }} Second semester IPMT:</div>
+
+<div class = border17></div>
+<div class = "second_mid_3">Second semester Midterms IPMT:</div>
+<button class = "eye_11"><a href="{% url 'last_last_secondmidsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_11"><a href="{% url 'last_last_secondmidsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+<div class = border18></div>
+<div class = "second_final_3">Second semester Finalterms IPMT:</div>
+<button class = "eye_12"><a href="{% url 'last_last_secondfinalsem_ViewIPMT' %}"><img src="{% static 'home/img/eye_1.png' %}"></a></button>
+<button class = "download_12"><a href="{% url 'last_last_secondfinalsem_DownloadIPMT' %}"><img src="{% static 'home/img/download_1.png' %}"></a></button>
+
+
+

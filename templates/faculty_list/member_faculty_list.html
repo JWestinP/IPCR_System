@@ -31,7 +31,7 @@
 
  
 <section class ="faculty_list_menu" id="faculty_list_menu">
-    <button class="faculty_list_home"><a href="{% url 'member_home' %}"">Home</a></button> 
+    <button class="faculty_list_home"><a href="{% url 'member_home' %}">Home</a></button> 
     <button class="faculty_list_ipcr"><a href="{% url 'IPCR_Form' %}">IPCR</a></button> 
     <button class="faculty_list_downloads"><a href="{% url 'download' %}">Downloads</a></button>
     <button class="faculty_list_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
@@ -53,6 +53,13 @@
          
       </div>
       <h1 class="FacultyList_dean">Dean</h1>
+      <section class = "faculty_list_dean">
+      {% for users in department_dean.distinct %}
+      <li>
+        <a href="{% url 'member_faculty_list' user_id=user.id%}">{{ users.get_full_name }}</a>
+      </li>
+    {% endfor %}
+  </section>
    </div>
 </form>
 

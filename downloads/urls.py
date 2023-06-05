@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('download', views.download, name='download'),
+    path('download_ipmt', views.download_ipmt, name='download_ipmt'),
     path('firstmidsem_ViewIPCR', views.firstmidsem_ViewIPCR, name = 'firstmidsem_ViewIPCR'),
     path('firstfinalsem_ViewIPCR', views.firstfinalsem_ViewIPCR, name = 'firstfinalsem_ViewIPCR'),
     path('secondmidsem_ViewIPCR', views.secondmidsem_ViewIPCR, name = 'secondmidsem_ViewIPCR'),
@@ -29,5 +30,29 @@ urlpatterns = [
     path('last_last_firstfinalsem_download_pdf', views.last_last_firstfinalsem_download_pdf, name = 'last_last_firstfinalsem_download_pdf'),
     path('last_last_secondmidsem_download_pdf', views.last_last_secondmidsem_download_pdf, name = 'last_last_secondmidsem_download_pdf'),
     path('last_last_secondfinalsem_download_pdf', views.last_last_secondfinalsem_download_pdf, name = 'last_last_secondfinalsem_download_pdf'),
-    
+    path('firstmidsem_ViewIPMT', views.firstmidsem_ViewIPMT, name = 'firstmidsem_ViewIPMT'),
+    path('firstfinalsem_ViewIPMT', views.firstfinalsem_ViewIPMT, name = 'firstfinalsem_ViewIPMT'),
+    path('secondmidsem_ViewIPMT', views.secondmidsem_ViewIPMT, name = 'secondmidsem_ViewIPMT'),
+    path('secondfinalsem_ViewIPMT', views.secondfinalsem_ViewIPMT, name = 'secondfinalsem_ViewIPMT'),
+    path('firstmidsem_DownloadIPMT', views.firstmidsem_DownloadIPMT, name = 'firstmidsem_DownloadIPMT'),
+    path('firstfinalsem_DownloadIPMT', views.firstfinalsem_DownloadIPMT, name = 'firstfinalsem_DownloadIPMT'),
+    path('secondmidsem_DownloadIPMT', views.secondmidsem_DownloadIPMT, name = 'secondmidsem_DownloadIPMT'),
+    path('secondfinalsem_DownloadIPMT', views.secondfinalsem_DownloadIPMT, name = 'secondfinalsem_DownloadIPMT'),
+    path('last_firstmidsem_ViewIPMT', views.last_firstmidsem_ViewIPMT, name = 'last_firstmidsem_ViewIPMT'),
+    path('last_firstfinalsem_ViewIPMT', views.last_firstfinalsem_ViewIPMT, name = 'last_firstfinalsem_ViewIPMT'),
+    path('last_secondmidsem_ViewIPMT', views.last_secondmidsem_ViewIPMT, name = 'last_secondmidsem_ViewIPMT'),
+    path('last_secondfinalsem_ViewIPMT', views.last_secondfinalsem_ViewIPMT, name = 'last_secondfinalsem_ViewIPMT'),
+    path('last_firstmidsem_DownloadIPMT', views.last_firstmidsem_DownloadIPMT, name = 'last_firstmidsem_DownloadIPMT'),
+    path('last_firstfinalsem_DownloadIPMT', views.last_firstfinalsem_DownloadIPMT, name = 'last_firstfinalsem_DownloadIPMT'),
+    path('last_secondmidsem_DownloadIPMT', views.last_secondmidsem_DownloadIPMT, name = 'last_secondmidsem_DownloadIPMT'),
+    path('last_secondfinalsem_DownloadIPMT', views.last_secondfinalsem_DownloadIPMT, name = 'last_secondfinalsem_DownloadIPMT'),
+    path('last_last_firstmidsem_ViewIPMT', views.last_last_firstmidsem_ViewIPMT, name = 'last_last_firstmidsem_ViewIPMT'),
+    path('last_last_firstfinalsem_ViewIPMT', views.last_last_firstfinalsem_ViewIPMT, name = 'last_last_firstfinalsem_ViewIPMT'),
+    path('last_last_secondmidsem_ViewIPMT', views.last_last_secondmidsem_ViewIPMT, name = 'last_last_secondmidsem_ViewIPMT'),
+    path('last_last_secondfinalsem_ViewIPMT', views.last_last_secondfinalsem_ViewIPMT, name = 'last_last_secondfinalsem_ViewIPMT'),
+    path('last_last_firstmidsem_DownloadIPMT', views.last_last_firstmidsem_DownloadIPMT, name = 'last_last_firstmidsem_DownloadIPMT'),
+    path('last_last_firstfinalsem_DownloadIPMT', views.last_last_firstfinalsem_DownloadIPMT, name = 'last_last_firstfinalsem_DownloadIPMT'),
+    path('last_last_secondmidsem_DownloadIPMT', views.last_last_secondmidsem_DownloadIPMT, name = 'last_last_secondmidsem_DownloadIPMT'),
+    path('last_last_secondfinalsem_DownloadIPMT', views.last_last_secondfinalsem_DownloadIPMT, name = 'last_last_secondfinalsem_DownloadIPMT'),
 ]
+
