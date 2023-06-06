@@ -6,3 +6,34 @@
 <button><a href="{% url 'member_faculty_list' %}">faculty list</a></button>
 <button><a href="{% url 'member_notification' %}">notifications</a></button>
 <button><a href="{% url 'member_home' %}">home</a></button>
+<h1>settings</h1>
+<button><a href="{% url 'logout' %}">logout</a></button>
+<button><a href="{% url 'IPCR_Form' %}">IPCR_Form</a></button>
+<button><a href="{% url 'download' %}">download</a></button>
+<button><a href="{% url 'dashboard' %}">dashboard</a></button>
+<button><a href="{% url 'member_faculty_list' %}">faculty list</a></button>
+<button><a href="{% url 'member_notification' %}">notifications</a></button>
+<button><a href="{% url 'member_home' %}">home</a></button>
+<h1>User Settings</h1>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form method="POST" action="{% url 'settings' %}">
+    {% csrf_token %}
+    <p>
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" value="{{ user.username }}" id="id_username">
+    </p>
+    <p>
+        <label for="id_email">Email:</label>
+        <input type="email" name="email" value="{{ user.email }}" id="id_email">
+    </p>
+    <!-- Add more user information fields as needed -->
+    <button type="submit">Save</button>
+</form>

@@ -190,7 +190,7 @@ def secondfinalsem_ViewIPCR(request):
     current_year = datetime.now().year
     secondfinalsem_month = 4
     secondsem_endmonth = 6
-    secondsem_day = 5
+    secondsem_day = 10
     
     secondfinalsem_date = datetime(current_year, secondfinalsem_month, secondsem_day).date()
     secondsem_enddate = datetime(current_year, secondsem_endmonth, secondsem_day).date()
@@ -445,7 +445,7 @@ def secondfinalsem_download_pdf(request):
     current_year = datetime.now().year
     secondfinalsem_month = 4
     secondsem_endmonth = 6
-    secondsem_day = 5
+    secondsem_day = 10
     
     secondfinalsem_date = datetime(current_year, secondfinalsem_month, secondsem_day).date()
     secondsem_enddate = datetime(current_year, secondsem_endmonth, secondsem_day).date()
@@ -1600,7 +1600,7 @@ def secondfinalsem_ViewIPMT(request):
     current_year = datetime.now().year
     secondfinalsem_month = 4
     secondsem_endmonth = 6
-    secondsem_day = 5
+    secondsem_day = 10
     
     secondfinalsem_date = datetime(current_year, secondfinalsem_month, secondsem_day).date()
     secondsem_enddate = datetime(current_year, secondsem_endmonth, secondsem_day).date()

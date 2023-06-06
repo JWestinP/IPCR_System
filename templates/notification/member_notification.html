@@ -3,7 +3,7 @@
   {% load static %}
   <meta charset = "utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type = "text/css" href="static/notifications/style.css">
+  <link rel="stylesheet" type = "text/css" href="css/style.css">
   <link rel="stylesheet"href = "https://unpkg.com/boxiconx@latest/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,14 +39,14 @@
      <!--<div class ="menu_ipcr"> -->
          <button class="download_ipcr"><a href="{% url 'IPCR_Form' %}">IPCR</a></button> 
      <!--<div class ="menu_downloads"> -->
-         <button class ="download_download"><a href="{% url 'download' %}">Downloads</a></button>
+         <div class ="download_download"></div>
+         <div class ="download">Downloads</div>
      <!--<div class ="menu_dashboard"></div> -->
          <button class="download_dashboard"><a href = "{% url 'dashboard' %}">Dashboard</a></button>
      <!--<div class ="menu_faculty_list"></div> -->
          <button class="download_faculty_list"><a href="{% url 'member_faculty_list' %}">Faculty List</a></button>
      <!--<div class ="menu_notifications"></div>-->
-        <div class ="download">Notifications</div>
-        <div class="download_notifications"></div>
+         <button class="download_notifications"><a href="{% url 'member_notification' %}">Notifications</a></button>
      <!--<div class ="menu_settings"></div>-->
          <button class="download_settings"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
  </section>

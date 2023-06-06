@@ -3,7 +3,7 @@ from forms.forms import *
 from forms.models import *
 from django.contrib.auth.models import User, Group
 from home.decorators import allowed_users
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.contrib.auth import get_user_model
 from datetime import date, datetime
 from django.contrib.auth.decorators import login_required
@@ -18,7 +18,14 @@ def member_faculty_list(request, user_id=None):
     admin_dean_group = Group.objects.get(name='Admin_Dean')
 
     current_user_groups = current_user.groups.all()
-    department_dean = User.objects.filter(groups__in=current_user_groups).filter(groups=admin_dean_group)
+    department_dean = User.objects.filter(
+    groups__in=current_user_groups
+    ).annotate(
+        matching_groups=Count('groups')
+    ).filter(
+        matching_groups__gte=2,
+        groups=admin_dean_group
+    )
     matching_users = User.objects.filter(groups__in=current_user_groups).exclude(groups__name=admin_dean_group).exclude(id=current_user.id)
 
     selected_user = None
@@ -53,7 +60,14 @@ def admin_faculty_list(request, user_id=None):
     admin_dean_group = Group.objects.get(name='Admin_Dean')
 
     current_user_groups = current_user.groups.all()
-    department_dean = User.objects.filter(groups__in=current_user_groups).filter(groups=admin_dean_group)
+    department_dean = User.objects.filter(
+    groups__in=current_user_groups
+    ).annotate(
+        matching_groups=Count('groups')
+    ).filter(
+        matching_groups__gte=2,
+        groups=admin_dean_group
+    )
     matching_users = User.objects.filter(groups__in=current_user_groups).exclude(groups__name=admin_dean_group).exclude(id=current_user.id)
     
     selected_user = None
@@ -100,7 +114,16 @@ def superadmin_faculty_list(request, group_id=None, user_id=None):
             selected_group = get_object_or_404(Group, id=group_id)
             users = User.objects.filter(groups=selected_group).exclude(groups__name=admin_dean_group)
             # Create a list containing the selected_group and pass it to the Q object
-            department_dean = User.objects.filter(groups=selected_group).filter(groups=admin_dean_group)
+            department_dean = User.objects.filter(
+                groups__in=[selected_group]
+            ).annotate(
+                matching_groups=Count('groups')
+            ).filter(
+                matching_groups__gte=2,
+                groups__in=[admin_dean_group]
+            )
+
+
         else:
             selected_group = None
             users = User.objects.all()
@@ -150,11 +173,13 @@ def IPCR_Remarks_Create(request, user_id):
         forms.instance.author = selected_user
         forms.instance.IPCR_Submitted = datetime.now().date()
 
-        
         if forms.is_valid():
             model_instance = forms.save(commit=False)
+            model_instance.reviewer = f"{first_name} {last_name}"
+            model_instance.IPCR_Submitted = datetime.now().date()
             model_instance.save()
-
+        else:
+            print(forms.errors)
     else:
         forms = IPCR_Remarks_Form(instance=existing_instance)
 

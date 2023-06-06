@@ -10,4 +10,4 @@ class IPCR_Remarks_Form(forms.ModelForm):
     class Meta:
         model = IPCR_Remarks
         fields = '__all__'
-        exclude = ['author']
+        exclude = ['author', 'reviewer', 'IPCR_Submitted']

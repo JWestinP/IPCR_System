@@ -33,7 +33,7 @@ class ChartData(APIView):
         firstmidsem_month = 8
         firstsem_day = 25
         secondsem_endmonth = 6
-        secondsem_day = 5
+        secondsem_day = 10
         firstmidsem_date = datetime(current_SY2, firstmidsem_month, firstsem_day).date()
         secondsem_enddate = datetime(current_SY1, secondsem_endmonth, secondsem_day).date()
         try:

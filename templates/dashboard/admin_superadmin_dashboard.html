@@ -36,14 +36,14 @@
             <button class="settings_icon_super"><a href="{% url 'settings' %}"><img src="{% static 'home/img/settings_icon.png' %}"></a></button>
     </section> -->
     <section class="menu" id="menu">
-        {% if 'Admin_Director' in user_group_names %}
+        {% if 'Admin_Director' or 'Admin_Dean' in user_group_names %}
         <button class="menu_home_admin" style="position: absolute; width: 172px; height: 42px; left: 480px; top: 273px; background-color: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF""><a href="{% url 'admin_home' %}">Home</a></button>
         {% elif 'Superadmin' in user_group_names %}
         <button class="menu_home_admin" style="position: absolute; width: 172px; height: 42px; left: 480px; top: 273px; background-color: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF""><a href="{% url 'superadmin_home' %}">Home</a></button>
         {% endif %}
         <div class="home_admin" style="position: absolute; width: 139px; height: 20px; left: 710px; top: 285px; font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF;">Dashboard</div>
         <div class="menu_dashboard_admin" style="position: absolute; width: 172px; height: 42px; left: 696px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #FFFFFF"></div>
-        {% if 'Admin_Director' in user_group_names %}
+        {% if 'Admin_Director' or 'Admin_Dean' in user_group_names %}
 		<button class="menu_faculty_list_admin" style="position: absolute; width: 172px; height: 42px; left: 904px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'admin_faculty_list' %}">Faculty List</a></button>
         {% elif 'Superadmin' in user_group_names %}
 		<button class="menu_faculty_list_admin" style="position: absolute; width: 172px; height: 42px; left: 904px; top: 273px; background: #ffffff; opacity: 0.4; border-radius: 18px;font-family: 'Inter'; font-style: italic; font-weight: 700; font-size: 16px; line-height: 19px; text-align: center; color: #ffffff"><a href="{% url 'superadmin_faculty_list' %}">Faculty List</a></button>
